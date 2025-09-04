@@ -1,31 +1,30 @@
-import type { Metadata } from "next"
+﻿import type { Metadata } from "next"
 import "./globals.css"
 import { inter, playfair } from "./fonts"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import FloatingChat from "@/components/FloatingChat"
-import BookingModalProvider from "@/components/BookingModalProvider"
 import Script from "next/script"
+import RouteTransition from "@/components/RouteTransition"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.example-massage-spa.com"),
   title: {
-    default: "Therapy Masage",
-    template: "%s | Therapy Masage"
+    default: "Therapy Massage",
+    template: "%s | Therapy Massage"
   },
-  description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο. Κλείσε χαλαρωτικό, αθλητικό μασάζ, ρεφλεξολογία και άλλα.",
-  keywords: ["μασάζ", "θεραπεία", "χαλάρωση", "ρεφλεξολογία", "spa", "αθλητικό μασάζ"],
+  description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο. Χαλάρωση, αθλητικό μασάζ, ρεφλεξολογία και άλλα.",
+  keywords: ["μασάζ", "ολιστική θεραπεία", "ρεφλεξολογία", "spa", "χαλαρωτικό μασάζ"],
   openGraph: {
-    title: "Therapy Masage",
+    title: "Therapy Massage",
     description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο.",
     url: "/",
-    siteName: "Therapy Masage",
+    siteName: "Therapy Massage",
     locale: "el_GR",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Therapy Masage",
+    title: "Therapy Massage",
     description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο.",
   },
 }
@@ -34,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Therapy Masage",
+    name: "Therapy Massage",
     image: ["/images/hero.jpg"],
     url: "https://www.example-massage-spa.com",
     telephone: "+30 210 123 4567",
@@ -59,16 +58,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
 
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="el" className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-beige text-olive-900 antialiased">
-        <BookingModalProvider>
-          <Navbar />
+        <Navbar />
+        <RouteTransition>
           {children}
-          <Footer />
-          <FloatingChat />
-        </BookingModalProvider>
+        </RouteTransition>
+        <Footer />
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>
   )
 }
+

@@ -1,12 +1,12 @@
 import ServiceCard from "./ServiceCard"
 
 const services = [
-  { title: "Χαλαρωτικό Μασάζ", desc: "Απαλό μασάζ σώματος που αποβάλλει την ένταση και χαρίζει βαθιά ηρεμία.", duration: "60΄", price: "€55", image: "/images/services/relaxing.svg" },
-  { title: "Αθλητικό Μασάζ", desc: "Στοχευμένη φροντίδα για αποκατάσταση μυών και απόδοση.", duration: "60΄", price: "€65", image: "/images/services/athletic.svg" },
-  { title: "Ρεφλεξολογία", desc: "Θεραπεία ποδιών που διεγείρει αντανακλαστικά σημεία για ισορροπία στο σώμα.", duration: "45΄", price: "€40", image: "/images/services/reflexology.svg" },
-  { title: "Ανόρθωση Προσώπου", desc: "Μη επεμβατικό μασάζ προσώπου για τόνωση και φρεσκάδα.", duration: "45΄", price: "€45", image: "/images/services/face.svg" },
-  { title: "Μασάζ Βαθείας Πίεσης", desc: "Σταθερή πίεση για ανακούφιση χρόνιων μυϊκών εντάσεων.", duration: "60΄", price: "€70", image: "/images/services/deeptissue.svg" },
-  { title: "Αρωματοθεραπεία", desc: "Θεραπευτικά αιθέρια έλαια για διάθεση και ευεξία.", duration: "60΄", price: "€60", image: "/images/services/aroma.svg" },
+  { slug: "euexia", title: "Ευεξία", desc: "Χαλάρωση και ισορροπία σώματος και νου.", image: "/images/place3.webp" },
+  { slug: "omorfia", title: "Ομορφιά", desc: "Περιποίηση προσώπου και σώματος για λάμψη.", image: "/images/services/service10.webp" },
+  { slug: "energeiakes-therapeies", title: "Ενεργειακές θεραπείες", desc: "Τεχνικές για αναζωογόνηση και ευθυγράμμιση ενέργειας.", image: "/images/services/service13.webp" },
+  { slug: "idiaiteres-stigmes", title: "Ιδιαίτερες στιγμές", desc: "Πακέτα για ζευγάρια, γενέθλια και επετείους.", image: "/images/services/srvs2.webp" },
+  { slug: "special-events", title: "Special Events", desc: "On-site υπηρεσίες για εταιρικά events και ομάδες.", image: "/images/services/srvs15.webp" },
+  { slug: "gift-cards", title: "Gift Cards", desc: "Δώσε ευεξία σε όσους αγαπάς.", image: "/images/services/srvs13.webp" },
 ]
 
 export default function ServicesGrid({ withTitle = true }: { withTitle?: boolean }) {
@@ -15,14 +15,15 @@ export default function ServicesGrid({ withTitle = true }: { withTitle?: boolean
       {withTitle && (
         <div className="mb-8">
           <h2 id="services-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Οι Υπηρεσίες μας</h2>
-          <p className="mt-2 section-subtitle">Επιλέξτε από μια επιμελημένη συλλογή θεραπειών που αποκαθιστούν την ισορροπία.</p>
+          <p className="mt-2 section-subtitle">Επίλεξε κατηγορία για να δεις υποκατηγορίες.</p>
         </div>
       )}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map(s => (
-          <ServiceCard key={s.title} {...s} />
+          <ServiceCard key={s.slug} title={s.title} desc={s.desc} image={s.image} href={`/services/${s.slug}`} />
         ))}
       </div>
     </section>
   )
 }
+

@@ -36,10 +36,15 @@ const config: Config = {
         fadeInUp: {
           "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        routeFade: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
         }
       },
       animation: {
-        fadeInUp: "fadeInUp 700ms ease-out forwards"
+        fadeInUp: "fadeInUp 700ms ease-out forwards",
+        routeFade: "routeFade 350ms ease-out"
       }
     }
   },
@@ -47,4 +52,3 @@ const config: Config = {
 }
 
 export default config
-

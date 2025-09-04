@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from "react"
-import { useBookingModal } from "./BookingModalProvider"
 
 function getRemaining(end: Date) {
   const diff = +end - +new Date()
@@ -14,7 +13,6 @@ function getRemaining(end: Date) {
 
 export default function Offers() {
   const [time, setTime] = useState(getRemaining(new Date(new Date().getFullYear(), new Date().getMonth(), 28, 23, 59)))
-  const { openBooking } = useBookingModal()
 
   useEffect(() => {
     const end = new Date(new Date().getFullYear(), new Date().getMonth(), 28, 23, 59)
@@ -26,10 +24,10 @@ export default function Offers() {
     <section className="container-safe py-12">
       <div className="rounded-xl bg-olive-800 text-beige p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-soft">
         <div>
-          <h3 className="text-2xl font-semibold">Προσφορά: -30% στη Ρεφλεξολογία</h3>
-          <p className="mt-2 text-beige/90">Μόνο για αυτόν τον μήνα. Ξαναβρείτε την ισορροπία και τη ζωντάνια σας.</p>
+          <h3 className="text-2xl font-semibold">Προσφορά: -30% σε πακέτα μασάζ</h3>
+          <p className="mt-2 text-beige/90">Ισχύει έως το τέλος του μήνα. Επικοινώνησε μαζί μας για περισσότερες πληροφορίες.</p>
         </div>
-        <div aria-label="Αντίστροφη μέτρηση" className="grid grid-cols-4 gap-3 text-center">
+        <div aria-label="Μετρητής προσφοράς" className="grid grid-cols-4 gap-3 text-center">
           {([
             ["Ημέρες", time.d],
             ["Ώρες", time.h],
@@ -42,7 +40,6 @@ export default function Offers() {
             </div>
           ))}
         </div>
-        <button onClick={openBooking} className="btn btn-primary bg-beige text-olive-900 hover:bg-white" aria-haspopup="dialog">Κράτηση</button>
       </div>
     </section>
   )

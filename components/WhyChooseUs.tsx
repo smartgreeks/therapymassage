@@ -1,15 +1,15 @@
 import { Leaf, BadgeCheck, HandCoins } from "lucide-react"
 
 const features = [
-  { icon: Leaf, title: "Ολιστική Φροντίδα", desc: "Συνειδητές θεραπείες με βιολογικά έλαια και γαλήνια τελετουργικά." },
-  { icon: BadgeCheck, title: "Έμπειρη Ομάδα", desc: "Πιστοποιημένοι θεραπευτές αφοσιωμένοι στην ευεξία σας." },
-  { icon: HandCoins, title: "Προσιτή Πολυτέλεια", desc: "Premium εμπειρία σε δίκαιες, διαφανείς τιμές." },
+  { icon: Leaf, title: "Φυσικές θεραπείες", desc: "Χρησιμοποιούμε ήπιες, φυσικές τεχνικές και προϊόντα." },
+  { icon: BadgeCheck, title: "Πιστοποιημένοι επαγγελματίες", desc: "Έμπειρη ομάδα με πιστοποιήσεις και πολυετή εμπειρία." },
+  { icon: HandCoins, title: "Διαφανείς τιμές", desc: "Σαφείς χρεώσεις χωρίς κρυφά κόστη." },
 ]
 
 export default function WhyChooseUs() {
   return (
     <section aria-labelledby="why-title" className="container-safe py-16">
-      <h2 id="why-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Γιατί να μας επιλέξετε</h2>
+      <h2 id="why-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Γιατί εμάς</h2>
       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map(F => (
           <div key={F.title} className="card p-6">
@@ -22,3 +22,4 @@ export default function WhyChooseUs() {
     </section>
   )
 }
+

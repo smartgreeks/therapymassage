@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Themed scrollbar for dropdown panels */
+.themed-scroll {
+  scrollbar-color: #6b8a60 #f5efe6; /* Firefox */
+}
+.themed-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.themed-scroll::-webkit-scrollbar-thumb {
+  background-color: #6b8a60;
+  border-radius: 8px;
+}
+.themed-scroll::-webkit-scrollbar-track {
+  background-color: #f5efe6;
+}
+
 :root {
   --radius: 12px;
 }
@@ -24,6 +39,47 @@ html, body {
 
 .btn-outline {
   @apply border border-olive-700 text-olive-800 hover:bg-olive-700 hover:text-white focus:ring-olive-300;
+}
+
+/* Glass (liquid) buttons keeping brand colors */
+.btn-glass {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+}
+.btn-glass:hover { background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10)); }
+.btn-glass:focus { outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,0.6), 0 8px 24px rgba(0,0,0,0.25); }
+.btn-glass::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(600px 100px at -10% -20%, rgba(255,255,255,0.25), transparent 60%),
+              radial-gradient(500px 120px at 120% 140%, rgba(214, 225, 200, 0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.btn-glass-outline {
+  position: relative;
+  color: #f5efe6; /* beige */
+  background: linear-gradient(135deg, rgba(245,239,230,0.08), rgba(245,239,230,0.04));
+  border: 1px solid rgba(245,239,230,0.45);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+.btn-glass-outline:hover { background: linear-gradient(135deg, rgba(245,239,230,0.12), rgba(245,239,230,0.06)); }
+.btn-glass-outline:focus { outline: none; box-shadow: 0 0 0 2px rgba(214,225,200,0.6), 0 6px 18px rgba(0,0,0,0.2); }
+.btn-glass-outline::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(600px 100px at -10% -20%, rgba(255,255,255,0.2), transparent 60%),
+              radial-gradient(400px 80px at 120% 140%, rgba(214, 225, 200, 0.18), transparent 60%);
+  pointer-events: none;
 }
 
 .card {

@@ -1,0 +1,25 @@
+﻿{
+    "extends":  [
+                    "next/core-web-vitals",
+                    "eslint:recommended"
+                ],
+    "overrides":  [
+                      {
+                          "files":  [
+                                        "**/*.{ts,tsx}"
+                                    ],
+                          "parser":  "@typescript-eslint/parser",
+                          "plugins":  [
+                                          "@typescript-eslint"
+                                      ],
+                          "rules":  {
+                                        "@typescript-eslint/no-unused-vars":  "off",
+                                        "no-unused-vars":  "off",
+                                        "no-undef":  "off"
+                                    }
+                      }
+                  ],
+    "rules":  {
+
+              }
+}

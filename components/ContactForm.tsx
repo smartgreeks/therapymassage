@@ -49,9 +49,9 @@ export default function ContactForm() {
         <label htmlFor="cf-message" className="block text-sm font-medium">Μήνυμα</label>
         <textarea id="cf-message" name="message" required rows={5} className="mt-1 w-full rounded-lg border-sand focus:ring-olive-400 focus:border-olive-400" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
       </div>
-      <button className="btn btn-primary" disabled={status === "loading"}>{status === "loading" ? "Αποστολή…" : "Αποστολή"}</button>
+      <button className="btn btn-primary" disabled={status === "loading"}>{status === "loading" ? "Αποστολή..." : "Αποστολή"}</button>
       {status === "success" && <p className="text-green-700">Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα.</p>}
-      {status === "error" && <p className="text-red-700">Κάτι πήγε στραβά. Προσπάθησε ξανά.</p>}
+      {status === "error" && <p className="text-red-700">Κάτι πήγε στραβά. Δοκιμάστε ξανά.</p>}
     </form>
   )
 }
