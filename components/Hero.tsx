@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="relative container-safe h-full flex items-center">
         <div className="max-w-2xl text-white animate-fadeInUp">
           <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>Therapy Massage</h1>
-          <p className="mt-4 text-lg text-sand">Premium μασάζ και ολιστική θεραπεία σε ήρεμο, προσεγμένο χώρο.</p>
+          <p className="mt-4 text-lg text-sand">Premium υπηρεσίες μασάζ σε ήρεμο χώρο. Χαλάρωση, ανακούφιση και ευεξία.</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/services" className="btn btn-primary">Υπηρεσίες</Link>
             <Link href="/#contact" className="btn btn-outline">Επικοινωνία</Link>
@@ -20,6 +20,3 @@ export default function Hero() {
     </section>
   )
 }
-
-
-

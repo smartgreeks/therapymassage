@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 export default function TelephoneCTA() {
   const PHONE = "2104644289"
@@ -14,10 +14,10 @@ export default function TelephoneCTA() {
 
   return (
     <div className="card p-6">
-      <h3 className="font-semibold text-lg">Τηλεφωνική επικοινωνία</h3>
-      <p className="mt-2 text-olive-800/80">Προτιμούμε την άμεση τηλεφωνική εξυπηρέτηση. Κάλεσέ μας για διαθέσιμες ώρες, πληροφορίες και ραντεβού.</p>
+      <h3 className="font-semibold text-lg">Κλείστε ραντεβού</h3>
+      <p className="mt-2 text-olive-800/80">Θέλετε βοήθεια για να επιλέξετε το ιδανικό μασάζ; Καλέστε μας ή ελάτε να σας εξυπηρετήσουμε.</p>
       <div className="mt-5 flex flex-wrap gap-3">
-        <a href={`tel:${PHONE}`} className="btn btn-primary">Κάλεσέ μας τώρα: {PHONE_HUMAN}</a>
+        <a href={`tel:${PHONE}`} className="btn btn-primary">Κλήση στο {PHONE_HUMAN}</a>
         <button type="button" onClick={copyPhone} className="btn btn-outline">Αντιγραφή τηλεφώνου</button>
         <a
           className="btn btn-outline"
@@ -25,13 +25,10 @@ export default function TelephoneCTA() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Άνοιγμα στο Google Maps
+          Άνοιγμα σε Google Maps
         </a>
       </div>
       <p className="mt-4 text-sm text-olive-700/80"><strong>Αν δεν απαντήσουμε εκείνη τη στιγμή, θα σας καλέσουμε πίσω το συντομότερο δυνατόν.</strong> Ευχαριστούμε για την κατανόηση!</p>
     </div>
   )
 }
-
-
-/* eslint-disable no-irregular-whitespace */

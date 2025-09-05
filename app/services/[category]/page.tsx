@@ -1,4 +1,4 @@
-﻿import TelephoneCTA from "@/components/TelephoneCTA"
+import TelephoneCTA from "@/components/TelephoneCTA"
 import Image from "next/image"
 import { Sparkles, BadgeCheck } from "lucide-react"
 import CategoryCalculator from "@/components/CategoryCalculator"
@@ -16,106 +16,102 @@ type SubItem = {
 }
 type Category = { title: string; intro: string; hero?: string; sub: SubItem[] }
 
-// Temporary image overrides by title (handles mojibake + proper Greek)
-const IMAGE_OVERRIDES: Record<string, string[]> = {
-  "Χαλαρωτικό μασάζ": ["/images/place10.webp"],
-  "Deep tissue massage": ["/images/services/service27.webp"],
-  "Αρωματική μάλαξη": ["/images/services/srvs18.webp"],
-  "Αθλητικό μασάζ": ["/images/services/service8.webp"],
-  "Candle massage (add‑on)": ["/images/place7.webp"],
-  "Massage εγκυμοσύνης": ["/images/place13.webp"],
-  "Head massage": ["/images/services/service25.webp"],
-  "Hot stone massage (add‑on)": ["/images/services/service5.webp", "/images/services/service4.webp"],
-  "Βεντούζες (add‑on)": ["/images/place5.webp"],
-}
-
 const CATEGORIES: Record<string, Category> = {
   euexia: {
     title: "Ευεξία",
-    intro: "Χαλάρωση, ισορροπία και αποφόρτιση.",
+    intro: "Χαλάρωση, ισορροπία και ευεξία με τεχνικές προσαρμοσμένες στις ανάγκες σας.",
     hero: undefined,
     sub: [
-      { title: "Χαλαρωτικό μασάζ", desc: "Ήπιες πιέσεις για βαθιά χαλάρωση και αποφόρτιση.", options: [
-        { duration: "30′", price: "€15" },
-        { duration: "45′", price: "€20" },
-        { duration: "60′", price: "€25" },
-        { duration: "90′", price: "€35" },
+      { title: "Χαλαρωτικό μασάζ", desc: "Ήπιες πιέσεις και ρυθμικοί χειρισμοί για αποφόρτιση άγχους.", images: ["/images/services/service8.webp"], options: [
+        { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
+        { duration: "90'", price: "€35" },
       ] },
-      { title: "Deep tissue massage", desc: "Εστίαση σε βαθύτερους μυϊκούς ιστούς για ένταση και πόνους.", options: [
-        { duration: "30′", price: "€15" },
-        { duration: "45′", price: "€20" },
-        { duration: "60′", price: "€25" },
-        { duration: "90′", price: "€35" },
+      { title: "Deep tissue", desc: "Εστιασμένη δουλειά σε χρόνιες εντάσεις και trigger points.", images: ["/images/services/service27.webp"], options: [
+        { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
+        { duration: "90'", price: "€35" },
       ] },
-      { title: "Αρωματική μάλαξη", desc: "Συνδυασμός μασάζ με αιθέρια έλαια για ευεξία.", options: [
-        { duration: "45′", price: "€20" },
-        { duration: "60′", price: "€25" },
+      { title: "Αθλητικό μασάζ", desc: "Αποκατάσταση, ευλυγισία και πρόληψη τραυματισμών.", images: ["/images/services/service10.webp"], options: [
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
       ] },
-      { title: "Αθλητικό μασάζ", desc: "Ιδανικό για αποθεραπεία, πρόληψη και βελτίωση απόδοσης.", options: [
-        { duration: "45′", price: "€20" },
-        { duration: "60′", price: "€25" },
-        { duration: "90′", price: "€35" },
+      { title: "Λεμφικό μασάζ", desc: "Ενίσχυση λεμφικής κυκλοφορίας – αποσυμφόρηση.", images: ["/images/services/srvs18.webp"], options: [
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
       ] },
-      { title: "Massage εγκυμοσύνης", desc: "Ασφαλείς τεχνικές χαλάρωσης στη διάρκεια της κύησης.", options: [
-        { duration: "30′", price: "€15" },
-        { duration: "45′", price: "€20" },
-        { duration: "60′", price: "€25" },
+      { title: "Υδρομασάζ", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/place10.webp"] },
+      { title: "Korean head spa massage", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/service25.webp"] },
+      { title: "Hot stones", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/service5.webp", "/images/services/service4.webp"] },
+      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/service26.webp"], options: [
+        { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" }
       ] },
-      { title: "Head massage", desc: "Χαλάρωση για αυχένα και κεφάλι.", price: "€15" },
-      { title: "Candle massage (add‑on)", desc: "Ζεστό κερί μασάζ για βελούδινη αίσθηση.", price: "+€5" },
-      { title: "Hot stone massage (add‑on)", desc: "Θερμές πέτρες για ανακούφιση έντασης.", price: "+€5" },
-      { title: "Βεντούζες (add‑on)", desc: "Τοπική αποσυμφόρηση και ενεργοποίηση κυκλοφορίας.", price: "€10" },
+      { title: "Μασάζ για εγκύους & παιδιά", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/srvs21.webp"] },
+      { title: "4 hands massage", desc: "Δύο θεραπευτές συγχρονισμένα για βαθιά χαλάρωση.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€45" } ] },
+      { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", images: ["/images/services/srvs12.webp"], options: [
+        { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
+      ] },
+      { title: "Πρεσσοθεραπεία", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/srvs19.webp"] },
+      { title: "Αγιουρβεδικό μασάζ", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/srvs23.webp"] },
     ],
   },
+
   omorfia: {
     title: "Ομορφιά",
-    intro: "Περιποίηση προσώπου και σώματος.",
+    intro: "Φυσική λάμψη και φροντίδα προσώπου/σώματος με εξειδικευμένες τεχνικές.",
     hero: undefined,
     sub: [
-      { title: "Scrub & μάσκα σώματος", desc: "Απολέπιση και ενυδάτωση για αναζωογόνηση δέρματος.", price: "€20" },
-      { title: "Σοκολατοθεραπεία (add‑on)", desc: "Σοκολατένια εμπειρία ευεξίας ως πρόσθετη παροχή.", price: "+€5" },
-      { title: "Φυσικό face lifting", desc: "Μη επεμβατικές τεχνικές τόνωσης και σύσφιξης.", price: "€15" },
-      { title: "Face lifting (full extra)", desc: "Πλήρες πρόγραμμα τόνωσης προσώπου.", price: "€30" },
-      { title: "Massage κυτταρίτιδας / αδυνάτισμα / σύσφιξη", desc: "Στοχευμένες τεχνικές για υφή και σύσφιξη.", price: "€35" },
+      { title: "Φυσικό face lifting", desc: "Μη επεμβατικές τεχνικές τόνωσης και σύσφιξης.", images: ["/images/services/service21.webp"], price: "€15" },
+      { title: "Face lifting (full extra)", desc: "Πλήρες πρόγραμμα τόνωσης προσώπου.", images: ["/images/services/service20.webp"], price: "€30" },
+      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, μάσκα και χαλαρωτικό μασάζ σώματος.", images: ["/images/services/service24.webp"], price: "€30" },
+      { title: "Σοκολατοθεραπεία", desc: "Θεραπεία ευεξίας με άρωμα σοκολάτας.", images: ["/images/services/service22.webp"], price: "€30" },
+      { title: "Φωτοθεραπεία", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/service16.webp"], price: "10,00€" },
+      { title: "Massage κυτταρίτιδας", desc: "Στοχευμένες τεχνικές για υφή και σύσφιξη.", images: ["/images/services/service19.webp"], price: "20,00€" },
     ],
   },
-  "energeiakes-therapeies": {
-    title: "Ενεργειακές θεραπείες",
-    intro: "Ενεργειακό μασάζ, κρυσταλλοθεραπεία, ρεφλεξολογία.",
+
+  "enallaktikes-therapeies": {
+    title: "Εναλλακτικές Θεραπείες",
+    intro: "Ενεργειακό μασάζ, αγιουρβεδικό, ρεφλεξολογία και περισσότερα.",
     hero: undefined,
     sub: [
-      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", options: [ { duration: "90′", price: "€40" } ] },
-      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", options: [ { duration: "60′", price: "€35" }, { duration: "90′", price: "€45" } ] },
-      { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", options: [ { duration: "30′", price: "€15" }, { duration: "45′", price: "€20" }, { duration: "60′", price: "€25" } ] },
-      { title: "Ηλεκτροβελονισμός", desc: "Ηλεκτρική διέγερση σε σημεία βελονισμού.", options: [ { duration: "45′", price: "€20" }, { duration: "60′", price: "€25" } ] },
+      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", images: ["/images/services/srvs20.webp"], options: [ { duration: "90'", price: "€40" } ] },
+      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/service26.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
+      { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", images: ["/images/services/srvs12.webp"], options: [ { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" } ] },
+      { title: "Αγιουρβεδικό μασάζ", desc: "Μάθετε περισσότερα μετά από επικοινωνία", images: ["/images/services/srvs23.webp"] },
     ],
   },
+
   "idiaiteres-stigmes": {
     title: "Ιδιαίτερες στιγμές",
-    intro: "Πακέτα για ζευγάρια και παρέες.",
+    intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Massage με 4 χέρια", desc: "Δύο θεραπευτές ταυτόχρονα για ολιστική εμπειρία.", options: [ { duration: "60′", price: "€45" } ] },
-      { title: "Bachelorette spa", desc: "Ειδικά πακέτα για παρέες πριν τον γάμο.", price: "Κατόπιν συνεννόησης" },
-      { title: "Couples massage", desc: "Δίπλα‑δίπλα εμπειρία χαλάρωσης για δύο.", options: [ { duration: "60′", price: "€110" } ] },
+      { title: "Massage με 4 χέρια", desc: "Δύο θεραπευτές, ένας ρυθμός.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€45" } ] },
+      { title: "Bachelorette spa", desc: "Ομαδική εμπειρία με φίλες.", images: ["/images/services/srvs15.webp"], price: "Κατόπιν συνεννόησης" },
+      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/service28.webp"], options: [ { duration: "60'", price: "€110" } ] },
     ],
   },
+
   "special-events": {
     title: "Special Events",
-    intro: "On-site υπηρεσίες για ομάδες και εταιρικά events.",
+    intro: "On-site υπηρεσίες για εταιρικά events και ομάδες.",
     hero: undefined,
     sub: [
-      { title: "Corporate", desc: "Καρέκλα μασάζ στον χώρο σας.", price: "€80/h" },
-      { title: "Team Wellness", desc: "Σύντομες συνεδρίες για ομάδες.", price: "Κατόπιν συνεννόησης" },
+      { title: "Corporate", desc: "Παροχή μασάζ στον χώρο σας.", images: ["/images/services/srvs21.webp"], price: "€80/h" },
+      { title: "Team Wellness", desc: "Προγράμματα ευεξίας για ομάδες.", images: ["/images/services/srvs25.webp"], price: "Κατόπιν συνεννόησης" },
     ],
   },
+
   "gift-cards": {
     title: "Gift Cards",
-    intro: "Δώστε δώρο ευεξίας στους αγαπημένους σας.",
+    intro: "Χάρισε ευεξία στους αγαπημένους σου.",
     hero: undefined,
     sub: [
-      { title: "E‑Gift", desc: "Ψηφιακή κάρτα δώρου.", price: "από €30" },
-      { title: "Physical Card", desc: "Έντυπη κάρτα δώρου.", price: "από €30" },
+      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου.", images: ["/images/services/srvs13.webp"], price: "από €30" },
+      { title: "Physical Card", desc: "Έντυπη κάρτα δώρου.", images: ["/images/services/srvs14.webp"], price: "από €30" },
     ],
   },
 }
@@ -150,7 +146,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
         )}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.sub.map((s, i) => {
-            const imgs = (s.images && s.images.length ? s.images : (s.image ? [s.image] : (IMAGE_OVERRIDES[s.title] ?? [])))
+            const imgs = (s.images && s.images.length ? s.images : (s.image ? [s.image] : []))
             return (
             <div key={s.title} className="card p-0 overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp" style={{ animationDelay: `${i * 60}ms` }}>
               <ServiceCardImages images={imgs} alt={s.title} />
@@ -190,21 +186,18 @@ export default function CategoryPage({ params }: { params: { category: string } 
 }
 
 function Calculator({ data }: { data: Category }) {
-  // Build base services (with options) and add-ons (single price or "+€")
-  const bases = data.sub.filter(s => (s.options && s.options.length) || (s.price && !/^\+/.test(s.price)))
-  const addons = data.sub.filter(s => (s.price && /^\+?€?\+?/.test(s.price)) || /add‑on/i.test(s.title))
+  // Build base services (with options) and add-ons (single price or starts-with "+")
+  const bases = data.sub.filter(s => (s.options && s.options.length) || (s.price && !/^\+/.test(s.price || '')))
+  const addons = data.sub.filter(s => (s.price && /^\+/.test(s.price || '')) || /add-on/i.test(s.title))
 
   return (
     <section className="container-safe py-12">
       <div className="rounded-xl bg-olive-50 border border-sand p-6">
-        <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>Υπολογισμός Κόστους</h2>
-        <p className="text-olive-800/80 mt-1">Διάλεξε υπηρεσία και πρόσθεσε add‑ons για να δεις ενδεικτικό σύνολο.</p>
+        <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>Υπολογισμός πακέτου</h2>
+        <p className="text-olive-800/80 mt-1">Συνδυάστε υπηρεσίες και τυχόν add-ons για το ιδανικό αποτέλεσμα.</p>
         <CategoryCalculator bases={bases} addons={addons} />
       </div>
     </section>
   )
 }
-
-
-
 

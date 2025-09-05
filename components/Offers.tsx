@@ -24,10 +24,10 @@ export default function Offers() {
     <section className="container-safe py-12">
       <div className="rounded-xl bg-olive-800 text-beige p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-soft">
         <div>
-          <h3 className="text-2xl font-semibold">Προσφορά: -30% σε πακέτα μασάζ</h3>
-          <p className="mt-2 text-beige/90">Ισχύει έως το τέλος του μήνα. Επικοινώνησε μαζί μας για περισσότερες πληροφορίες.</p>
+          <h3 className="text-2xl font-semibold">Προσφορά: -30% σε πακέτα ευεξίας</h3>
+          <p className="mt-2 text-beige/90">Ισχύει μέχρι το τέλος του μήνα. Συνδύασε υπηρεσίες και κέρδισε επιπλέον προνόμια. Κλείσε τώρα το ραντεβού σου!</p>
         </div>
-        <div aria-label="Μετρητής προσφοράς" className="grid grid-cols-4 gap-3 text-center">
+        <div aria-label="Μετρητής αντίστροφης μέτρησης" className="grid grid-cols-4 gap-3 text-center">
           {([
             ["Ημέρες", time.d],
             ["Ώρες", time.h],

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 import "./globals.css"
 import { inter, playfair } from "./fonts"
 import Navbar from "@/components/Navbar"
@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     default: "Therapy Massage",
     template: "%s | Therapy Massage"
   },
-  description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο. Χαλάρωση, αθλητικό μασάζ, ρεφλεξολογία και άλλα.",
-  keywords: ["μασάζ", "ολιστική θεραπεία", "ρεφλεξολογία", "spa", "χαλαρωτικό μασάζ"],
+  description: "Premium υπηρεσίες μασάζ σε ήρεμο χώρο.",
+  keywords: ["μασάζ", "ευεξία", "θεραπευτικό μασάζ", "spa", "χαλαρωτικό"],
   openGraph: {
     title: "Therapy Massage",
-    description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο.",
+    description: "Premium υπηρεσίες μασάζ σε ήρεμο χώρο.",
     url: "/",
     siteName: "Therapy Massage",
     locale: "el_GR",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Therapy Massage",
-    description: "Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο.",
+    description: "Premium υπηρεσίες μασάζ σε ήρεμο χώρο.",
   },
 }
 
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     address: {
       "@type": "PostalAddress",
       streetAddress: "Tranquility 123",
-      addressLocality: "Αθήνα",
+      addressLocality: "Σαλαμίνα",
       postalCode: "105 58",
       addressCountry: "GR"
     },

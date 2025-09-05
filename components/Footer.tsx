@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -32,7 +32,7 @@ export default function Footer() {
             <span className="h-8 w-8 rounded-full bg-olive-500 inline-block" />
             <span className="font-semibold">Therapy Massage</span>
           </div>
-          <p className="mt-4 text-olive-100/80">Premium μασάζ και ολιστική θεραπεία σε έναν ήρεμο, πολυτελή χώρο. Χαλάρωση, ρεφλεξολογία, αθλητικό μασάζ και άλλα.</p>
+          <p className="mt-4 text-olive-100/80">Premium υπηρεσίες μασάζ σε ήρεμο χώρο. Χαλάρωση, ανακούφιση και ευεξία.</p>
         </div>
         <div>
           <h3 className="font-semibold mb-3">Σύνδεσμοι</h3>
@@ -53,7 +53,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold mb-3">Μείνετε ενημερωμένοι</h3>
+          <h3 className="font-semibold mb-3">Εγγραφή Newsletter</h3>
           <form onSubmit={subscribe} className="flex gap-2">
             <label htmlFor="newsletter" className="sr-only">Διεύθυνση email</label>
             <input id="newsletter" name="newsletter" type="email" required placeholder="you@example.com" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 rounded-lg px-4 py-3 text-olive-900" />
@@ -69,5 +69,3 @@ export default function Footer() {
     </footer>
   )
 }
-
-

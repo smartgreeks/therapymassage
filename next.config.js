@@ -12,6 +12,15 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: '/services/energeiakes-therapeies',
+        destination: '/services/enallaktikes-therapeies',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

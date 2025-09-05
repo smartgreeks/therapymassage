@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -31,7 +31,6 @@ export default function Navbar() {
       <nav className="container-safe flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2" aria-label="Μετάβαση στην αρχική σελίδα">
           <Image src="/images/logoTherapy.png" alt="Therapy Massage logo" width={64} height={64} className="h-16 w-16 object-contain" />
-          
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
@@ -67,10 +66,3 @@ export default function Navbar() {
     </header>
   )
 }
-
-
-
-
-
-
-

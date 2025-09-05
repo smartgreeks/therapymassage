@@ -25,7 +25,7 @@ export default function ContactSection() {
 
   function formatRange(d?: Day) {
     if (!d?.start || !d?.end) return 'Κλειστά'
-    return `${formatTimeGreek(d.start[0], d.start[1])}–${formatTimeGreek(d.end[0], d.end[1])}`
+    return `${formatTimeGreek(d.start[0], d.start[1])} – ${formatTimeGreek(d.end[0], d.end[1])}`
   }
 
   function openNow() {
@@ -64,7 +64,7 @@ export default function ContactSection() {
             </p>
             <details className="rounded-md border border-sand bg-white/70 p-3">
               <summary className="cursor-pointer select-none text-olive-900/90">
-                <strong>Σήμερα:</strong> {todayRange}{' '}
+                <strong>Ωράριο:</strong> {todayRange}{' '}
                 <span className={isOpen ? 'text-emerald-700' : 'text-rose-700'}>
                   ({isOpen ? 'Ανοιχτά τώρα' : 'Κλειστά'})
                 </span>
@@ -94,10 +94,10 @@ export default function ContactSection() {
         </div>
 
         <div className="card p-6">
-          <h3 className="font-semibold text-lg">Τηλεφωνική επικοινωνία</h3>
-          <p className="mt-2 text-olive-800/80">Προτιμούμε την άμεση τηλεφωνική εξυπηρέτηση. Κάλεσέ μας για διαθέσιμες ώρες, πληροφορίες και ραντεβού.</p>
+          <h3 className="font-semibold text-lg">Κλείστε ραντεβού</h3>
+          <p className="mt-2 text-olive-800/80">Είμαστε εδώ για να βοηθήσουμε με εξατομικευμένες προτάσεις. Καλέστε μας ή στείλτε μήνυμα για διαθεσιμότητα.</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <a href={`tel:${PHONE}`} className="btn btn-primary">Κάλεσέ μας τώρα: {PHONE_HUMAN}</a>
+            <a href={`tel:${PHONE}`} className="btn btn-primary">Κλήση στο {PHONE_HUMAN}</a>
             <button type="button" onClick={copyPhone} className="btn btn-outline">Αντιγραφή τηλεφώνου</button>
             <a
               className="btn btn-outline"
@@ -105,7 +105,7 @@ export default function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Άνοιγμα στο Google Maps
+              Άνοιγμα σε Google Maps
             </a>
           </div>
           <p className="mt-4 text-sm text-olive-700/80"><strong>Αν δεν απαντήσουμε εκείνη τη στιγμή, θα σας καλέσουμε πίσω το συντομότερο δυνατόν.</strong> Ευχαριστούμε για την κατανόηση!</p>
@@ -114,4 +114,3 @@ export default function ContactSection() {
     </section>
   )
 }
-

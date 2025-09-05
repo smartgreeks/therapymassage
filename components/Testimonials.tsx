@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
@@ -10,9 +10,9 @@ type Testimonial = {
 }
 
 const testimonials: Testimonial[] = [
-  { name: "Μαρία Κ.", rating: 5, text: "Το καλύτερο μασάζ που έχω κάνει. Επαγγελματίες και ευγενικοί.", avatar: "/images/avatars/1.svg" },
-  { name: "Γιώργος Σ.", rating: 5, text: "Χαλαρωτικό περιβάλλον και εξαιρετικές τεχνικές. Προτείνεται ανεπιφύλακτα!", avatar: "/images/avatars/2.svg" },
-  { name: "Ελένη Π.", rating: 4.5, text: "Πολύ καλή εμπειρία, ένιωσα άμεση ανακούφιση. Θα ξαναπάω σίγουρα.", avatar: "/images/avatars/3.svg" },
+  { name: "Μαρία Π.", rating: 5, text: "Υπέροχη εμπειρία! Ο χώρος ζεστός και οι τεχνικές εξαιρετικές.", avatar: "/images/avatars/1.svg" },
+  { name: "Γιώργος Ν.", rating: 5, text: "Επαγγελματισμός και άψογη εξυπηρέτηση. Ένιωσα πραγματική ανακούφιση.", avatar: "/images/avatars/2.svg" },
+  { name: "Ελένη Κ.", rating: 4.5, text: "Πολύ καλό μασάζ, χαλάρωσα πλήρως. Θα ξαναπάω σίγουρα!", avatar: "/images/avatars/3.svg" },
 ]
 
 export default function Testimonials() {
@@ -24,7 +24,7 @@ export default function Testimonials() {
 
   return (
     <section aria-labelledby="testimonials-title" className="container-safe py-16">
-      <h2 id="testimonials-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Κριτικές Πελατών</h2>
+      <h2 id="testimonials-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Μαρτυρίες πελατών</h2>
       <div className="mt-8 grid lg:grid-cols-[2fr_1fr] gap-8 items-start">
         <div className="relative overflow-hidden rounded-xl bg-white p-6 border border-sand min-h-[220px]">
           {testimonials.map((t, i) => (
@@ -42,8 +42,8 @@ export default function Testimonials() {
         </div>
         <div className="card p-6">
           <div className="text-3xl font-semibold">4.9/5</div>
-          <div className="text-olive-700">Βαθμολογία στο Google</div>
-          <a href="#" className="btn btn-outline mt-4">Δείτε περισσότερα</a>
+          <div className="text-olive-700">Κριτικές στο Google</div>
+          <a href="#" className="btn btn-outline mt-4">Διαβάστε περισσότερα</a>
         </div>
       </div>
     </section>
