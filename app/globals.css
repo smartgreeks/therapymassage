@@ -119,3 +119,50 @@ html, body {
 }
 .nav-link:hover::after { width: 100%; }
 .nav-link[data-active="true"]::after { width: 100%; }
+
+/* ---- Article Typography ---- */
+.article-prose {
+  @apply text-[17px] leading-8 text-olive-900;
+}
+.article-prose h1 {
+  @apply text-3xl sm:text-4xl font-semibold tracking-tight mt-2;
+}
+.article-prose h2 {
+  @apply text-2xl sm:text-3xl font-semibold tracking-tight mt-10 mb-3 text-olive-900;
+}
+.article-prose h3 {
+  @apply text-xl sm:text-2xl font-semibold mt-8 mb-2 text-olive-900;
+}
+.article-prose p { @apply mt-4 text-olive-800/90; }
+.article-prose ul { @apply list-disc pl-6 mt-4 space-y-1; }
+.article-prose ol { @apply list-decimal pl-6 mt-4 space-y-1; }
+.article-prose li { @apply marker:text-olive-600; }
+.article-prose a { @apply text-olive-700 underline decoration-olive-300 underline-offset-4 hover:text-olive-800; }
+.article-prose blockquote {
+  @apply border-l-4 border-olive-200 pl-4 italic text-olive-800/90 bg-olive-50/60 rounded-r;
+}
+.article-prose figure { @apply my-6; }
+.article-prose img { @apply rounded-lg shadow-soft; }
+.article-prose hr { @apply my-10 border-sand; }
+.article-prose code { @apply px-1.5 py-0.5 rounded bg-sand/60 text-bark; }
+.article-prose pre {
+  @apply p-4 rounded-lg bg-olive-900 text-beige overflow-x-auto;
+}
+.article-prose details { @apply rounded-lg border border-sand p-4 bg-white/70; }
+.article-prose details > summary {
+  @apply font-medium cursor-pointer text-olive-900 marker:text-olive-600;
+}
+.article-prose details > p { @apply mt-2; }
+
+/* Article hero overlay */
+.article-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+.article-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(46,55,33,0.55), rgba(46,55,33,0.15) 45%, transparent 90%);
+}

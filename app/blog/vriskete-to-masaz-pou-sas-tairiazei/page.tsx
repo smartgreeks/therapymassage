@@ -80,7 +80,7 @@ export default function BlogArticle() {
     <main id="content" aria-labelledby="page-title">
       <section className="bg-olive-900 text-beige">
         <div className="container-safe py-10">
-          <nav aria-label="breadcrumb" className="text-sm text-beige/80">
+          <nav aria-label="Breadcrumb" className="text-sm text-beige/80">
             <ol className="flex gap-2">
               <li><a href="/" className="hover:underline">Αρχική</a></li>
               <li>/</li>
@@ -97,8 +97,8 @@ export default function BlogArticle() {
       </section>
 
       <section className="container-safe py-12 grid gap-8 lg:grid-cols-[2fr_1fr]">
-        <article className="prose max-w-none">
-          <figure className="relative aspect-[16/9] w-full mb-6 rounded-lg overflow-hidden">
+        <article className="article-prose" itemScope itemType="https://schema.org/Article">
+          <figure className="relative aspect-[16/9] w-full mb-6 article-hero">
             <Image src="/images/hero.webp" alt="Χαλαρωτικό μασάζ σε επαγγελματικό στούντιο Therapy Massage" fill className="object-cover" />
           </figure>
 
@@ -124,7 +124,7 @@ export default function BlogArticle() {
               για μέγιστη χαλάρωση και ανακούφιση.
             </p>
 
-            <figure className="relative aspect-[16/9] w-full my-6 rounded-lg overflow-hidden">
+            <figure className="relative aspect-[16/9] w-full my-6 article-hero">
               <Image src="/images/place10.webp" alt="Εξατομικευμένη αξιολόγηση αναγκών πριν το μασάζ" fill className="object-cover" />
             </figure>
 
@@ -150,7 +150,7 @@ export default function BlogArticle() {
               <li>Καλύτερη ποιότητα ύπνου και ενέργεια μέσα στην ημέρα.</li>
             </ul>
 
-            <figure className="relative aspect-[16/9] w-full my-6 rounded-lg overflow-hidden">
+            <figure className="relative aspect-[16/9] w-full my-6 article-hero">
               <Image src="/images/services/service5.webp" alt="Ανακούφιση μυϊκής έντασης με θεραπευτικό μασάζ" fill className="object-cover" />
             </figure>
           </section>
@@ -165,8 +165,8 @@ export default function BlogArticle() {
           </section>
         </article>
 
-        <aside className="space-y-4">
-          <div className="rounded-lg border border-sand p-4">
+        <aside className="space-y-4 lg:sticky lg:top-24 h-max">
+          <div className="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5">
             <p className="font-semibold">Σύντομη περίληψη</p>
             <p className="mt-2 text-olive-800/80">
               Εξατομικευμένη προσέγγιση, αξιολόγηση επί τόπου και προτάσεις μασάζ που ταιριάζουν στο σώμα και στις

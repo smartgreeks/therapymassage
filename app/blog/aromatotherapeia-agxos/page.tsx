@@ -79,15 +79,29 @@ export default function BlogArticle() {
   return (
     <main id="content" aria-labelledby="page-title">
       <section className="container-safe py-10 grid lg:grid-cols-[1fr_360px] gap-8">
-        <article className="" itemScope itemType="https://schema.org/Article">
+        <article className="article-prose" itemScope itemType="https://schema.org/Article">
           <header>
-          <h1 id="page-title" itemProp="headline" className="text-3xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>
+          <nav aria-label="Breadcrumb" className="text-sm text-olive-700/80 mb-2">
+            <a href="/" className="hover:underline">Αρχική</a>
+            <span className="mx-2">/</span>
+            <a href="/blog" className="hover:underline">Blog</a>
+            <span className="mx-2">/</span>
+            <span aria-current="page">Άρθρο</span>
+          </nav>
+          <h1 id="page-title" itemProp="headline" className="!mt-0" style={{ fontFamily: "var(--font-playfair)" }}>
             Αρωματοθεραπεία και Άγχος – Φυσική ανακούφιση
           </h1>
+          <div className="flex items-center gap-3 text-sm text-olive-700/80 mt-2">
+            <time itemProp="datePublished" dateTime={published}>{published}</time>
+            <span aria-hidden>•</span>
+            <span itemProp="author" itemScope itemType="https://schema.org/Organization">
+              Από <span itemProp="name">Therapy Massage</span>
+            </span>
+          </div>
           <p className="mt-2 text-olive-800/80" itemProp="description">
             Η αρωματοθεραπεία είναι ένας φυσικός τρόπος για να μειώσετε το άγχος, να χαλαρώσετε και να βρείτε ισορροπία μέσα στην καθημερινότητα.
           </p>
-          <figure className="relative aspect-[16/9] w-full my-6 rounded-lg overflow-hidden">
+          <figure className="relative aspect-[16/9] w-full my-6 article-hero">
             <Image src="/images/place10.webp" alt="Αρωματοθεραπεία και άγχος – Φυσική ανακούφιση" fill className="object-cover z-10" />
           </figure>
         </header>
@@ -110,7 +124,7 @@ export default function BlogArticle() {
             <li>Βελτιώσει την ποιότητα του ύπνου</li>
             <li>Ανακουφίσει από πονοκεφάλους που σχετίζονται με το άγχος</li>
           </ul>
-          <figure className="relative aspect-[16/9] w-full my-6 rounded-lg overflow-hidden">
+          <figure className="relative aspect-[16/9] w-full my-6 article-hero">
             <Image src="/images/hero.webp" alt="Λεβάντα και αιθέρια έλαια για αρωματοθεραπεία" fill className="object-cover" />
           </figure>
         </section>
@@ -149,8 +163,8 @@ export default function BlogArticle() {
         </section>
         </article>
 
-        <aside className="space-y-4">
-          <div className="rounded-lg border border-sand p-4">
+        <aside className="space-y-4 lg:sticky lg:top-24 h-max">
+          <div className="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5">
             <p className="font-semibold">Σύντομη περίληψη</p>
             <p className="mt-2 text-olive-800/80">
               Αρωματοθεραπεία με αιθέρια έλαια που μειώνει το άγχος, ενισχύει τη χαλάρωση και υποστηρίζει
