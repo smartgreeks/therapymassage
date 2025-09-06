@@ -52,26 +52,18 @@ export default function BlogArticle() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Πόσες συνεδρίες χρειάζομαι για να δω αποτέλεσμα;',
+        name: 'Πόσες συνεδρίες χρειάζομαι για να δω διαφορά;',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ανάλογα με την περίπτωση και τον στόχο σας. Συνήθως 2–4 συνεδρίες βοηθούν σε χρόνια θέματα, με επανεκτίμηση μετά.',
+          text: 'Εξαρτάται από το ζήτημα. Πολλοί νιώθουν ανακούφιση από την πρώτη συνεδρία, ενώ για χρόνιες εντάσεις συνιστάται ένα στοχευμένο πλάνο.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Προσαρμόζετε την ένταση του μασάζ;',
+        name: 'Υπάρχει κάποια προετοιμασία πριν τη συνεδρία;',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ναι. Η ένταση και οι τεχνικές προσαρμόζονται στις ανάγκες και τις προτιμήσεις σας σε κάθε συνεδρία.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Μπορώ να συνδυάσω τεχνικές;',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Βεβαίως. Συχνά συνδυάζουμε τεχνικές για καλύτερο, εξατομικευμένο αποτέλεσμα.',
+          text: 'Φορέστε άνετα ρούχα και φάτε ελαφριά. Ενημερώστε μας για τυχόν παθήσεις ή πρόσφατους τραυματισμούς.',
         },
       },
     ],
@@ -79,10 +71,9 @@ export default function BlogArticle() {
 
   return (
     <main id="content" aria-labelledby="page-title">
-      <section className="container-safe py-10 grid lg:grid-cols-[1fr_360px] gap-8">
-        <article className="article-prose" itemScope itemType="https://schema.org/Article">
-          <header>
-          <nav aria-label="breadcrumb" className="text-sm text-olive-800/80">
+      <section className="bg-olive-900 text-beige">
+        <div className="container-safe py-10">
+          <nav aria-label="Breadcrumb" className="text-sm text-beige/80">
             <ol className="flex gap-2">
               <li><a href="/" className="hover:underline">Αρχική</a></li>
               <li>/</li>
@@ -91,88 +82,58 @@ export default function BlogArticle() {
               <li aria-current="page">Therapy Massage – Πέρα από τη χαλάρωση</li>
             </ol>
           </nav>
-
-          <h1 id="page-title" itemProp="headline" className="!mt-0" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 id="page-title" className="text-3xl md:text-4xl font-semibold mt-3" style={{ fontFamily: 'var(--font-playfair)' }}>
             Therapy Massage – Πέρα από τη χαλάρωση
           </h1>
-          <div className="flex items-center gap-3 text-sm text-olive-700/80 mt-2">
-            <time itemProp="datePublished" dateTime={published}>{published}</time>
-            <span aria-hidden>•</span>
-            <span itemProp="author" itemScope itemType="https://schema.org/Organization">
-              Από <span itemProp="name">Therapy Massage</span>
-            </span>
-          </div>
-          <figure className="relative aspect-[16/9] w-full my-6 article-hero">
-            <Image src="/images/services/eueksiaImage.webp" alt="Therapy Massage – πέρα από τη χαλάρωση" fill className="object-cover" />
-          </figure>
-          
-        </header>
+          <p className="mt-2 text-beige/80">Δημοσίευση: {new Date(published).toLocaleDateString()}</p>
+        </div>
+      </section>
 
-        <section aria-labelledby="intro" className="">
-          <h2 id="intro">Φροντίδα με ουσία και αποτέλεσμα</h2>
-          <p>
-            Το Therapy Massage δεν είναι απλώς ένας χώρος χαλάρωσης. Μετά από χρόνια εμπειρίας και ακούγοντας προσεκτικά τις ανάγκες των ανθρώπων που μας εμπιστεύονται, έχουμε καταφέρει να ανακουφίσουμε πολλούς από μυϊκούς πόνους, εντάσεις και συμπτώματα χρόνιας κόπωσης.
-          </p>
-          <p>
-            Η φροντίδα μας βασίζεται σε ουσιαστική εμπειρία, γνώση και προσωπική προσέγγιση. Για εμάς, κάθε συνεδρία είναι ξεχωριστή και προσαρμοσμένη στις ανάγκες του κάθε ανθρώπου.
-          </p>
+      <section className="container-safe py-10 grid lg:grid-cols-[1fr_360px] gap-8">
+        <article className="article-prose" itemScope itemType="https://schema.org/Article">
           <figure className="relative aspect-[16/9] w-full my-6 article-hero">
-            <Image src="/images/place10.webp" alt="Προσωπική προσέγγιση και εμπειρία στη φροντίδα μασάζ" fill className="object-cover" />
-          </figure>
-        </section>
-
-        <section aria-labelledby="social-proof" className="">
-          <h2 id="social-proof">Εμπιστοσύνη που κερδίζεται «από στόμα σε στόμα»</h2>
-          <p>
-            Σε μια μικρή κοινωνία, όπου η πιο αληθινή μορφή διαφήμισης είναι η σύσταση «από στόμα σε στόμα», η εμπιστοσύνη που μας δείχνετε όλα αυτά τα χρόνια είναι η μεγαλύτερη επιβεβαίωση της δουλειάς μας. Και είναι αυτό που μας κρατά στις προτιμήσεις τόσων ανθρώπων που αναζητούν ανακούφιση, υγεία και ευεξία.
-          </p>
-          <figure className="relative aspect-[16/9] w-full my-6 article-hero">
-            <Image src="/images/place7.webp" alt="Σύσταση από στόμα σε στόμα και εμπιστοσύνη πελατών" fill className="object-cover" />
+            <Image src="/images/place7.webp" alt="Χαλαρωτική ατμόσφαιρα σε χώρο θεραπευτικού μασάζ" fill className="object-cover" />
           </figure>
           <p>
-            Εξερευνήστε περισσότερα για τις υπηρεσίες μας στη σελίδα <a href="/services" className="underline">Υπηρεσίες</a>.
+            Στο Therapy Massage, η προσέγγισή μας ξεπερνά την απλή χαλάρωση: επικεντρωνόμαστε στη συνολική ευεξία σας, με
+            τεχνικές που στοχεύουν σε συγκεκριμένους μυϊκούς ιστούς και μοτίβα έντασης.
           </p>
-        </section>
 
-        <section aria-labelledby="our-approach" className="">
-          <h2 id="our-approach">Η προσέγγισή μας</h2>
-          <ul>
-            <li><strong>Ακρόαση &amp; αξιολόγηση:</strong> κατανοούμε τις ανάγκες πριν από κάθε συνεδρία.</li>
-            <li><strong>Εξατομίκευση:</strong> προσαρμόζουμε τεχνικές και ένταση στις ιδιαιτερότητές σας.</li>
-            <li><strong>Συνέπεια:</strong> στοχευμένες συνεδρίες για βιώσιμο αποτέλεσμα στην καθημερινότητα.</li>
-          </ul>
-        </section>
+          <section aria-labelledby="our-approach" className="">
+            <h2 id="our-approach">Η προσέγγισή μας</h2>
+            <ul>
+              <li><strong>Στοχευμένοι χειρισμοί &amp; αξιολόγηση:</strong> εντοπίζουμε τα σημεία έντασης και προσαρμόζουμε τη συνεδρία.</li>
+              <li><strong>Εξατομίκευση:</strong> ανάλογα με τις ανάγκες, την καθημερινότητα και τους στόχους σας.</li>
+              <li><strong>Ολιστική φροντίδα:</strong> έμφαση στη στάση σώματος, στην αναπνοή και στη ρουτίνα αποκατάστασης.</li>
+            </ul>
+          </section>
 
-        <section aria-labelledby="cta" className="">
-          <h2 id="cta">Κλείστε ραντεβού</h2>
-          <p>
-            Ανακαλύψτε πώς η ουσιαστική φροντίδα μπορεί να κάνει τη διαφορά. <a href="/contact" className="underline">Επικοινωνήστε μαζί μας</a> για να κλείσετε τη δική σας συνεδρία.
-          </p>
-        </section>
+          <section aria-labelledby="cta" className="">
+            <h2 id="cta">Κλείστε ραντεβού</h2>
+            <p>
+              Είμαστε εδώ για να βρούμε μαζί την ιδανική προσέγγιση. <a href="/contact" className="underline">Επικοινωνήστε μαζί μας</a>
+               για να προγραμματίσουμε τη συνεδρία σας.
+            </p>
+          </section>
 
-        <section aria-labelledby="faq" className="">
-          <h2 id="faq">Συχνές Ερωτήσεις</h2>
-          <details>
-            <summary>Πόσες συνεδρίες χρειάζομαι για να δω αποτέλεσμα;</summary>
-            <p>Αυτό εξαρτάται από την κατάσταση και τον στόχο σας. Συνήθως, ένα πλάνο 2–4 συνεδρίων βοηθά σε χρόνια θέματα, με επανεκτίμηση μετά.</p>
-          </details>
-          <details>
-            <summary>Προσαρμόζετε την ένταση του μασάζ;</summary>
-            <p>Ναι. Η ένταση και οι τεχνικές προσαρμόζονται στις προτιμήσεις και στις ανάγκες σας σε κάθε συνεδρία.</p>
-          </details>
-          <details>
-            <summary>Μπορώ να συνδυάσω τεχνικές;</summary>
-            <p>Βεβαίως. Συχνά συνδυάζουμε τεχνικές για καλύτερο, εξατομικευμένο αποτέλεσμα.</p>
-          </details>
-        </section>
+          <section aria-labelledby="faq" className="">
+            <h2 id="faq">Συχνές ερωτήσεις</h2>
+            <details>
+              <summary>Πόσες συνεδρίες χρειάζομαι για να δω διαφορά;</summary>
+              <p>Πολλοί νιώθουν άμεσα ανακούφιση. Για χρόνιες εντάσεις συνιστάται ένα προσαρμοσμένο πλάνο με συχνότητα ανά περίπτωση.</p>
+            </details>
+            <details>
+              <summary>Υπάρχει κάποια προετοιμασία πριν τη συνεδρία;</summary>
+              <p>Φορέστε άνετα ρούχα και φάτε ελαφριά. Ενημερώστε μας για τυχόν παθήσεις ή τραυματισμούς.</p>
+            </details>
+          </section>
         </article>
 
         <aside className="space-y-4 lg:sticky lg:top-24 h-max">
           <div className="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5">
             <p className="font-semibold">Σύντομη περίληψη</p>
             <p className="mt-2 text-olive-800/80">
-              Ουσιαστική φροντίδα πέρα από τη χαλάρωση: εξατομικευμένες συνεδρίες με βάση την εμπειρία,
-              τη γνώση και την προσεκτική ακρόαση για μόνιμη ανακούφιση και ευεξία.
+              Πέρα από τη χαλάρωση, το μασάζ προσφέρει ουσιαστικά θεραπευτικά οφέλη για μυς και αρθρώσεις.
             </p>
           </div>
         </aside>
@@ -183,3 +144,4 @@ export default function BlogArticle() {
     </main>
   )
 }
+

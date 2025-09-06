@@ -51,26 +51,18 @@ export default function BlogArticle() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Ποια αιθέρια έλαια είναι καλύτερα για το άγχος;',
+        name: 'Είναι ασφαλή τα αιθέρια έλαια για όλους;',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Η λεβάντα, το χαμομήλι και το περγαμόντο θεωρούνται από τα πιο αποτελεσματικά για την ανακούφιση του άγχους.',
+          text: 'Χρησιμοποιούμε ποιοτικά αιθέρια έλαια και εξατομικεύουμε την επιλογή τους. Αν έχετε αλλεργίες, ευαισθησίες ή εγκυμοσύνη, ενημερώστε μας πριν τη συνεδρία.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Υπάρχουν αντενδείξεις στην αρωματοθεραπεία;',
+        name: 'Πόσο συχνά μπορώ να κάνω αρωματοθεραπεία;',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Σε ορισμένες περιπτώσεις (π.χ. εγκυμοσύνη, αλλεργίες) χρειάζεται προσοχή. Συμβουλευτείτε μας πριν από τη συνεδρία.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Μπορώ να συνδυάσω αρωματοθεραπεία με μασάζ;',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Ναι, στο Therapy Massage συνδυάζουμε αρωματοθεραπεία με διαφορετικά είδη μασάζ για καλύτερο αποτέλεσμα.',
+          text: 'Εξαρτάται από τις ανάγκες σας. Πολλοί πελάτες ωφελούνται από συνεδρίες ανά 1–2 εβδομάδες, αλλά προσαρμόζουμε πάντα το πλάνο.',
         },
       },
     ],
@@ -78,97 +70,71 @@ export default function BlogArticle() {
 
   return (
     <main id="content" aria-labelledby="page-title">
-      <section className="container-safe py-10 grid lg:grid-cols-[1fr_360px] gap-8">
-        <article className="article-prose" itemScope itemType="https://schema.org/Article">
-          <header>
-          <nav aria-label="Breadcrumb" className="text-sm text-olive-700/80 mb-2">
-            <a href="/" className="hover:underline">Αρχική</a>
-            <span className="mx-2">/</span>
-            <a href="/blog" className="hover:underline">Blog</a>
-            <span className="mx-2">/</span>
-            <span aria-current="page">Άρθρο</span>
+      <section className="bg-olive-900 text-beige">
+        <div className="container-safe py-10">
+          <nav aria-label="Breadcrumb" className="text-sm text-beige/80">
+            <ol className="flex gap-2">
+              <li><a href="/" className="hover:underline">Αρχική</a></li>
+              <li>/</li>
+              <li><a href="/blog" className="hover:underline">Blog</a></li>
+              <li>/</li>
+              <li aria-current="page">Αρωματοθεραπεία και Άγχος – Φυσική ανακούφιση</li>
+            </ol>
           </nav>
-          <h1 id="page-title" itemProp="headline" className="!mt-0" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 id="page-title" className="text-3xl md:text-4xl font-semibold mt-3" style={{ fontFamily: 'var(--font-playfair)' }}>
             Αρωματοθεραπεία και Άγχος – Φυσική ανακούφιση
           </h1>
-          <div className="flex items-center gap-3 text-sm text-olive-700/80 mt-2">
-            <time itemProp="datePublished" dateTime={published}>{published}</time>
-            <span aria-hidden>•</span>
-            <span itemProp="author" itemScope itemType="https://schema.org/Organization">
-              Από <span itemProp="name">Therapy Massage</span>
-            </span>
-          </div>
-          <p className="mt-2 text-olive-800/80" itemProp="description">
-            Η αρωματοθεραπεία είναι ένας φυσικός τρόπος για να μειώσετε το άγχος, να χαλαρώσετε και να βρείτε ισορροπία μέσα στην καθημερινότητα.
-          </p>
+          <p className="mt-2 text-beige/80">Δημοσίευση: {new Date(published).toLocaleDateString()}</p>
+        </div>
+      </section>
+
+      <section className="container-safe py-10 grid lg:grid-cols-[1fr_360px] gap-8">
+        <article className="article-prose" itemScope itemType="https://schema.org/Article">
           <figure className="relative aspect-[16/9] w-full my-6 article-hero">
-            <Image src="/images/place10.webp" alt="Αρωματοθεραπεία και άγχος – Φυσική ανακούφιση" fill className="object-cover z-10" />
+            <Image src="/images/place10.webp" alt="Αρωματοθεραπεία – ατμόσφαιρα χαλάρωσης" fill className="object-cover z-10" />
           </figure>
-        </header>
 
-        <section aria-labelledby="what-is" className="space-y-3">
-          <h2 id="what-is" className="text-2xl font-semibold">Τι είναι η Αρωματοθεραπεία;</h2>
-          <p>
-            Η <strong>αρωματοθεραπεία</strong> είναι μια φυσική θεραπευτική πρακτική που χρησιμοποιεί <em>αιθέρια έλαια</em> από φυτά για να βελτιώσει τη σωματική και ψυχική υγεία. Τα αρώματα διεγείρουν το νευρικό σύστημα και βοηθούν το σώμα να χαλαρώσει, μειώνοντας το στρες και το άγχος.
-          </p>
-        </section>
+          <section aria-labelledby="what-is" className="space-y-3">
+            <h2 id="what-is" className="text-2xl font-semibold">Τι είναι η αρωματοθεραπεία;</h2>
+            <p>
+              Η αρωματοθεραπεία αξιοποιεί τα αιθέρια έλαια φυτών με στόχο τη χαλάρωση, την ανακούφιση από την ένταση και τη βελτίωση της διάθεσης.
+              Επιλέγουμε προσεκτικά τα έλαια και τα συνδυάζουμε με ήπιες τεχνικές μασάζ για μια ολοκληρωμένη εμπειρία ευεξίας.
+            </p>
+          </section>
 
-        <section aria-labelledby="how-it-helps" className="mt-8 space-y-3">
-          <h2 id="how-it-helps" className="text-2xl font-semibold">Πώς βοηθά στην αντιμετώπιση του άγχους</h2>
-          <p>
-            Μελέτες έχουν δείξει ότι ορισμένα αιθέρια έλαια, όπως η <strong>λεβάντα</strong>, το <strong>χαμομήλι</strong> και το <strong>περγαμόντο</strong>, έχουν αγχολυτικές ιδιότητες. Η εισπνοή ή η εφαρμογή τους κατά τη διάρκεια ενός <a href="/services/">μασάζ</a> μπορεί να:
-          </p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Μειώσει την αρτηριακή πίεση και τον καρδιακό ρυθμό</li>
-            <li>Ενισχύσει την αίσθηση χαλάρωσης και ευεξίας</li>
-            <li>Βελτιώσει την ποιότητα του ύπνου</li>
-            <li>Ανακουφίσει από πονοκεφάλους που σχετίζονται με το άγχος</li>
-          </ul>
-          <figure className="relative aspect-[16/9] w-full my-6 article-hero">
-            <Image src="/images/hero.webp" alt="Λεβάντα και αιθέρια έλαια για αρωματοθεραπεία" fill className="object-cover" />
-          </figure>
-        </section>
+          <section aria-labelledby="how-it-helps" className="mt-8 space-y-3">
+            <h2 id="how-it-helps" className="text-2xl font-semibold">Πώς βοηθά στη μείωση του άγχους</h2>
+            <p>
+              Ο συνδυασμός απαλών χειρισμών και στοχευμένων αρωμάτων δημιουργεί μια κατάσταση βαθιάς χαλάρωσης που βοηθά το νευρικό σύστημα να ισορροπήσει.
+              Συχνά χρησιμοποιούμε λεβάντα, χαμομήλι και γλυκό πορτοκάλι, ανάλογα με την προτίμηση και την ανταπόκριση του οργανισμού.
+            </p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Μείωση στρες και ηρεμία του νου</li>
+              <li>Καλύτερη ποιότητα ύπνου</li>
+              <li>Απαλός ρυθμός αναπνοής και αποφόρτιση</li>
+            </ul>
+          </section>
 
-        <section aria-labelledby="benefits" className="mt-8 space-y-3">
-          <h2 id="benefits" className="text-2xl font-semibold">Τα οφέλη της αρωματοθεραπείας στο Therapy Massage</h2>
-          <p>
-            Συνδυάζοντας την αρωματοθεραπεία με τις συνεδρίες μας, προσφέρουμε μια ολοκληρωμένη εμπειρία που στοχεύει στη χαλάρωση και την αποκατάσταση. Κάθε συνεδρία είναι εξατομικευμένη ώστε να ανταποκρίνεται στις ανάγκες σας.
-          </p>
-          <p>
-            Στόχος μας είναι να φύγετε όχι μόνο με λιγότερο άγχος, αλλά και με μια αίσθηση ανανέωσης και ισορροπίας.
-          </p>
-        </section>
+          <section aria-labelledby="image" className="mt-8">
+            <figure className="relative aspect-[16/9] w-full my-6 article-hero">
+              <Image src="/images/hero.webp" alt="Ζεστός, γαλήνιος χώρος Therapy Massage" fill className="object-cover" />
+            </figure>
+          </section>
 
-        <section aria-labelledby="cta" className="mt-8 space-y-3">
-          <h2 id="cta" className="text-2xl font-semibold">Κλείστε ραντεβού</h2>
-          <p>
-            Ανακαλύψτε τη δύναμη της αρωματοθεραπείας και ζήστε μια μοναδική εμπειρία ευεξίας. <a href="/contact/">Επικοινωνήστε μαζί μας</a> για να κλείσετε το ραντεβού σας.
-          </p>
-        </section>
-
-        <section aria-labelledby="faq" className="mt-8 space-y-3">
-          <h2 id="faq" className="text-2xl font-semibold">Συχνές Ερωτήσεις</h2>
-          <details>
-            <summary>Ποια αιθέρια έλαια είναι καλύτερα για το άγχος;</summary>
-            <p>Η λεβάντα, το χαμομήλι και το περγαμόντο θεωρούνται από τα πιο αποτελεσματικά για την ανακούφιση του άγχους.</p>
-          </details>
-          <details>
-            <summary>Υπάρχουν αντενδείξεις στην αρωματοθεραπεία;</summary>
-            <p>Σε ορισμένες περιπτώσεις (π.χ. εγκυμοσύνη, αλλεργίες) χρειάζεται προσοχή. Συμβουλευτείτε μας πριν από τη συνεδρία.</p>
-          </details>
-          <details>
-            <summary>Μπορώ να συνδυάσω αρωματοθεραπεία με μασάζ;</summary>
-            <p>Ναι, στο Therapy Massage συνδυάζουμε αρωματοθεραπεία με διαφορετικά είδη μασάζ για καλύτερο αποτέλεσμα.</p>
-          </details>
-        </section>
+          <section aria-labelledby="cta" className="mt-8 space-y-3">
+            <h2 id="cta" className="text-2xl font-semibold">Έτοιμοι για μια στιγμή ηρεμίας;</h2>
+            <p>
+              Κλείστε ραντεβού και απολαύστε μια συνεδρία αρωματοθεραπείας προσαρμοσμένη στις ανάγκες σας.
+              <a href="/contact/" className="underline"> Επικοινωνήστε μαζί μας</a> για διαθεσιμότητα.
+            </p>
+          </section>
         </article>
 
         <aside className="space-y-4 lg:sticky lg:top-24 h-max">
           <div className="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5">
             <p className="font-semibold">Σύντομη περίληψη</p>
             <p className="mt-2 text-olive-800/80">
-              Αρωματοθεραπεία με αιθέρια έλαια που μειώνει το άγχος, ενισχύει τη χαλάρωση και υποστηρίζει
-              καλύτερο ύπνο, ειδικά όταν συνδυάζεται με μασάζ.
+              Η αρωματοθεραπεία, συνδυασμένη με ήπιους χειρισμούς, συμβάλλει στη μείωση του άγχους και στη βελτίωση της διάθεσης.
             </p>
           </div>
         </aside>
@@ -179,6 +145,4 @@ export default function BlogArticle() {
     </main>
   )
 }
-
-
 

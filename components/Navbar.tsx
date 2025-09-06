@@ -27,9 +27,9 @@ export default function Navbar() {
   useEffect(() => setOpen(false), [pathname])
 
   return (
-    <header className={`sticky top-0 z-40 transition-colors ${scrolled ? "bg-white/90 backdrop-blur border-b border-sand" : "bg-beige/90"}`}>
+    <header className={`sticky top-0 z-50 transition-colors ${scrolled ? "bg-white/90 backdrop-blur border-b border-sand" : "bg-beige/90"}`}>
       <nav className="container-safe flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2" aria-label="Μετάβαση στην αρχική σελίδα">
+        <Link href="/" className="flex items-center gap-2" aria-label="Μετάβαση στην αρχική">
           <Image src="/images/logoTherapy.png" alt="Therapy Massage logo" width={64} height={64} className="h-16 w-16 object-contain" />
         </Link>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
           <Link href="/#contact" className="btn btn-primary text-sm">Επικοινωνία</Link>
         </div>
 
-        <button className="md:hidden p-2" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(v => !v)}>
+        <button className="md:hidden p-2" aria-label="Άνοιγμα μενού" aria-expanded={open} onClick={() => setOpen(v => !v)}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
@@ -66,3 +66,4 @@ export default function Navbar() {
     </header>
   )
 }
+

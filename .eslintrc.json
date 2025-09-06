@@ -1,25 +1,13 @@
-﻿{
-    "extends":  [
-                    "next/core-web-vitals",
-                    "eslint:recommended"
-                ],
-    "overrides":  [
-                      {
-                          "files":  [
-                                        "**/*.{ts,tsx}"
-                                    ],
-                          "parser":  "@typescript-eslint/parser",
-                          "plugins":  [
-                                          "@typescript-eslint"
-                                      ],
-                          "rules":  {
-                                        "@typescript-eslint/no-unused-vars":  "off",
-                                        "no-unused-vars":  "off",
-                                        "no-undef":  "off"
-                                    }
-                      }
-                  ],
-    "rules":  {
-
-              }
+{
+  "extends": ["next/core-web-vitals"],
+  "overrides": [
+    {
+      "files": ["app/blog/**/*.tsx"],
+      "rules": {
+        "react/no-unescaped-entities": "off",
+        "no-irregular-whitespace": "off"
+      }
+    }
+  ]
 }
+

@@ -12,10 +12,10 @@ export default function Footer() {
           <Link href="/" aria-label="Therapy Massage home" className="inline-flex items-center gap-2">
             <Image src="/images/logoTherapy.png" alt="Therapy Massage logo" width={64} height={64} className="h-16 w-16 object-contain" />
           </Link>
-          <p className="mt-4 text-olive-100/80">Premium υπηρεσίες μασάζ σε ήρεμο χώρο. Χαλάρωση, ανακούφιση και ευεξία.</p>
+          <p className="mt-4 text-olive-100/80">Premium εμπειρία μασάζ με έμφαση στη χαλάρωση και την ευεξία.</p>
         </div>
         <div>
-          <h3 className="font-semibold mb-3">Σύνδεσμοι</h3>
+          <h3 className="font-semibold mb-3">Μενού</h3>
           <ul className="space-y-2 text-olive-100/90">
             <li><Link href="/" className="hover:underline">Αρχική</Link></li>
             <li><Link href="/services" className="hover:underline">Υπηρεσίες</Link></li>
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-olive-700">
-        <div className="container-safe py-4 text-sm text-olive-100/70">© {new Date().getFullYear()} Therapy Massage. Όλα τα δικαιώματα διατηρούνται.</div>
+        <div className="container-safe py-4 text-sm text-olive-100/70">© {new Date().getFullYear()} Therapy Massage. Με την επιφύλαξη παντός δικαιώματος.</div>
       </div>
     </footer>
   )
