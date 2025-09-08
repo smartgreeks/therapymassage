@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
+import { useT } from "@/lib/TProvider"
 
 function getRemaining(end: Date) {
   const diff = +end - +new Date()
@@ -12,27 +13,57 @@ function getRemaining(end: Date) {
 }
 
 export default function Offers() {
-  const [time, setTime] = useState(getRemaining(new Date(new Date().getFullYear(), new Date().getMonth(), 28, 23, 59)))
+  const t = useT()
+  const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 })
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const end = new Date(new Date().getFullYear(), new Date().getMonth(), 28, 23, 59)
+    setMounted(true)
+    const end = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0, 23, 59) // End of current month
+    setTime(getRemaining(end))
     const id = setInterval(() => setTime(getRemaining(end)), 1000)
     return () => clearInterval(id)
   }, [])
+
+  if (!mounted) {
+    return (
+      <section className="container-safe py-12">
+        <div className="rounded-xl bg-olive-800 text-beige p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-soft">
+          <div>
+            <h3 className="text-2xl font-semibold">{t("offers.title")}</h3>
+            <p className="mt-2 text-beige/90">{t("offers.description")}</p>
+          </div>
+          <div aria-label="Countdown timer" className="grid grid-cols-4 gap-3 text-center">
+            {[
+              [t("offers.days"), "--"],
+              [t("offers.hours"), "--"],
+              [t("offers.minutes"), "--"],
+              [t("offers.seconds"), "--"]
+            ].map(([label, val]) => (
+              <div key={label} className="bg-olive-700 rounded-lg px-4 py-3">
+                <div className="text-2xl font-semibold">{val}</div>
+                <div className="text-sm text-beige/80">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="container-safe py-12">
       <div className="rounded-xl bg-olive-800 text-beige p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-soft">
         <div>
-          <h3 className="text-2xl font-semibold">Προσφορά: -30% σε πακέτα ευεξίας</h3>
-          <p className="mt-2 text-beige/90">Ισχύει μέχρι το τέλος του μήνα. Συνδύασε υπηρεσίες και κέρδισε επιπλέον προνόμια. Κλείσε τώρα το ραντεβού σου!</p>
+          <h3 className="text-2xl font-semibold">{t("offers.title")}</h3>
+          <p className="mt-2 text-beige/90">{t("offers.description")}</p>
         </div>
-        <div aria-label="Μετρητής αντίστροφης μέτρησης" className="grid grid-cols-4 gap-3 text-center">
+        <div aria-label="Countdown timer" className="grid grid-cols-4 gap-3 text-center">
           {([
-            ["Ημέρες", time.d],
-            ["Ώρες", time.h],
-            ["Λεπτά", time.m],
-            ["Δευτ.", time.s]
+            [t("offers.days"), time.d],
+            [t("offers.hours"), time.h],
+            [t("offers.minutes"), time.m],
+            [t("offers.seconds"), time.s]
           ] as const).map(([label, val]) => (
             <div key={label} className="bg-olive-700 rounded-lg px-4 py-3">
               <div className="text-2xl font-semibold">{String(val).padStart(2, '0')}</div>

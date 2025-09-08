@@ -1,6 +1,7 @@
-"use client"
-import { useState, useEffect } from "react"
-import Image from "next/image"
+'use client'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { useT } from '@/lib/TProvider'
 
 type Testimonial = {
   name: string
@@ -16,6 +17,7 @@ const testimonials: Testimonial[] = [
 ]
 
 export default function Testimonials() {
+  const t = useT()
   const [index, setIndex] = useState(0)
   useEffect(() => {
     const id = setInterval(() => setIndex(i => (i + 1) % testimonials.length), 5000)
@@ -24,9 +26,9 @@ export default function Testimonials() {
 
   return (
     <section aria-labelledby="testimonials-title" className="container-safe py-16">
-      <h2 id="testimonials-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Μαρτυρίες πελατών</h2>
-      <div className="mt-8 grid lg:grid-cols-[2fr_1fr] gap-8 items-start">
-        <div className="relative overflow-hidden rounded-xl bg-white p-6 border border-sand min-h-[220px]">
+      <h2 id="testimonials-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t('testimonials.title')}</h2>
+      <div className="mt-8 grid lg:grid-cols-[2fr_1fr] gap-8 items-stretch">
+        <div className="relative overflow-hidden rounded-xl bg-white p-6 border border-sand min-h-[220px] h-full">
           {testimonials.map((t, i) => (
             <div key={t.name} className={`transition-opacity duration-700 ${i === index ? 'opacity-100' : 'opacity-0'} absolute inset-0 p-6`}>
               <div className="flex items-center gap-4">
@@ -40,10 +42,10 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-        <div className="card p-6">
+        <div className="card p-6 flex flex-col h-full">
           <div className="text-3xl font-semibold">4.9/5</div>
-          <div className="text-olive-700">Κριτικές στο Google</div>
-          <a href="#" className="btn btn-outline mt-4">Διαβάστε περισσότερα</a>
+          <div className="text-olive-700">{t('testimonials.googleReviews')}</div>
+          <a href="https://www.google.com/search?sa=X&sca_esv=48c2a6a335f0c113&tbm=lcl&q=Therapy+Massage+%CE%91%CE%BE%CE%B9%CE%BF%CE%BB%CE%BF%CE%B3%CE%AE%CF%83%CE%B5%CE%B9%CF%82&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NjO2sLAwNjO0tLQwM7EwMzC22MDI-IpRIyQjtSixoFLBN7G4ODE9VeHcxHP7zu08t__cbiDefG7d-eZzW8_tPN-0iJVopQC_XSHwcAAAAA&rldimm=3638883619986486038&hl=el-GR&ved=2ahUKEwj708zw_8mPAxU_nCYFHbsxJhYQ9fQKegQIVhAF&biw=3440&bih=1271&dpr=1#lkt=LocalPoiReviews" target="_blank" rel="noopener noreferrer" className="btn btn-outline mt-4">{t('testimonials.readMore')}</a>
         </div>
       </div>
     </section>

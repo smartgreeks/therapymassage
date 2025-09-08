@@ -15,6 +15,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/',
+        destination: '/el',
+        permanent: false,
+      },
+      {
         source: '/services/energeiakes-therapeies',
         destination: '/services/enallaktikes-therapeies',
         permanent: true,

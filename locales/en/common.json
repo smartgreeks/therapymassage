@@ -1,0 +1,133 @@
+{
+  "site": {
+    "name": "Therapy Massage",
+    "description": "Premium massage and wellness services in Athens"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contactCta": "Contact"
+  },
+  "hero": {
+    "alt": "Relaxing massage",
+    "title": "Therapy Massage",
+    "description": "Premium massage services in a serene environment. Relaxation, relief, and wellness.",
+    "servicesBtn": "Services",
+    "contactBtn": "Contact"
+  },
+  "footer": {
+    "description": "Premium massage experience with emphasis on relaxation and wellness.",
+    "menu": "Menu",
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "facebook": "Facebook",
+    "rights": "All rights reserved"
+  },
+  "services": {
+    "title": "Services & Categories",
+    "subtitle": "Choose a category to see subcategories.",
+    "euexia": {
+      "title": "Wellness",
+      "desc": "Relaxation and balance of body and mind."
+    },
+    "omorfia": {
+      "title": "Beauty",
+      "desc": "Facial and body care for radiance."
+    },
+    "enallaktikes-therapeies": {
+      "title": "Alternative Therapies",
+      "desc": "Techniques for rejuvenation and energy alignment."
+    },
+    "idiaiteres-stigmes": {
+      "title": "Special Moments",
+      "desc": "Packages for couples, birthdays and anniversaries."
+    },
+    "special-events": {
+      "title": "Special Events",
+      "desc": "On-site services for corporate events and groups."
+    },
+    "gift-cards": {
+      "title": "Gift Cards",
+      "desc": "Give wellness to those you love."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We believe in slow living, wellness and caring for body and mind. We offer personalized treatments with emphasis on quality and safety.",
+    "alt": "The spa space",
+    "features": [
+      "Certified therapists",
+      "Welcoming, clean space",
+      "Natural products",
+      "Personalized treatments"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "Address:",
+    "phone": "Phone:",
+    "hours": "Hours:",
+    "closed": "Closed",
+    "openNow": "Open now",
+    "closedNow": "Closed",
+    "bookAppointment": "Book Appointment",
+    "bookDescription": "We're here to help with personalized suggestions. Call us or send a message for availability.",
+    "call": "Call",
+    "copyPhone": "Copy phone",
+    "openMaps": "Open in Google Maps",
+    "callbackNote": "If we don't answer right away, we'll call you back as soon as possible. Thank you for your understanding!",
+    "days": {
+      "sunday": "Sunday",
+      "monday": "Monday", 
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
+  },
+  "offers": {
+    "title": "Offer: -30% on wellness packages",
+    "description": "Valid until the end of the month. Combine services and get additional benefits. Book your appointment now!",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Sec."
+  },
+  "misc": {
+    "changeLanguage": "Ελληνικά"
+  },
+  "blog": {
+    "title": "From the Blog",
+    "subtitle": "News, tips and articles about wellness and care.",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "summary": "Brief summary"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "googleReviews": "Google Reviews",
+    "readMore": "Read more"
+  },
+  "whyUs": {
+    "title": "Why Us",
+    "feature1": {
+      "title": "Natural approach, quality techniques",
+      "desc": "We use safe, effective techniques and emphasize comfort and quality."
+    },
+    "feature2": {
+      "title": "Certified therapists with experience",
+      "desc": "Continuous training, professionalism, and respect for the body's needs."
+    },
+    "feature3": {
+      "title": "Fair prices, clear packages",
+      "desc": "Flexible options, gifts, and offers for regular clients."
+    }
+  }
+}

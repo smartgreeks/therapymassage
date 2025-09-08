@@ -1,0 +1,44 @@
+import AboutSection from "@/components/AboutSection"
+import TelephoneCTA from "@/components/TelephoneCTA"
+import WhyChooseUs from "@/components/WhyChooseUs"
+import { getDictionary } from "@/lib/i18n"
+import { TProvider } from "@/lib/TProvider"
+
+type Props = {
+  params: { locale: 'el' | 'en' }
+}
+
+export function generateMetadata({ params }: Props) {
+  const dict = getDictionary(params.locale)
+  return {
+    title: dict.about?.title || (params.locale === 'el' ? 'Σχετικά' : 'About')
+  }
+}
+
+export default function AboutPage({ params }: Props) {
+  const dict = getDictionary(params.locale)
+  
+  return (
+    <TProvider locale={params.locale} dict={dict}>
+      <main>
+        <section className="bg-olive-900 text-beige">
+          <div className="container-safe py-16">
+            <h1 className="text-4xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>
+              {dict.about?.title || (params.locale === 'el' ? 'Σχετικά με εμάς' : 'About Us')}
+            </h1>
+            <p className="mt-2 text-beige/80">
+              {dict.about?.subtitle || (params.locale === 'el' 
+                ? 'Η φιλοσοφία μας: ευεξία, φροντίδα, ποιότητα υπηρεσιών.' 
+                : 'Our philosophy: wellness, care, quality services.')}
+            </p>
+          </div>
+        </section>
+        <AboutSection />
+        <WhyChooseUs />
+        <div className="container-safe mt-16">
+          <TelephoneCTA />
+        </div>
+      </main>
+    </TProvider>
+  )
+}
