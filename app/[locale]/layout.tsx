@@ -61,7 +61,7 @@ export default function LocaleLayout({ children, params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Therapy Massage',
-    image: ['/images/hero.jpg'],
+    image: ['/images/hero.webp'],
     url: 'https://www.example-massage-spa.com',
     telephone: '+30 210 123 4567',
     address: {
