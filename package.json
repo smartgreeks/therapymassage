@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
     "@ark-ui/react": "^5.22.0",
@@ -19,6 +18,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/react": "19.1.12",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
@@ -26,7 +27,6 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.2",
     "postcss": "^8.4.45",
-    "sharp": "^0.34.3",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.6.2"
   }

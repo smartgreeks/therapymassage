@@ -74,10 +74,10 @@ export const blogPosts: BlogPost[] = [
       en: 'Aromatherapy uses plant essential oils for relaxation, stress relief and mood improvement.'
     },
     content: {
-      el: '<div><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/place10.webp" alt="Αρωματοθεραπεία – ατμόσφαιρα χαλάρωσης" class="object-cover w-full h-full" /></figure><section class="space-y-3"><h2 class="text-2xl font-semibold">Τι είναι η αρωματοθεραπεία;</h2><p>Η αρωματοθεραπεία αξιοποιεί τα αιθέρια έλαια φυτών με στόχο τη χαλάρωση, την ανακούφιση από την ένταση και τη βελτίωση της διάθεσης. Επιλέγουμε προσεκτικά τα έλαια και τα συνδυάζουμε με ήπιες τεχνικές μασάζ για μια ολοκληρωμένη εμπειρία ευεξίας.</p></section><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">Πώς βοηθά στη μείωση του άγχους</h2><p>Ο συνδυασμός απαλών χειρισμών και στοχευμένων αρωμάτων δημιουργεί μια κατάσταση βαθιάς χαλάρωσης που βοηθά το νευρικό σύστημα να ισορροπήσει. Συχνά χρησιμοποιούμε λεβάντα, χαμομήλι και γλυκό πορτοκάλι, ανάλογα με την προτίμηση και την ανταπόκριση του οργανισμού.</p><ul class="list-disc list-inside space-y-1"><li>Μείωση στρες και ηρεμία του νου</li><li>Καλύτερη ποιότητα ύπνου</li><li>Απαλός ρυθμός αναπνοής και αποφόρτιση</li></ul></section><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/hero.webp" alt="Ζεστός, γαλήνιος χώρος Therapy Massage" class="object-cover w-full h-full" /></figure><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">Έτοιμοι για μια στιγμή ηρεμίας;</h2><p>Κλείστε ραντεβού και απολαύστε μια συνεδρία αρωματοθεραπείας προσαρμοσμένη στις ανάγκες σας. <a href="/contact/" class="underline"> Επικοινωνήστε μαζί μας</a> για διαθεσιμότητα.</p></section><aside class="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5 mt-8"><p class="font-semibold">Σύντομη περίληψη</p><p class="mt-2 text-olive-800/80">Η αρωματοθεραπεία, συνδυασμένη με ήπιους χειρισμούς, συμβάλλει στη μείωση του άγχους και στη βελτίωση της διάθεσης.</p></aside></div>',
-      en: '<div><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/place10.webp" alt="Aromatherapy – relaxing atmosphere" class="object-cover w-full h-full" /></figure><section class="space-y-3"><h2 class="text-2xl font-semibold">What is aromatherapy?</h2><p>Aromatherapy uses plant essential oils for relaxation, stress relief and mood improvement. We carefully select oils and combine them with gentle massage techniques for a complete wellness experience.</p></section><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">How it helps reduce anxiety</h2><p>The combination of gentle movements and targeted aromas creates a state of deep relaxation that helps the nervous system balance. We often use lavender, chamomile and sweet orange, depending on preference and body response.</p><ul class="list-disc list-inside space-y-1"><li>Stress reduction and peace of mind</li><li>Better sleep quality</li><li>Gentle breathing rhythm and decompression</li></ul></section><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/hero.webp" alt="Warm, peaceful Therapy Massage space" class="object-cover w-full h-full" /></figure><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">Ready for a moment of peace?</h2><p>Book an appointment and enjoy an aromatherapy session tailored to your needs. <a href="/contact/" class="underline"> Contact us</a> for availability.</p></section><aside class="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5 mt-8"><p class="font-semibold">Brief summary</p><p class="mt-2 text-olive-800/80">Aromatherapy, combined with gentle movements, contributes to anxiety reduction and mood improvement.</p></aside></div>'
+      el: '<div><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/therapy3.webp" alt="Αρωματοθεραπεία – ατμόσφαιρα χαλάρωσης" class="object-cover w-full h-full" /></figure><section class="space-y-3"><h2 class="text-2xl font-semibold">Τι είναι η αρωματοθεραπεία;</h2><p>Η αρωματοθεραπεία αξιοποιεί τα αιθέρια έλαια φυτών με στόχο τη χαλάρωση, την ανακούφιση από την ένταση και τη βελτίωση της διάθεσης. Επιλέγουμε προσεκτικά τα έλαια και τα συνδυάζουμε με ήπιες τεχνικές μασάζ για μια ολοκληρωμένη εμπειρία ευεξίας.</p></section><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">Πώς βοηθά στη μείωση του άγχους</h2><p>Ο συνδυασμός απαλών χειρισμών και στοχευμένων αρωμάτων δημιουργεί μια κατάσταση βαθιάς χαλάρωσης που βοηθά το νευρικό σύστημα να ισορροπήσει. Συχνά χρησιμοποιούμε λεβάντα, χαμομήλι και γλυκό πορτοκάλι, ανάλογα με την προτίμηση και την ανταπόκριση του οργανισμού.</p><ul class="list-disc list-inside space-y-1"><li>Μείωση στρες και ηρεμία του νου</li><li>Καλύτερη ποιότητα ύπνου</li><li>Απαλός ρυθμός αναπνοής και αποφόρτιση</li></ul></section><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/hero.webp" alt="Ζεστός, γαλήνιος χώρος Therapy Massage" class="object-cover w-full h-full" /></figure><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">Έτοιμοι για μια στιγμή ηρεμίας;</h2><p>Κλείστε ραντεβού και απολαύστε μια συνεδρία αρωματοθεραπείας προσαρμοσμένη στις ανάγκες σας. <a href="/contact/" class="underline"> Επικοινωνήστε μαζί μας</a> για διαθεσιμότητα.</p></section></div>',
+      en: '<div><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/therapy3.webp" alt="Aromatherapy – relaxing atmosphere" class="object-cover w-full h-full" /></figure><section class="space-y-3"><h2 class="text-2xl font-semibold">What is aromatherapy?</h2><p>Aromatherapy uses plant essential oils for relaxation, stress relief and mood improvement. We carefully select oils and combine them with gentle massage techniques for a complete wellness experience.</p></section><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">How it helps reduce anxiety</h2><p>The combination of gentle movements and targeted aromas creates a state of deep relaxation that helps the nervous system balance. We often use lavender, chamomile and sweet orange, depending on preference and body response.</p><ul class="list-disc list-inside space-y-1"><li>Stress reduction and peace of mind</li><li>Better sleep quality</li><li>Gentle breathing rhythm and decompression</li></ul></section><figure class="relative aspect-[16/9] w-full my-6"><img src="/images/hero.webp" alt="Warm, peaceful Therapy Massage space" class="object-cover w-full h-full" /></figure><section class="mt-8 space-y-3"><h2 class="text-2xl font-semibold">Ready for a moment of peace?</h2><p>Book an appointment and enjoy an aromatherapy session tailored to your needs. <a href="/contact/" class="underline"> Contact us</a> for availability.</p></section></div>'
     },
-    imageUrl: '/images/place10.webp',
+    imageUrl: '/images/therapy3.webp',
     publishedAt: '2025-03-05',
     category: {
       el: 'Αρωματοθεραπεία',
@@ -123,6 +123,44 @@ export function getBlogPosts(locale: 'el' | 'en'): {
   category: string;
 }[] {
   return blogPosts.map(post => ({
+    slug: post.slug,
+    title: post.title[locale],
+    excerpt: post.excerpt[locale],
+    imageUrl: post.imageUrl,
+    publishedAt: post.publishedAt,
+    category: post.category[locale]
+  }));
+}
+
+export function getRelatedBlogPosts(currentSlug: string, locale: 'el' | 'en', limit: number = 3): {
+  slug: string;
+  title: string;
+  excerpt: string;
+  imageUrl: string;
+  publishedAt: string;
+  category: string;
+}[] {
+  const currentPost = blogPosts.find(p => p.slug === currentSlug);
+  
+  if (!currentPost) return [];
+  
+  // Get all posts except the current one
+  const otherPosts = blogPosts.filter(p => p.slug !== currentSlug);
+  
+  // Sort by relevance (same category first, then by publish date)
+  const sortedPosts = otherPosts.sort((a, b) => {
+    // Posts in same category get higher priority
+    const aIsSameCategory = a.category[locale] === currentPost.category[locale];
+    const bIsSameCategory = b.category[locale] === currentPost.category[locale];
+    
+    if (aIsSameCategory && !bIsSameCategory) return -1;
+    if (!aIsSameCategory && bIsSameCategory) return 1;
+    
+    // If both are same category or both are different, sort by date (newest first)
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  });
+  
+  return sortedPosts.slice(0, limit).map(post => ({
     slug: post.slug,
     title: post.title[locale],
     excerpt: post.excerpt[locale],

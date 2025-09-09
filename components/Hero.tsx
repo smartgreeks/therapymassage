@@ -8,7 +8,16 @@ export default function Hero() {
   const locale = useLocale()
   return (
     <section aria-label="Hero" className="relative h-[70vh] min-h-[480px] w-full overflow-hidden">
-      <Image src="/images/therapy3.webp" alt={t("hero.alt")} fill priority sizes="100vw" className="object-cover" />
+      <Image 
+        src="/images/therapy3.webp" 
+        alt={t("hero.alt")} 
+        fill 
+        priority 
+        sizes="100vw" 
+        className="object-cover"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyVbqfE5eMtOEd5OVDW4MZp6LLEqjZJGTKP0mH8GNK8w=="
+      />
       <div className="absolute inset-0 bg-olive-900/50 pointer-events-none" />
       <div className="relative container-safe h-full flex items-center">
         <div className="max-w-2xl text-white animate-fadeInUp">

@@ -3,6 +3,7 @@ import '../globals.css'
 import { inter, playfair } from '../fonts'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ImagePreloader from '@/components/ImagePreloader'
 import Script from 'next/script'
 import RouteTransition from '@/components/RouteTransition'
 import { getDictionary } from '@/lib/i18n'
@@ -89,11 +90,20 @@ export default function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={params.locale} className={`${inter.variable} ${playfair.variable}`}>
       <head>
-        <link rel="preload" href="/images/therapy3.webp" as="image" />
-        <link rel="preload" href="/images/logoTherapy.png" as="image" />
+        <link rel="preload" href="/images/therapy3.webp" as="image" fetchPriority="high" />
+        <link rel="preload" href="/images/logoTherapy.webp" as="image" />
+        <link rel="preload" href="/images/hero.webp" as="image" />
       </head>
       <body className="bg-beige text-olive-900 antialiased">
         <TProvider locale={params.locale} dict={dict}>
+          <ImagePreloader 
+            images={[
+              '/images/services/relaxing.webp',
+              '/images/services/deepTissuue.webp',
+              '/images/services/athletic.webp',
+              '/images/services/lemfiko.webp'
+            ]} 
+          />
           <Navbar />
           <RouteTransition>
             {children}
@@ -101,6 +111,13 @@ export default function LocaleLayout({ children, params }: Props) {
           <Footer />
         </TProvider>
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <Script id="sw-register" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed'));
+            }
+          `}
+        </Script>
       </body>
     </html>
   )

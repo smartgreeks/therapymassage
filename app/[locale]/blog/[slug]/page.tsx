@@ -4,7 +4,9 @@ import Link from 'next/link'
 import { ArrowLeft, Calendar, User } from 'lucide-react'
 import { getDictionary } from '@/lib/i18n'
 import { TProvider } from '@/lib/TProvider'
-import { getBlogPost, getAllBlogSlugs } from '@/lib/blogPosts'
+import { getBlogPost, getAllBlogSlugs, getRelatedBlogPosts } from '@/lib/blogPosts'
+import BlogSidebar from '@/components/BlogSidebar'
+import TelephoneCTA from '@/components/TelephoneCTA'
 
 type Props = {
   params: { locale: 'el' | 'en'; slug: string }
@@ -24,6 +26,7 @@ export const dynamicParams = false
 export default function BlogPostPage({ params }: Props) {
   const dict = getDictionary(params.locale)
   const post = getBlogPost(params.slug, params.locale)
+  const relatedPosts = getRelatedBlogPosts(params.slug, params.locale, 3)
   
   if (!post) {
     notFound()
@@ -68,28 +71,35 @@ export default function BlogPostPage({ params }: Props) {
               />
             </div>
             
-            <div className="grid lg:grid-cols-[1fr_360px] gap-8">
-              <div>
+            <div className="grid lg:grid-cols-[1fr_360px] gap-8 lg:gap-12">
+              <article>
                 <h1 className="text-3xl md:text-4xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
                   {post.title}
                 </h1>
                 <div 
-                  className="prose prose-lg max-w-none prose-headings:font-playfair prose-headings:text-olive-900 prose-p:text-olive-800 prose-a:text-olive-700"
+                  className="prose prose-lg max-w-none prose-headings:font-playfair prose-headings:text-olive-900 prose-p:text-olive-800 prose-a:text-olive-700 prose-figure:my-8 prose-img:rounded-lg"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
-              </div>
+              </article>
               
-              <aside className="space-y-4 lg:sticky lg:top-24 h-max">
-                <div className="rounded-xl border border-sand/80 bg-white/80 shadow-soft p-5">
-                  <p className="font-semibold">{dict.blog.summary}</p>
-                  <p className="mt-2 text-olive-800/80">
-                    {post.excerpt}
-                  </p>
-                </div>
-              </aside>
+              <div className="order-first lg:order-last lg:sticky lg:top-24 h-max">
+                <BlogSidebar 
+                  relatedPosts={relatedPosts}
+                  currentPost={{
+                    title: post.title,
+                    excerpt: post.excerpt,
+                    category: post.category
+                  }}
+                />
+              </div>
             </div>
           </div>
         </article>
+        <div className="container-safe py-16">
+          <div className="max-w-7xl mx-auto">
+            <TelephoneCTA />
+          </div>
+        </div>
       </main>
     </TProvider>
   )
