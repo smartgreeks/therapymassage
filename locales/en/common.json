@@ -129,5 +129,37 @@
       "title": "Fair prices, clear packages",
       "desc": "Flexible options, gifts, and offers for regular clients."
     }
+  },
+  "business": {
+    "sectionTitle": "Our Space",
+    "sectionDescription": "Discover the peaceful and professional environment where we provide our services.",
+    "reception": {
+      "alt": "Reception area",
+      "title": "Reception Area",
+      "description": "A welcoming reception space where your relaxation experience begins."
+    },
+    "massageRoom": {
+      "alt": "Massage room",
+      "title": "Therapy Rooms",
+      "description": "Peaceful and comfortable rooms designed for maximum relaxation."
+    },
+    "relaxationArea": {
+      "alt": "Relaxation area",
+      "title": "Relaxation Area",
+      "description": "A special space for preparation and relaxation after therapy."
+    },
+    "equipment": {
+      "alt": "Professional equipment",
+      "title": "Professional Equipment",
+      "description": "Modern equipment and high-quality products for every therapy."
+    },
+    "ambiance": {
+      "alt": "Space ambiance",
+      "title": "Ambiance & Decoration",
+      "description": "Warm lighting and natural elements for an authentic wellness experience."
+    },
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "goToImage": "Go to image"
   }
 }

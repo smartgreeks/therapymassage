@@ -181,3 +181,47 @@ html, body {
   inset: 0;
   background: linear-gradient(to top, rgba(46,55,33,0.55), rgba(46,55,33,0.15) 45%, transparent 90%);
 }
+
+/* Business Carousel Animations */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fadeInUp { 
+  animation: fadeInUp 0.6s ease-out; 
+}
+
+@keyframes slideInFromRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+.animate-slideInFromRight { 
+  animation: slideInFromRight 0.5s ease-out; 
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(107, 138, 96, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 0 0 8px rgba(107, 138, 96, 0); 
+  }
+}
+
+.animate-pulseGlow { 
+  animation: pulseGlow 2s infinite; 
+}

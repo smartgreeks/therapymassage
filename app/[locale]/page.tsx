@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import AboutSection from '@/components/AboutSection'
+import BusinessCarousel from '@/components/BusinessCarousel'
 import ServicesGrid from '@/components/ServicesGrid'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import Offers from '@/components/Offers'
@@ -17,6 +18,7 @@ export default function HomePage({ params }: Props) {
     <main>
       <Hero />
       <AboutSection />
+      <BusinessCarousel />
       <ServicesGrid />
       <WhyChooseUs />
       <Offers />
