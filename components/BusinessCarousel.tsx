@@ -16,34 +16,46 @@ export default function BusinessCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-  // Business space images - θα προσθέσουμε αυτές τις εικόνες στο public/images/business/
+  // Business space images - real photos from the massage therapy space
   const images: BusinessImage[] = [
     {
-      src: '/images/business/reception.webp',
+      src: '/images/place/room1.webp',
       alt: t('business.reception.alt'),
       title: t('business.reception.title'),
       description: t('business.reception.description')
     },
     {
-      src: '/images/business/massage-room.webp', 
+      src: '/images/place/room2.webp', 
       alt: t('business.massageRoom.alt'),
       title: t('business.massageRoom.title'),
       description: t('business.massageRoom.description')
     },
     {
-      src: '/images/business/relaxation-area.webp',
+      src: '/images/place/room3.webp',
       alt: t('business.relaxationArea.alt'), 
       title: t('business.relaxationArea.title'),
       description: t('business.relaxationArea.description')
     },
     {
-      src: '/images/business/equipment.webp',
+      src: '/images/place/room4.webp',
       alt: t('business.equipment.alt'),
       title: t('business.equipment.title'), 
       description: t('business.equipment.description')
     },
     {
-      src: '/images/business/ambiance.webp',
+      src: '/images/place/room5.webp',
+      alt: t('business.ambiance.alt'),
+      title: t('business.ambiance.title'),
+      description: t('business.ambiance.description')
+    },
+    {
+      src: '/images/place/room7.webp',
+      alt: t('business.ambiance.alt'),
+      title: t('business.ambiance.title'),
+      description: t('business.ambiance.description')
+    },
+    {
+      src: '/images/place/room8.webp',
       alt: t('business.ambiance.alt'),
       title: t('business.ambiance.title'),
       description: t('business.ambiance.description')
@@ -78,6 +90,22 @@ export default function BusinessCarousel() {
   const goToNext = () => {
     const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1
     goToSlide(newIndex)
+  }
+
+  // Get custom object positioning for specific images
+  const getImageClassName = (index: number) => {
+    const baseClass = "object-cover transition-transform duration-700"
+    
+    switch (index) {
+      case 2: // room3.webp - 3rd image - focus on center-top area
+        return `${baseClass} object-center-top`
+      case 3: // room4.webp - 4th image - focus on left-center area  
+        return `${baseClass} object-left-center`
+      case 4: // room5.webp - 5th image - focus on center and bottom
+        return `${baseClass} object-center-bottom`
+      default:
+        return `${baseClass} object-center`
+    }
   }
 
   return (
@@ -116,7 +144,7 @@ export default function BusinessCarousel() {
                   fill
                   priority={index === 0}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-                  className="object-cover"
+                  className={getImageClassName(index)}
                 />
                 
                 {/* Gradient Overlay */}
@@ -188,7 +216,7 @@ export default function BusinessCarousel() {
                 alt={image.alt}
                 fill
                 sizes="80px"
-                className="object-cover"
+                className={getImageClassName(index)}
               />
             </button>
           ))}

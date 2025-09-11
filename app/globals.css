@@ -225,3 +225,28 @@ html, body {
 .animate-pulseGlow { 
   animation: pulseGlow 2s infinite; 
 }
+
+/* Custom object positioning for carousel images */
+.object-center-top {
+  object-position: center 25%;
+}
+
+.object-center-bottom {
+  object-position: center 75%;
+}
+
+.object-left-center {
+  object-position: 25% center;
+}
+
+.object-right-center {
+  object-position: 75% center;
+}
+
+.object-left-top {
+  object-position: 25% 25%;
+}
+
+.object-right-bottom {
+  object-position: 75% 75%;
+}

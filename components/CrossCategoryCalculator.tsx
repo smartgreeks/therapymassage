@@ -64,7 +64,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
       { title: "Korean head spa massage", desc: "Ολιστική περιποίηση για το τριχωτό της κεφαλής και τα μαλλιά.", images: ["/images/services/headSpa.webp"], options: [
         { duration: "60'", price: "€40" },
       ] },
-      { title: "Hot stones", desc: "Ζεστές πέτρες για απελευθέρωση της έντασης.", images: ["/images/services/hardRock.webp"], options: [
+      { title: "Hard Rock Massage", desc: "Έντονο μασάζ για απόλυτη μυϊκή ανακούφιση.", images: ["/images/services/hardRock.webp"], options: [
         { duration: "60'", price: "€35" },
       ] },
       { title: "Μασάζ για παιδιά", desc: "Απαλό και ασφαλές μασάζ για παιδιά.", images: ["/images/services/kidsMassage.webp"], options: [
@@ -176,7 +176,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
       { title: "Korean head spa massage", desc: "Holistic care for scalp and hair.", images: ["/images/services/headSpa.webp"], options: [
         { duration: "60'", price: "€40" },
       ] },
-      { title: "Hot stones", desc: "Hot stones to release tension.", images: ["/images/services/hardRock.webp"], options: [
+      { title: "Hard Rock Massage", desc: "Intense massage for ultimate muscle relief.", images: ["/images/services/hardRock.webp"], options: [
         { duration: "60'", price: "€35" },
       ] },
       { title: "Kids Massage", desc: "Gentle and safe massage for children.", images: ["/images/services/kidsMassage.webp"], options: [
