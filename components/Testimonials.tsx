@@ -32,7 +32,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div key={t.name} className={`transition-opacity duration-700 ${i === index ? 'opacity-100' : 'opacity-0'} absolute inset-0 p-6`}>
               <div className="flex items-center gap-4">
-                <Image src={t.avatar} alt="Client avatar" width={48} height={48} className="h-12 w-12 rounded-full bg-sand" />
+                <img src={t.avatar} alt="Client avatar" width={48} height={48} loading="lazy" decoding="async" className="h-12 w-12 rounded-full bg-sand" />
                 <div>
                   <div className="font-semibold">{t.name}</div>
                   <div className="text-olive-700" aria-label={`${t.rating} από 5 αστέρια`}>{t.rating} <span className="text-olive-700/70">/ 5</span></div>
