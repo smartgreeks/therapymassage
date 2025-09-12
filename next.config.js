@@ -1,11 +1,35 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+// Strong but practical CSP for App Router + Next scripts. Uses self + inline for styles
+// and disallows plugins; keeps upgrade-insecure-requests. Trusted Types helps DOM XSS sinks.
+const csp = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "frame-ancestors 'self'",
+  "form-action 'self'",
+  // Next inlines some scripts; strict-dynamic is inert without nonce, but harmless
+  "script-src 'self' 'unsafe-inline' 'strict-dynamic'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "connect-src 'self' https:",
+  "font-src 'self' data:",
+  "object-src 'none'",
+  "upgrade-insecure-requests",
+  // Trusted Types
+  "require-trusted-types-for 'script'",
+  "trusted-types nextjs nextjs#bundler"
+].join('; ')
+
 const securityHeaders = [
-  // Mild CSP to prevent framing and mixed content; avoid breaking dev
-  { key: 'Content-Security-Policy', value: "frame-ancestors 'self'; upgrade-insecure-requests" },
+  { key: 'Content-Security-Policy', value: csp },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=()' },
+  // COOP/Isolation
+  { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+  // HSTS (only meaningful over HTTPS)
+  { key: 'Strict-Transport-Security', value: 'max-age=15552000; includeSubDomains' }, // ~180 days
 ]
 
 const nextConfig = {
