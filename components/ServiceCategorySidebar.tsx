@@ -119,7 +119,7 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         <div className="space-y-4">
           {relatedCategories.map((category) => (
             <article key={category.slug} className="group">
-              <Link href={`/${locale}/services/${category.slug}`} className="block">
+              <Link prefetch={false} href={`/${locale}/services/${category.slug}`} className="block">
                 <div className="flex gap-3 p-3 rounded-lg hover:bg-olive-50 transition-colors">
                   <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
@@ -154,7 +154,7 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         
         {/* View All Services Link */}
         <div className="mt-6 pt-4 border-t border-sand/60">
-          <Link 
+          <Link prefetch={false}
             href={`/${locale}/services`}
             className="inline-flex items-center gap-2 text-sm font-medium text-olive-700 hover:text-olive-900 transition-colors group"
           >

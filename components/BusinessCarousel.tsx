@@ -129,40 +129,46 @@ export default function BusinessCarousel() {
         >
           {/* Main Image Display */}
           <div className="relative aspect-[16/9] lg:aspect-[21/9] overflow-hidden rounded-2xl bg-olive-100 shadow-2xl">
-            {images.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                  index === currentIndex 
-                    ? 'opacity-100 scale-100' 
-                    : 'opacity-0 scale-105'
-                }`}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-                  className={getImageClassName(index)}
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-olive-900/60 via-transparent to-transparent" />
-                
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
-                  <div className="text-white animate-fadeInUp">
-                    <h3 className="text-2xl lg:text-3xl font-semibold mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
-                      {image.title}
-                    </h3>
-                    <p className="text-sand text-lg max-w-2xl">
-                      {image.description}
-                    </p>
+            {images.map((image, index) => {
+              const prev = (currentIndex - 1 + images.length) % images.length
+              const next = (currentIndex + 1) % images.length
+              const isVisible = index === currentIndex || index === prev || index === next
+              if (!isVisible) return null
+              return (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                    index === currentIndex 
+                      ? 'opacity-100 scale-100' 
+                      : 'opacity-0 scale-105'
+                  }`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+                    className={getImageClassName(index)}
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-olive-900/60 via-transparent to-transparent" />
+                  {/* Content Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
+                    <div className="text-white animate-fadeInUp">
+                      <h3 className="text-2xl lg:text-3xl font-semibold mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+                        {image.title}
+                      </h3>
+                      <p className="text-sand text-lg max-w-2xl">
+                        {image.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Navigation Arrows */}

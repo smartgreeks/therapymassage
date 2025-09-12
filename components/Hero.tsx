@@ -24,8 +24,8 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>{t("hero.title")}</h1>
           <p className="mt-4 text-lg text-sand">{t("hero.description")}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href={`/${locale}/services`} className="btn btn-primary">{t("hero.servicesBtn")}</Link>
-            <Link href={`/${locale}/#contact`} className="btn btn-outline">{t("hero.contactBtn")}</Link>
+            <Link prefetch={false} href={`/${locale}/services`} className="btn btn-primary">{t("hero.servicesBtn")}</Link>
+            <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-outline">{t("hero.contactBtn")}</Link>
           </div>
         </div>
       </div>

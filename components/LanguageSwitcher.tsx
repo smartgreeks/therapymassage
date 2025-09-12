@@ -20,7 +20,7 @@ export default function LanguageSwitcher() {
   const other = locale === 'el' ? 'en' : 'el'
 
   return (
-    <Link href={swapLocaleInPath(pathname, other)} className="text-sm text-olive-800/80 hover:text-olive-700">
+    <Link prefetch={false} href={swapLocaleInPath(pathname, other)} className="text-sm text-olive-800/80 hover:text-olive-700">
       {other === 'en' ? 'English' : 'Ελληνικά'}
     </Link>
   )

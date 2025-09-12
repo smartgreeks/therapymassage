@@ -37,7 +37,7 @@ export default function BlogPostPage({ params }: Props) {
       <main>
         <section className="bg-olive-900 text-beige">
           <div className="container-safe py-16">
-            <Link 
+            <Link prefetch={false}
               href={`/${params.locale}/blog`} 
               className="inline-flex items-center gap-2 text-beige/80 hover:text-beige mb-6"
             >

@@ -52,7 +52,7 @@ export default function BlogSidebar({ relatedPosts, currentPost }: BlogSidebarPr
           <div className="space-y-4">
             {relatedPosts.map((post) => (
               <article key={post.slug} className="group">
-                <Link 
+                <Link prefetch={false}
                   href={`/${locale}/blog/${post.slug}`} 
                   className="block hover:bg-olive-50/50 rounded-lg p-2 -m-2 transition-colors"
                 >
@@ -98,7 +98,7 @@ export default function BlogSidebar({ relatedPosts, currentPost }: BlogSidebarPr
           
           {/* View All Articles Link */}
           <div className="mt-6 pt-4 border-t border-sand/60">
-            <Link 
+            <Link prefetch={false}
               href={`/${locale}/blog`}
               className="inline-flex items-center gap-2 text-sm font-medium text-olive-700 hover:text-olive-900 transition-colors group"
             >

@@ -9,25 +9,33 @@ interface ImagePreloaderProps {
 export default function ImagePreloader({ images, priority = false }: ImagePreloaderProps) {
   useEffect(() => {
     if (typeof window === 'undefined') return
-    
-    const preloadImages = () => {
+
+    const warmImages = () => {
       images.forEach((src) => {
-        const link = document.createElement('link')
-        link.rel = 'preload'
-        link.as = 'image'
-        link.href = src
-        if (priority) {
-          link.fetchPriority = 'high'
-        }
-        document.head.appendChild(link)
+        const img = new Image()
+        // Hints for browsers; won’t block rendering like <link rel="preload">
+        // Load after main work is done; decoding async avoids main-thread jank
+        ;(img as any).fetchPriority = 'low'
+        img.decoding = 'async'
+        img.loading = 'eager'
+        img.src = src
       })
     }
 
-    // Small delay to avoid blocking critical rendering
-    const timer = setTimeout(preloadImages, priority ? 0 : 100)
-    
+    // Schedule after the page is interactive to avoid competing with critical CSS/JS
+    const schedule = () => {
+      // Prefer browser idle time when available
+      const ric = (window as any).requestIdleCallback as undefined | ((cb: () => void, opts?: any) => number)
+      if (ric) ric(warmImages, { timeout: 4000 })
+      else setTimeout(warmImages, 2500)
+    }
+
+    // Defer until after first paint
+    if (document.readyState === 'complete') schedule()
+    else window.addEventListener('load', schedule, { once: true })
+
     return () => {
-      clearTimeout(timer)
+      window.removeEventListener('load', schedule as any)
     }
   }, [images, priority])
 

@@ -89,11 +89,6 @@ export default function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={params.locale} className={`${inter.variable} ${playfair.variable}`}>
-      <head>
-        <link rel="preload" href="/images/therapy3.webp" as="image" fetchPriority="high" />
-        <link rel="preload" href="/images/logoTherapy.webp" as="image" />
-        <link rel="preload" href="/images/hero.webp" as="image" />
-      </head>
       <body className="bg-beige text-olive-900 antialiased">
         <TProvider locale={params.locale} dict={dict}>
           <ImagePreloader 
