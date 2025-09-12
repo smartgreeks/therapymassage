@@ -57,45 +57,6 @@ html, body {
 }
 
 /* Glass (liquid) buttons keeping brand colors */
-.btn-glass {
-  position: relative;
-  color: #fff;
-  background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.08));
-  border: 1px solid rgba(255,255,255,0.35);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.25);
-  backdrop-filter: blur(10px);
-}
-.btn-glass:hover { background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10)); }
-.btn-glass:focus { outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,0.6), 0 8px 24px rgba(0,0,0,0.25); }
-.btn-glass::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: radial-gradient(600px 100px at -10% -20%, rgba(255,255,255,0.25), transparent 60%),
-              radial-gradient(500px 120px at 120% 140%, rgba(214, 225, 200, 0.25), transparent 60%);
-  pointer-events: none;
-}
-
-.btn-glass-outline {
-  position: relative;
-  color: #f5efe6; /* beige */
-  background: linear-gradient(135deg, rgba(245,239,230,0.08), rgba(245,239,230,0.04));
-  border: 1px solid rgba(245,239,230,0.45);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-}
-.btn-glass-outline:hover { background: linear-gradient(135deg, rgba(245,239,230,0.12), rgba(245,239,230,0.06)); }
-.btn-glass-outline:focus { outline: none; box-shadow: 0 0 0 2px rgba(214,225,200,0.6), 0 6px 18px rgba(0,0,0,0.2); }
-.btn-glass-outline::after {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: radial-gradient(600px 100px at -10% -20%, rgba(255,255,255,0.2), transparent 60%),
-              radial-gradient(400px 80px at 120% 140%, rgba(214, 225, 200, 0.18), transparent 60%);
-  pointer-events: none;
-}
 
 .card {
   @apply bg-white/90 backdrop-blur border border-sand rounded-xl shadow-soft;
@@ -136,51 +97,6 @@ html, body {
 .nav-link[data-active="true"]::after { width: 100%; }
 
 /* ---- Article Typography ---- */
-.article-prose {
-  @apply text-[17px] leading-8 text-olive-900;
-}
-.article-prose h1 {
-  @apply text-3xl sm:text-4xl font-semibold tracking-tight mt-2;
-}
-.article-prose h2 {
-  @apply text-2xl sm:text-3xl font-semibold tracking-tight mt-10 mb-3 text-olive-900;
-}
-.article-prose h3 {
-  @apply text-xl sm:text-2xl font-semibold mt-8 mb-2 text-olive-900;
-}
-.article-prose p { @apply mt-4 text-olive-800/90; }
-.article-prose ul { @apply list-disc pl-6 mt-4 space-y-1; }
-.article-prose ol { @apply list-decimal pl-6 mt-4 space-y-1; }
-.article-prose li { @apply marker:text-olive-600; }
-.article-prose a { @apply text-olive-700 underline decoration-olive-300 underline-offset-4 hover:text-olive-800; }
-.article-prose blockquote {
-  @apply border-l-4 border-olive-200 pl-4 italic text-olive-800/90 bg-olive-50/60 rounded-r;
-}
-.article-prose figure { @apply my-6; }
-.article-prose img { @apply rounded-lg shadow-soft; }
-.article-prose hr { @apply my-10 border-sand; }
-.article-prose code { @apply px-1.5 py-0.5 rounded bg-sand/60 text-bark; }
-.article-prose pre {
-  @apply p-4 rounded-lg bg-olive-900 text-beige overflow-x-auto;
-}
-.article-prose details { @apply rounded-lg border border-sand p-4 bg-white/70; }
-.article-prose details > summary {
-  @apply font-medium cursor-pointer text-olive-900 marker:text-olive-600;
-}
-.article-prose details > p { @apply mt-2; }
-
-/* Article hero overlay */
-.article-hero {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-}
-.article-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(46,55,33,0.55), rgba(46,55,33,0.15) 45%, transparent 90%);
-}
 
 /* Business Carousel Animations */
 @keyframes fadeInUp {
