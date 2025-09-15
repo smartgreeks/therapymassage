@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-// Strict CSP for App Router without unsafe-eval and unsafe-inline
-// Uses nonce-based script execution for better security
+// CSP for App Router with Google Maps support
+// Allows necessary resources for maps and package calculator
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
   "frame-ancestors 'self'",
   "form-action 'self'",
-  // Allow Next.js scripts in development, strict in production
-  `script-src 'self' ${isProd ? "'strict-dynamic'" : "'unsafe-eval' 'strict-dynamic' 'unsafe-inline' http://localhost:3000 http://localhost:3001 http://localhost:*"}`,
-  "style-src 'self' 'unsafe-inline'", // Keep for CSS-in-JS compatibility
-  "img-src 'self' data: blob:",
-  "connect-src 'self' https:",
-  "font-src 'self' data:",
+  // Allow Next.js scripts and Google Maps scripts
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${isProd ? "https://maps.googleapis.com https://maps.gstatic.com" : "'unsafe-eval' 'strict-dynamic' 'unsafe-inline' http://localhost:3000 http://localhost:3001 http://localhost:*"}`,
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com", // Keep for CSS-in-JS compatibility
+  "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://*.gstatic.com",
+  "connect-src 'self' https: https://maps.googleapis.com https://maps.gstatic.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
   "object-src 'none'",
   "upgrade-insecure-requests"
 ].join('; ')
@@ -83,11 +83,11 @@ const nextConfig = {
               "default-src 'self'",
               "form-action 'self'",
               // Development-friendly CSP - less restrictive for localhost
-              `script-src 'self' ${isProd ? "'strict-dynamic'" : "'unsafe-eval' 'unsafe-inline' http://localhost:* 'self'"}`,
-              "style-src 'self' 'unsafe-inline'", // Keep for CSS-in-JS compatibility
-              "img-src 'self' data: blob:",
-              "connect-src 'self'",
-              "font-src 'self'",
+              `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${isProd ? "https://maps.googleapis.com https://maps.gstatic.com" : "'unsafe-eval' 'unsafe-inline' http://localhost:* 'self'"}`,
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com", // Keep for CSS-in-JS compatibility
+              "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com https://*.googleapis.com https://*.gstatic.com",
+              "connect-src 'self' https://maps.googleapis.com https://maps.gstatic.com",
+              "font-src 'self' data: https://fonts.gstatic.com",
               "frame-src 'self' https://www.google.com https://maps.google.com",
               "media-src 'self'",
               "object-src 'none'",
