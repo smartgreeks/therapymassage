@@ -35,17 +35,18 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Deep tissue", desc: "Εστιασμένη δουλειά σε χρόνιες εντάσεις και trigger points.", images: ["/images/services/deepTissuue.webp"], options: [
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Αθλητικό μασάζ", desc: "Αποκατάσταση, ευλυγισία και πρόληψη τραυματισμών.", images: ["/images/services/athletic.webp"], options: [
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Λεμφικό μασάζ", desc: "Ενίσχυση λεμφικής κυκλοφορίας – αποσυμφόρηση.", images: ["/images/services/lemfiko.webp"], options: [
         { duration: "45'", price: "€20" },
@@ -55,8 +56,9 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Μασάζ για εγκύους", desc: "Απαλό μασάζ για την ανακούφιση από μυοσκελετικούς πόνους.", images: ["/images/services/pregnantMassage.webp"], options: [
-        { duration: "45'", price: "€25" },
-        { duration: "60'", price: "€30" },
+        { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
       ] },
       { title: "Υδρομασάζ", desc: "Μασάζ με πίεση νερού για βαθιά χαλάρωση.", images: ["/images/services/uudromasaz.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -71,7 +73,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
         { duration: "30'", price: "€15" },
       ] },
       { title: "4 hands massage", desc: "Τέσσερα χέρια δουλεύουν ταυτόχρονα για διπλή χαλάρωση.", images: ["/images/services/4hands.webp"], options: [
-        { duration: "60'", price: "€50" },
+        { duration: "60'", price: "€45" },
       ] },
       { title: "Πρεσσοθεραπεία", desc: "Μηχανική λεμφική παροχέτευση για αποτοξίνωση.", images: ["/images/services/presotherapeia.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -89,7 +91,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     sub: [
       { title: "Φυσικό face lifting", desc: "Μη επεμβατικές τεχνικές τόνωσης και σύσφιξης.", images: ["/images/services/facelifitng.webp"], price: "€15" },
       { title: "Φυσικό face lifting full extra", desc: "Ολοκληρωμένη περιποίηση για άμεση αναζωογόνηση.", images: ["/images/services/extrafacelifting.webp"], price: "€30" },
-      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/scrabtherapy.webp"], price: "€30" },
+      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/scrabtherapy.webp"], price: "€20" },
       { title: "Σοκολατοθεραπεία", desc: "Θεραπεία ευεξίας με άρωμα σοκολάτας.", images: ["/images/services/sokotherapy.webp"], price: "€30" },
       { title: "Φωτοθεραπεία", desc: "Χρήση φωτός LED για την ανανέωση του δέρματος.", images: ["/images/services/fototherapy.webp"], price: "€10" },
       { title: "Massage κυτταρίτιδας (Πακέτο 10 συνεδριών)", desc: "Το πακέτο περιλαμβάνει 10 συνεδρίες κυτταρίτιδας με ειδική έκπτωση. Τελική τιμή: 160€ (κανονική αξία 200€).", images: ["/images/services/celluuliteMassage.webp"], options: [{ duration: "Μία συνεδρία", price: "€20" }, { duration: "Πακέτο 10 συνεδριών", price: "€160" }] },
@@ -147,17 +149,18 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Deep tissue", desc: "Focused work on chronic tensions and trigger points.", images: ["/images/services/deepTissuue.webp"], options: [
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Sports massage", desc: "Recovery, flexibility and injury prevention.", images: ["/images/services/athletic.webp"], options: [
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Lymphatic massage", desc: "Enhancement of lymphatic circulation - decongestion.", images: ["/images/services/lemfiko.webp"], options: [
         { duration: "45'", price: "€20" },
@@ -166,9 +169,10 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
       { title: "Reflexology", desc: "Pressure on reflex points of the soles.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
-      { title: "Pregnant Massage", desc: "Gentle massage to relieve musculoskeletal pain.", images: ["/images/services/pregnantMassage.webp"], options: [
-        { duration: "45'", price: "€25" },
-        { duration: "60'", price: "€30" },
+      { title: "Prenatal Massage", desc: "Gentle massage to relieve musculoskeletal pain.", images: ["/images/services/pregnantMassage.webp"], options: [
+        { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
       ] },
       { title: "Hydromassage", desc: "Water pressure massage for deep relaxation.", images: ["/images/services/uudromasaz.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -183,7 +187,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
         { duration: "30'", price: "€15" },
       ] },
       { title: "4 hands massage", desc: "Four hands work simultaneously for double relaxation.", images: ["/images/services/4hands.webp"], options: [
-        { duration: "60'", price: "€50" },
+        { duration: "60'", price: "€45" },
       ] },
       { title: "Pressotherapy", desc: "Mechanical lymphatic drainage for detoxification.", images: ["/images/services/presotherapeia.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -201,7 +205,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     sub: [
       { title: "Natural face lifting", desc: "Non-invasive toning and tightening techniques.", images: ["/images/services/facelifitng.webp"], price: "€15" },
       { title: "Natural face lifting full extra", desc: "Complete treatment for immediate rejuvenation.", images: ["/images/services/extrafacelifting.webp"], price: "€30" },
-      { title: "Body scrub mask & massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/scrabtherapy.webp"], price: "€30" },
+      { title: "Body scrub & mask + massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/scrabtherapy.webp"], price: "€20" },
       { title: "Chocolate therapy", desc: "Wellness therapy with chocolate aroma.", images: ["/images/services/sokotherapy.webp"], price: "€30" },
       { title: "Phototherapy", desc: "Use of LED light for skin rejuvenation.", images: ["/images/services/fototherapy.webp"], price: "€10" },
       { title: "Cellulite massage (Package of 10 sessions)", desc: "The package includes 10 cellulite sessions with special discount. Final price: €160 (regular value €200).", images: ["/images/services/celluuliteMassage.webp"], options: [{ duration: "Single session", price: "€20" }, { duration: "Package of 10 sessions", price: "€160" }] },
@@ -287,10 +291,39 @@ export default function CrossCategoryCalculator({
   const selectedService = availableServices[selectedServiceIndex]
   const serviceOptions = selectedService?.options ?? (selectedService?.price ? [{ duration: selectedService.duration ?? '', price: selectedService.price }] : [])
 
+  // Effect to reset service index when category changes and ensure valid selection
+  React.useEffect(() => {
+    if (availableServices.length > 0) {
+      if (selectedServiceIndex >= availableServices.length) {
+        setSelectedServiceIndex(0)
+      }
+    } else {
+      setSelectedServiceIndex(0)
+    }
+  }, [selectedCategory, availableServices.length, selectedServiceIndex])
+
+  // Effect to reset option index when service changes and ensure valid selection
+  React.useEffect(() => {
+    if (serviceOptions.length > 0) {
+      if (selectedOptionIndex >= serviceOptions.length) {
+        setSelectedOptionIndex(0)
+      }
+    } else {
+      setSelectedOptionIndex(0)
+    }
+  }, [selectedServiceIndex, serviceOptions.length, selectedOptionIndex])
+
+  // Effect to update category when currentCategory prop changes
+  React.useEffect(() => {
+    setSelectedCategory(currentCategory)
+  }, [currentCategory])
+
   const addService = () => {
-    if (!selectedService || serviceOptions.length === 0) return
+    if (!selectedService || serviceOptions.length === 0 || selectedOptionIndex >= serviceOptions.length) return
 
     const option = serviceOptions[selectedOptionIndex]
+    if (!option) return
+    
     const price = parsePrice(option.price) ?? 0
 
     const newService: SelectedService = {
@@ -321,32 +354,40 @@ export default function CrossCategoryCalculator({
           <SelectField
             label={locale === 'el' ? "Κατηγορία" : "Category"}
             options={categoryOptions.map(cat => cat.title)}
-            value={categoryOptions.findIndex(cat => cat.key === selectedCategory)}
+            value={Math.max(0, categoryOptions.findIndex(cat => cat.key === selectedCategory))}
             onChange={(i) => {
-              setSelectedCategory(categoryOptions[i].key)
-              setSelectedServiceIndex(0)
-              setSelectedOptionIndex(0)
+              if (i >= 0 && i < categoryOptions.length) {
+                setSelectedCategory(categoryOptions[i].key)
+                setSelectedServiceIndex(0)
+                setSelectedOptionIndex(0)
+              }
             }}
           />
           <SelectField
             label={locale === 'el' ? "Υπηρεσία" : "Service"}
             options={availableServices.map((s) => s.title)}
-            value={selectedServiceIndex}
+            value={Math.min(selectedServiceIndex, Math.max(0, availableServices.length - 1))}
             onChange={(i) => { 
-              setSelectedServiceIndex(i) 
-              setSelectedOptionIndex(0) 
+              if (i >= 0 && i < availableServices.length) {
+                setSelectedServiceIndex(i) 
+                setSelectedOptionIndex(0) 
+              }
             }}
           />
           <SelectField
             label={locale === 'el' ? "Διάρκεια" : "Duration"}
             options={serviceOptions.map((o) => `${o.duration} – ${o.price}`)}
-            value={selectedOptionIndex}
-            onChange={(i) => setSelectedOptionIndex(i)}
+            value={Math.min(selectedOptionIndex, Math.max(0, serviceOptions.length - 1))}
+            onChange={(i) => {
+              if (i >= 0 && i < serviceOptions.length) {
+                setSelectedOptionIndex(i)
+              }
+            }}
           />
         </div>
         <button 
           onClick={addService}
-          disabled={!selectedService || serviceOptions.length === 0}
+          disabled={!selectedService || serviceOptions.length === 0 || selectedOptionIndex >= serviceOptions.length || !serviceOptions[selectedOptionIndex]}
           className="mt-3 btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {locale === 'el' ? 'Προσθήκη στο Πακέτο' : 'Add to Package'}

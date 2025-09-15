@@ -29,17 +29,18 @@ const CATEGORIES_EL: Record<string, Category> = {
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Deep tissue", desc: "Εστιασμένη δουλειά σε χρόνιες εντάσεις και trigger points.", images: ["/images/services/deepTissuue.webp"], options: [
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Αθλητικό μασάζ", desc: "Αποκατάσταση, ευλυγισία και πρόληψη τραυματισμών.", images: ["/images/services/athletic.webp"], options: [
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Λεμφικό μασάζ", desc: "Ενίσχυση λεμφικής κυκλοφορίας – αποσυμφόρηση.", images: ["/images/services/lemfiko.webp"], options: [
         { duration: "45'", price: "€20" },
@@ -49,6 +50,7 @@ const CATEGORIES_EL: Record<string, Category> = {
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Μασάζ για εγκύους", desc: "Απαλό μασάζ για την ανακούφιση από μυοσκελετικούς πόνους.", images: ["/images/services/pregnantMassage.webp"], options: [
+        { duration: "30'", price: "€20" },
         { duration: "45'", price: "€25" },
         { duration: "60'", price: "€30" },
       ] },
@@ -65,7 +67,7 @@ const CATEGORIES_EL: Record<string, Category> = {
         { duration: "30'", price: "€15" },
       ] },
       { title: "4 hands massage", desc: "Τέσσερα χέρια δουλεύουν ταυτόχρονα για διπλή χαλάρωση.", images: ["/images/services/4hands.webp"], options: [
-        { duration: "60'", price: "€50" },
+        { duration: "60'", price: "€45" },
       ] },
       { title: "Πρεσσοθεραπεία", desc: "Μηχανική λεμφική παροχέτευση για αποτοξίνωση.", images: ["/images/services/presotherapeia.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -83,7 +85,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     sub: [
       { title: "Φυσικό face lifting", desc: "Μη επεμβατικές τεχνικές τόνωσης και σύσφιξης.", images: ["/images/services/facelifitng.webp"], price: "€15" },
       { title: "Φυσικό face lifting full extra", desc: "Ολοκληρωμένη περιποίηση για άμεση αναζωογόνηση.", images: ["/images/services/extrafacelifting.webp"], price: "€30" },
-      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/scrabtherapy.webp"], price: "€30" },
+      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/scrabtherapy.webp"], price: "€20" },
       { title: "Σοκολατοθεραπεία", desc: "Θεραπεία ευεξίας με άρωμα σοκολάτας.", images: ["/images/services/sokotherapy.webp"], price: "€30" },
       { title: "Φωτοθεραπεία", desc: "Χρήση φωτός LED για την ανανέωση του δέρματος.", images: ["/images/services/fototherapy.webp"], price: "€10" },
       { title: "Massage κυτταρίτιδας (Πακέτο 10 συνεδριών)", desc: "Το πακέτο περιλαμβάνει 10 συνεδρίες κυτταρίτιδας με ειδική έκπτωση. Τελική τιμή: 160€ (κανονική αξία 200€).", images: ["/images/services/celluuliteMassage.webp"], options: [{ duration: "Μία συνεδρία", price: "€20" }, { duration: "Πακέτο 10 συνεδριών", price: "€160" }] },
@@ -106,7 +108,7 @@ const CATEGORIES_EL: Record<string, Category> = {
   },
   "idiaiteres-stigmes": {
     title: "Special Moments",
-    intro: "Packages for couples, bachelor/bachelorette and anniversaries.",
+    intro: "Packages for couples, bachelor/bachelorette parties and anniversaries.",
     hero: undefined,
     sub: [
       { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
@@ -114,7 +116,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     ],
   },
   "special-events": {
-    title: "Special Events",
+    title: "Ειδικές Εκδηλώσεις",
     intro: "Ειδικές εκδηλώσεις και παιδικά πάρτυ.",
     hero: undefined,
     sub: [
@@ -123,11 +125,11 @@ const CATEGORIES_EL: Record<string, Category> = {
     ],
   },
   "gift-cards": {
-    title: "Gift Cards",
-    intro: "Give wellness to your loved ones.",
+    title: "Κάρτες Δώρου",
+    intro: "Χάρισε ευεξία στους αγαπημένους σου.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Digital gift card.", images: ["/images/services/giftcards.webp"], price: "from €30" },
+      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου.", images: ["/images/services/giftcards.webp"], price: "από €30" },
     ],
   },
 }
@@ -142,17 +144,18 @@ const CATEGORIES_EN: Record<string, Category> = {
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Deep tissue", desc: "Focused work on chronic tensions and trigger points.", images: ["/images/services/deepTissuue.webp"], options: [
         { duration: "30'", price: "€15" },
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
-        { duration: "90'", price: "€35" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Sports massage", desc: "Recovery, flexibility and injury prevention.", images: ["/images/services/athletic.webp"], options: [
         { duration: "45'", price: "€20" },
         { duration: "60'", price: "€25" },
+        { duration: "90'", price: "€37" },
       ] },
       { title: "Lymphatic massage", desc: "Enhancement of lymphatic circulation - decongestion.", images: ["/images/services/lemfiko.webp"], options: [
         { duration: "45'", price: "€20" },
@@ -161,7 +164,8 @@ const CATEGORIES_EN: Record<string, Category> = {
       { title: "Reflexology", desc: "Pressure on reflex points of the soles.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
-      { title: "Pregnant Massage", desc: "Gentle massage to relieve musculoskeletal pain.", images: ["/images/services/pregnantMassage.webp"], options: [
+      { title: "Prenatal Massage", desc: "Gentle massage to relieve musculoskeletal pain.", images: ["/images/services/pregnantMassage.webp"], options: [
+        { duration: "30'", price: "€20" },
         { duration: "45'", price: "€25" },
         { duration: "60'", price: "€30" },
       ] },
@@ -178,7 +182,7 @@ const CATEGORIES_EN: Record<string, Category> = {
         { duration: "30'", price: "€15" },
       ] },
       { title: "4 hands massage", desc: "Four hands work simultaneously for double relaxation.", images: ["/images/services/4hands.webp"], options: [
-        { duration: "60'", price: "€50" },
+        { duration: "60'", price: "€45" },
       ] },
       { title: "Pressotherapy", desc: "Mechanical lymphatic drainage for detoxification.", images: ["/images/services/presotherapeia.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -196,7 +200,7 @@ const CATEGORIES_EN: Record<string, Category> = {
     sub: [
       { title: "Natural face lifting", desc: "Non-invasive toning and tightening techniques.", images: ["/images/services/facelifitng.webp"], price: "€15" },
       { title: "Natural face lifting full extra", desc: "Complete treatment for immediate rejuvenation.", images: ["/images/services/extrafacelifting.webp"], price: "€30" },
-      { title: "Body scrub mask & massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/scrabtherapy.webp"], price: "€30" },
+      { title: "Body scrub mask & massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/scrabtherapy.webp"], price: "€20" },
       { title: "Chocolate therapy", desc: "Wellness therapy with chocolate aroma.", images: ["/images/services/sokotherapy.webp"], price: "€30" },
       { title: "Phototherapy", desc: "Use of LED light for skin rejuvenation.", images: ["/images/services/fototherapy.webp"], price: "€10" },
       { title: "Cellulite massage (Package of 10 sessions)", desc: "The package includes 10 cellulite sessions with special discount. Final price: €160 (regular value €200).", images: ["/images/services/celluuliteMassage.webp"], options: [{ duration: "Single session", price: "€20" }, { duration: "Package of 10 sessions", price: "€160" }] },
@@ -237,10 +241,10 @@ const CATEGORIES_EN: Record<string, Category> = {
   },
   "gift-cards": {
     title: "Gift Cards",
-    intro: "Χάρισε ευεξία στους αγαπημένους σου.",
+    intro: "Give wellness to your loved ones.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου.", images: ["/images/services/giftcards.webp"], price: "από €30" },
+      { title: "E-Gift", desc: "Digital gift card.", images: ["/images/services/giftcards.webp"], price: "from €30" },
     ],
   },
 }

@@ -88,7 +88,7 @@ const nextConfig = {
               "img-src 'self' data: blob:",
               "connect-src 'self'",
               "font-src 'self'",
-              "frame-src 'self'",
+              "frame-src 'self' https://www.google.com https://maps.google.com",
               "media-src 'self'",
               "object-src 'none'",
               "worker-src 'self'",
