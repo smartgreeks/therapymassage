@@ -33,7 +33,7 @@ function BlogContent({ locale }: { locale: 'el' | 'en' }) {
     <main>
       <section className="bg-olive-900 text-beige">
         <div className="container-safe py-16">
-          <h1 className="text-4xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h1 className="text-4xl font-semibold font-playfair">
             {text.title}
           </h1>
           <p className="mt-2 text-beige/80">{text.subtitle}</p>
@@ -43,7 +43,7 @@ function BlogContent({ locale }: { locale: 'el' | 'en' }) {
       <section className="container-safe py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post, i) => (
-            <article key={post.slug} className="card overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp" style={{ animationDelay: `${i * 100}ms` }}>
+            <article key={post.slug} className={`card overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp animate-delay-${i * 100}`}>
               <div className="relative h-48">
                 <Image src={post.imageUrl} alt={post.title} fill className="object-cover object-center" />
               </div>
@@ -52,7 +52,7 @@ function BlogContent({ locale }: { locale: 'el' | 'en' }) {
                   <Calendar className="h-4 w-4" />
                   <span>{new Date(post.publishedAt).toLocaleDateString(locale === 'el' ? 'el-GR' : 'en-US')}</span>
                 </div>
-                <h2 className="font-semibold text-xl mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
+                <h2 className="font-semibold text-xl mb-3 font-playfair">
                   {post.title}
                 </h2>
                 <p className="text-olive-800/80 mb-4">{post.excerpt}</p>

@@ -18,7 +18,7 @@ export default function ServicesGrid({ withTitle = true }: { withTitle?: boolean
     <section aria-labelledby="services-title" className="container-safe py-16">
       {withTitle && (
         <div className="mb-8">
-          <h2 id="services-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t("services.title")}</h2>
+          <h2 id="services-title" className="section-title font-playfair">{t("services.title")}</h2>
           <p className="mt-2 section-subtitle">{t("services.subtitle")}</p>
         </div>
       )}

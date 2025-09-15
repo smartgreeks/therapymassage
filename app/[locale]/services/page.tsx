@@ -22,7 +22,7 @@ export default function ServicesPage({ params }: Props) {
       <main>
         <section className="bg-olive-900 text-beige">
           <div className="container-safe py-16">
-            <h1 className="text-4xl font-semibold" style={{ fontFamily: "var(--font-playfair)" }}>
+            <h1 className="text-4xl font-semibold font-playfair">
               {dict.services?.title || (params.locale === 'el' ? 'Υπηρεσίες' : 'Services')}
             </h1>
             <p className="mt-2 text-beige/80">

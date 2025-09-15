@@ -113,7 +113,7 @@ export default function BusinessCarousel() {
       <div className="container-safe">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-olive-900 mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h2 className="text-3xl lg:text-4xl font-semibold text-olive-900 mb-4 font-playfair">
             {t('business.sectionTitle')}
           </h2>
           <p className="text-lg text-olive-700 max-w-2xl mx-auto">
@@ -158,7 +158,7 @@ export default function BusinessCarousel() {
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
                     <div className="text-white animate-fadeInUp">
-                      <h3 className="text-2xl lg:text-3xl font-semibold mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
+                      <h3 className="text-2xl lg:text-3xl font-semibold mb-2 font-playfair">
                         {image.title}
                       </h3>
                       <p className="text-sand text-lg max-w-2xl">

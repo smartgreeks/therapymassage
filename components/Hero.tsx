@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-olive-900/50 pointer-events-none" />
       <div className="relative container-safe h-full flex items-center">
         <div className="max-w-2xl text-white animate-fadeInUp">
-          <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight" style={{ fontFamily: "var(--font-playfair)" }}>{t("hero.title")}</h1>
+          <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight font-playfair">{t("hero.title")}</h1>
           <p className="mt-4 text-lg text-sand">{t("hero.description")}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link prefetch={false} href={`/${locale}/services`} className="btn btn-primary">{t("hero.servicesBtn")}</Link>

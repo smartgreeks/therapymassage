@@ -106,13 +106,7 @@ export default function LocaleLayout({ children, params }: Props) {
           <Footer />
         </TProvider>
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <Script id="sw-register" strategy="afterInteractive">
-          {`
-            if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed'));
-            }
-          `}
-        </Script>
+        <Script src="/sw-register.js" strategy="afterInteractive" />
       </body>
     </html>
   )

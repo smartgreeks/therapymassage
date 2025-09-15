@@ -11,7 +11,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
   return (
     <section aria-labelledby="faq-title" className="container-safe py-16">
-      <h2 id="faq-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>Συχνές Ερωτήσεις</h2>
+      <h2 id="faq-title" className="section-title font-playfair">Συχνές Ερωτήσεις</h2>
       <div className="mt-6 space-y-3">
         {items.map((it, i) => (
           <div key={it.q} className="card">

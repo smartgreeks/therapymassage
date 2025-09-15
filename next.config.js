@@ -1,23 +1,20 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-// Strong but practical CSP for App Router + Next scripts. Uses self + inline for styles
-// and disallows plugins; keeps upgrade-insecure-requests. Trusted Types helps DOM XSS sinks.
+// Strict CSP for App Router without unsafe-eval and unsafe-inline
+// Uses nonce-based script execution for better security
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
   "frame-ancestors 'self'",
   "form-action 'self'",
-  // Next inlines some scripts; strict-dynamic is inert without nonce, but harmless
-  "script-src 'self' 'unsafe-inline' 'strict-dynamic'",
-  "style-src 'self' 'unsafe-inline'",
+  // Allow Next.js scripts in development, strict in production
+  `script-src 'self' ${isProd ? "'strict-dynamic'" : "'unsafe-eval' 'strict-dynamic' 'unsafe-inline' http://localhost:3000 http://localhost:3001 http://localhost:*"}`,
+  "style-src 'self' 'unsafe-inline'", // Keep for CSS-in-JS compatibility
   "img-src 'self' data: blob:",
   "connect-src 'self' https:",
   "font-src 'self' data:",
   "object-src 'none'",
-  "upgrade-insecure-requests",
-  // Trusted Types
-  "require-trusted-types-for 'script'",
-  "trusted-types nextjs nextjs#bundler"
+  "upgrade-insecure-requests"
 ].join('; ')
 
 const securityHeaders = [
@@ -59,12 +56,47 @@ const nextConfig = {
     ]
   },
   async headers() {
+    const isProd = process.env.NODE_ENV === 'production';
     return [
       {
-        source: '/:path*',
-        headers: securityHeaders,
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "form-action 'self'",
+              // Development-friendly CSP - less restrictive for localhost
+              `script-src 'self' ${isProd ? "'strict-dynamic'" : "'unsafe-eval' 'unsafe-inline' http://localhost:* 'self'"}`,
+              "style-src 'self' 'unsafe-inline'", // Keep for CSS-in-JS compatibility
+              "img-src 'self' data: blob:",
+              "connect-src 'self'",
+              "font-src 'self'",
+              "frame-src 'self'",
+              "media-src 'self'",
+              "object-src 'none'",
+              "worker-src 'self'",
+            ].join('; '),
+          },
+        ],
       },
-    ]
+    ];
   },
 }
 

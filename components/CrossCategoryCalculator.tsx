@@ -87,13 +87,12 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Φυσική λάμψη και φροντίδα προσώπου/σώματος με εξειδικευμένες τεχνικές.",
     hero: undefined,
     sub: [
-      { title: "Φυσικό face lifting", desc: "Μη επεμβατικές τεχνικές τόνωσης και σύσφιξης.", images: ["/images/services/service19.webp"], price: "€15" },
-      { title: "Φυσικό face lifting full extra", desc: "Ολοκληρωμένη περιποίηση για άμεση αναζωογόνηση.", images: ["/images/services/service19.webp"], price: "€30" },
-      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/service22.webp"], price: "€30" },
-      { title: "Σοκολατοθεραπεία", desc: "Θεραπεία ευεξίας με άρωμα σοκολάτας.", images: ["/images/services/cocoa.webp"], price: "€30" },
-      { title: "Φωτοθεραπεία", desc: "Χρήση φωτός LED για την ανανέωση του δέρματος.", images: ["/images/services/unnamed.webp"], price: "€10" },
-      { title: "Massage κυτταρίτιδας", desc: "Εξειδικευμένο μασάζ για τη μείωση της όψης φλοιού πορτοκαλιού.", images: ["/images/services/celluuliteMassage.webp"], price: "€20" },
-      { title: "Πακέτο 10 συνεδριών κυτταρίτιδας", desc: "Ολοκληρωμένο πρόγραμμα 10 συνεδριών.", images: ["/images/services/celluuliteMassage.webp"], price: "€160" },
+      { title: "Φυσικό face lifting", desc: "Μη επεμβατικές τεχνικές τόνωσης και σύσφιξης.", images: ["/images/services/facelifitng.webp"], price: "€15" },
+      { title: "Φυσικό face lifting full extra", desc: "Ολοκληρωμένη περιποίηση για άμεση αναζωογόνηση.", images: ["/images/services/extrafacelifting.webp"], price: "€30" },
+      { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/scrabtherapy.webp"], price: "€30" },
+      { title: "Σοκολατοθεραπεία", desc: "Θεραπεία ευεξίας με άρωμα σοκολάτας.", images: ["/images/services/sokotherapy.webp"], price: "€30" },
+      { title: "Φωτοθεραπεία", desc: "Χρήση φωτός LED για την ανανέωση του δέρματος.", images: ["/images/services/fototherapy.webp"], price: "€10" },
+      { title: "Massage κυτταρίτιδας (Πακέτο 10 συνεδριών)", desc: "Το πακέτο περιλαμβάνει 10 συνεδρίες κυτταρίτιδας με ειδική έκπτωση. Τελική τιμή: 160€ (κανονική αξία 200€).", images: ["/images/services/celluuliteMassage.webp"], options: [{ duration: "Μία συνεδρία", price: "€20" }, { duration: "Πακέτο 10 συνεδριών", price: "€160" }] },
     ],
   },
   "enallaktikes-therapeies": {
@@ -101,7 +100,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Ενεργειακό μασάζ, αγιουρβεδικό, ρεφλεξολογία και περισσότερα.",
     hero: undefined,
     sub: [
-      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", images: ["/images/services/srvs20.webp"], options: [ { duration: "90'", price: "€40" } ] },
+      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", images: ["/images/services/service13.webp"], options: [ { duration: "90'", price: "€40" } ] },
       { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
@@ -116,15 +115,16 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/service28.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Πακέτο massage & τζακούζι", desc: "Συνδυασμός μασάζ και τζακούζι για απόλυτη χαλάρωση.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
   "special-events": {
     title: "Special Events",
-    intro: "On-site υπηρεσίες για εταιρικά events και ομάδες.",
+    intro: "Ειδικές εκδηλώσεις και παιδικά πάρτυ.",
     hero: undefined,
     sub: [
-      { title: "Corporate", desc: "Παροχή μασάζ στον χώρο σας.", images: ["/images/services/srvs21.webp"], price: "€80/h" },
+      { title: "Παιδικά πάρτυ", desc: "Ειδικές υπηρεσίες για παιδικές εκδηλώσεις. Η τελική τιμή και η διαθεσιμότητα θα επιβεβαιωθούν απευθείας με τον πελάτη μέσω επικοινωνίας.", images: ["/images/services/kidsparty.webp"] },
     ],
   },
   "gift-cards": {
@@ -199,13 +199,12 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Natural radiance and face/body care with specialized techniques.",
     hero: undefined,
     sub: [
-      { title: "Natural face lifting", desc: "Non-invasive toning and tightening techniques.", images: ["/images/services/service19.webp"], price: "€15" },
-      { title: "Natural face lifting full extra", desc: "Complete treatment for immediate rejuvenation.", images: ["/images/services/service19.webp"], price: "€30" },
-      { title: "Body scrub mask & massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/service22.webp"], price: "€30" },
-      { title: "Chocolate therapy", desc: "Wellness therapy with chocolate aroma.", images: ["/images/services/cocoa.webp"], price: "€30" },
-      { title: "Phototherapy", desc: "Use of LED light for skin rejuvenation.", images: ["/images/services/unnamed.webp"], price: "€10" },
-      { title: "Cellulite massage", desc: "Specialized massage to reduce the orange peel look.", images: ["/images/services/celluuliteMassage.webp"], price: "€20" },
-      { title: "Package of 10 cellulite sessions", desc: "Complete program of 10 sessions.", images: ["/images/services/celluuliteMassage.webp"], price: "€160" },
+      { title: "Natural face lifting", desc: "Non-invasive toning and tightening techniques.", images: ["/images/services/facelifitng.webp"], price: "€15" },
+      { title: "Natural face lifting full extra", desc: "Complete treatment for immediate rejuvenation.", images: ["/images/services/extrafacelifting.webp"], price: "€30" },
+      { title: "Body scrub mask & massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/scrabtherapy.webp"], price: "€30" },
+      { title: "Chocolate therapy", desc: "Wellness therapy with chocolate aroma.", images: ["/images/services/sokotherapy.webp"], price: "€30" },
+      { title: "Phototherapy", desc: "Use of LED light for skin rejuvenation.", images: ["/images/services/fototherapy.webp"], price: "€10" },
+      { title: "Cellulite massage (Package of 10 sessions)", desc: "The package includes 10 cellulite sessions with special discount. Final price: €160 (regular value €200).", images: ["/images/services/celluuliteMassage.webp"], options: [{ duration: "Single session", price: "€20" }, { duration: "Package of 10 sessions", price: "€160" }] },
     ],
   },
   "enallaktikes-therapeies": {
@@ -213,7 +212,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Energy massage, Ayurvedic, reflexology and more.",
     hero: undefined,
     sub: [
-      { title: "Energy therapy", desc: "Combination of techniques for energy balance.", images: ["/images/services/srvs20.webp"], options: [ { duration: "90'", price: "€40" } ] },
+      { title: "Energy therapy", desc: "Combination of techniques for energy balance.", images: ["/images/services/service13.webp"], options: [ { duration: "90'", price: "€40" } ] },
       { title: "Reflexology", desc: "Pressure on reflex points of the soles.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
@@ -228,15 +227,17 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Packages for couples, bachelor/bachelorette and anniversaries.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Side-by-side experience for two.", options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Massage & jacuzzi package", desc: "Combination of massage and jacuzzi for ultimate relaxation.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
     "special-events": {
     title: "Special Events",
-    intro: "On-site services for corporate events and groups.",
+    intro: "Special events and kids parties.",
     hero: undefined,
     sub: [
-      { title: "Corporate", desc: "Massage services at your location.", images: ["/images/services/srvs21.webp"], price: "€80/h" },
+      { title: "Kids parties", desc: "Special services for children's events. Final price and availability will be confirmed directly with the client through communication.", images: ["/images/services/kidsparty.webp"] },
+      { title: "Bachelorette Spa", desc: "Special spa services for bachelorette parties. Details for price and time will be updated after communication.", images: ["/images/services/bacherorettespa.webp"] },
     ],
   },
   "gift-cards": {
@@ -244,7 +245,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Give wellness to your loved ones.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Digital gift card.", images: ["/images/services/srvs13.webp"], price: "from €30" },
+      { title: "E-Gift", desc: "Digital gift card.", images: ["/images/services/giftcards.webp"], price: "from €30" },
     ],
   },
     }
@@ -381,7 +382,7 @@ export default function CrossCategoryCalculator({
       {/* Total */}
       <div className="flex items-center justify-between rounded-lg bg-olive-900 text-white px-4 py-3">
         <div className="text-lg font-medium">{locale === 'el' ? 'Συνολικό Κόστος' : 'Total Cost'}</div>
-        <div className="text-2xl font-bold" style={{ fontFamily: 'var(--font-playfair)' }}>
+        <div className="text-2xl font-bold font-playfair">
           €{total.toFixed(2)}
         </div>
       </div>

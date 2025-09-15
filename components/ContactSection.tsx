@@ -69,7 +69,7 @@ export default function ContactSection() {
   if (!mounted) {
     return (
       <section id="contact" aria-labelledby="contact-title" className="container-safe py-16">
-        <h2 id="contact-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t("contact.title")}</h2>
+        <h2 id="contact-title" className="section-title font-playfair">{t("contact.title")}</h2>
         <div className="mt-6 grid lg:grid-cols-2 gap-8">
           <div className="card p-6">
             <div className="space-y-3 text-olive-800/90">
@@ -103,7 +103,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" aria-labelledby="contact-title" className="container-safe py-16">
-      <h2 id="contact-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t("contact.title")}</h2>
+      <h2 id="contact-title" className="section-title font-playfair">{t("contact.title")}</h2>
       <div className="mt-6 grid lg:grid-cols-2 gap-8">
         <div className="card p-6">
           <div className="space-y-3 text-olive-800/90">

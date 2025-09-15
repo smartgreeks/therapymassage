@@ -44,7 +44,7 @@ export default function BlogPostPage({ params }: Props) {
               <ArrowLeft className="h-4 w-4" />
               {params.locale === 'el' ? 'Πίσω στο Blog' : 'Back to Blog'}
             </Link>
-            <h1 className="text-4xl font-semibold mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            <h1 className="text-4xl font-semibold mb-4 font-playfair">
               {post.title}
             </h1>
             <div className="flex items-center gap-4 text-beige/80">
@@ -73,7 +73,7 @@ export default function BlogPostPage({ params }: Props) {
             
             <div className="grid lg:grid-cols-[1fr_360px] gap-8 lg:gap-12">
               <article>
-                <h1 className="text-3xl md:text-4xl font-semibold mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h1 className="text-3xl md:text-4xl font-semibold mb-6 font-playfair">
                   {post.title}
                 </h1>
                 <div 

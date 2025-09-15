@@ -30,6 +30,23 @@ export default function Navbar() {
 
   useEffect(() => setOpen(false), [pathname])
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (open) {
+        const menu = document.querySelector('.mobile-menu')
+        const button = document.querySelector('.menu-button')
+        if (menu && !menu.contains(event.target as Node) && 
+            button && !button.contains(event.target as Node)) {
+          setOpen(false)
+        }
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [open])
+
   return (
     <header className={`sticky top-0 z-50 transition-colors ${scrolled ? "bg-white/90 backdrop-blur border-b border-sand" : "bg-beige/90"}`}>
       <nav className="container-safe flex items-center justify-between h-16">
@@ -53,23 +70,36 @@ export default function Navbar() {
           <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-primary text-sm">{t("nav.contactCta")}</Link>
         </div>
 
-        <button className="md:hidden p-2" aria-label="Άνοιγμα μενού" aria-expanded={open} onClick={() => setOpen(v => !v)}>
+        <button 
+          className="menu-button md:hidden p-3 cursor-pointer relative z-50 hover:bg-olive-100 rounded-md transition-colors" 
+          aria-label="Άνοιγμα μενού" 
+          aria-expanded={open} 
+          onClick={() => setOpen(prev => !prev)}
+          type="button"
+        >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-sand bg-white animate-slideDown">
+        <>
+          {/* Overlay */}
+          <div 
+            className="fixed inset-0 bg-black/20 z-40 md:hidden" 
+            onClick={() => setOpen(false)}
+          />
+          <div className="mobile-menu md:hidden border-t border-sand bg-white animate-slideInDown fixed top-16 left-0 right-0 z-50">
           <div className="container-safe py-3 flex flex-col gap-3">
             {navItems.map(i => (
-              <Link prefetch={false} key={i.href} href={i.href === '/' ? `/${locale}` : `/${locale}${i.href}`} className="py-2 text-olive-800/90 nav-link" data-active={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`)} aria-current={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`) ? 'page' : undefined}>{t(i.key)}</Link>
+              <Link prefetch={false} key={i.href} href={i.href === '/' ? `/${locale}` : `/${locale}${i.href}`} className="py-2 text-olive-800/90 nav-link" data-active={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`)} aria-current={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`) ? 'page' : undefined} onClick={() => setOpen(false)}>{t(i.key)}</Link>
             ))}
             <div className="pt-2 border-t border-sand mt-2">
               <LanguageSwitcher />
             </div>
-            <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-primary w-full">{t("nav.contactCta")}</Link>
+            <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-primary w-full" onClick={() => setOpen(false)}>{t("nav.contactCta")}</Link>
           </div>
         </div>
+        </>
       )}
     </header>
   )

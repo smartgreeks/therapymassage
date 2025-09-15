@@ -26,7 +26,7 @@ export default function Testimonials() {
 
   return (
     <section aria-labelledby="testimonials-title" className="container-safe py-16">
-      <h2 id="testimonials-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t('testimonials.title')}</h2>
+      <h2 id="testimonials-title" className="section-title font-playfair">{t('testimonials.title')}</h2>
       <div className="mt-8 grid lg:grid-cols-[2fr_1fr] gap-8 items-stretch">
         <div className="relative overflow-hidden rounded-xl bg-white p-6 border border-sand min-h-[220px] h-full">
           {testimonials.map((t, i) => (

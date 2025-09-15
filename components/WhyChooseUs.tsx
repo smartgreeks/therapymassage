@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
 
   return (
     <section aria-labelledby="why-title" className="container-safe py-16">
-      <h2 id="why-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t("whyUs.title")}</h2>
+      <h2 id="why-title" className="section-title font-playfair">{t("whyUs.title")}</h2>
       <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map(F => (
           <div key={F.title} className="card p-6">

@@ -22,7 +22,7 @@ export default function BlogPreview({ locale }: { locale: 'el' | 'en' }) {
     <section aria-labelledby="blog-title" className="container-safe py-16">
       <div className="flex items-end justify-between mb-6">
         <div>
-          <h2 id="blog-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>
+          <h2 id="blog-title" className="section-title font-playfair">
             {text.title}
           </h2>
           <p className="mt-2 section-subtitle">{text.subtitle}</p>
@@ -33,7 +33,7 @@ export default function BlogPreview({ locale }: { locale: 'el' | 'en' }) {
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.slice(0, 3).map((post, i) => (
-          <article key={post.slug} className="card overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp" style={{ animationDelay: `${i * 100}ms` }}>
+          <article key={post.slug} className={`card overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp animate-delay-${i * 100}`}>
             <div className="relative h-44">
               <Image src={post.imageUrl} alt={post.title} fill className="object-cover object-center" />
             </div>

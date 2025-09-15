@@ -11,7 +11,7 @@ export default function AboutSection() {
           <Image src="/images/hero.webp" alt={t("about.alt")} fill className="object-cover object-center" />
         </div>
         <div>
-          <h2 id="about-title" className="section-title" style={{ fontFamily: "var(--font-playfair)" }}>{t("about.title")}</h2>
+          <h2 id="about-title" className="section-title font-playfair">{t("about.title")}</h2>
           <p className="mt-4 section-subtitle">{t("about.subtitle")}</p>
           <ul className="mt-6 grid grid-cols-2 gap-4 text-olive-800/90">
             <li>• {t("about.features.0")}</li>
