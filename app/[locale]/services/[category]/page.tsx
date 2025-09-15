@@ -107,12 +107,12 @@ const CATEGORIES_EL: Record<string, Category> = {
     ],
   },
   "idiaiteres-stigmes": {
-    title: "Special Moments",
-    intro: "Packages for couples, bachelor/bachelorette parties and anniversaries.",
+    title: "Ιδιαίτερες στιγμές",
+    intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
-      { title: "Massage & jacuzzi package", desc: "Combination of massage and jacuzzi for ultimate relaxation.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
+      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Πακέτο massage & τζακούζι", desc: "Συνδυασμός μασάζ και τζακούζι για απόλυτη χαλάρωση.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
   "special-events": {
@@ -222,12 +222,12 @@ const CATEGORIES_EN: Record<string, Category> = {
     ],
   },
   "idiaiteres-stigmes": {
-    title: "Ιδιαίτερες στιγμές",
-    intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
+    title: "Special Moments",
+    intro: "Packages for couples, bachelor/bachelorette parties and anniversaries.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
-      { title: "Πακέτο massage & τζακούζι", desc: "Συνδυασμός μασάζ και τζακούζι για απόλυτη χαλάρωση.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
+      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Massage & jacuzzi package", desc: "Combination of massage and jacuzzi for ultimate relaxation.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
   "special-events": {
