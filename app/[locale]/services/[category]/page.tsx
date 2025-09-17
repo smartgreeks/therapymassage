@@ -50,9 +50,9 @@ const CATEGORIES_EL: Record<string, Category> = {
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Μασάζ για εγκύους", desc: "Απαλό μασάζ για την ανακούφιση από μυοσκελετικούς πόνους.", images: ["/images/services/pregnantMassage.webp"], options: [
-        { duration: "30'", price: "€20" },
-        { duration: "45'", price: "€25" },
-        { duration: "60'", price: "€30" },
+        { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
       ] },
       { title: "Υδρομασάζ", desc: "Μασάζ με πίεση νερού για βαθιά χαλάρωση.", images: ["/images/services/uudromasaz.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -91,7 +91,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     ],
   },
   "enallaktikes-therapeies": {
-    title: "Εναλλακτικές θεραπείες",
+    title: "Εναλλακτικές Θεραπείες",
     intro: "Ενεργειακό μασάζ, αγιουρβεδικό, ρεφλεξολογία και περισσότερα.",
     hero: undefined,
     sub: [
@@ -110,7 +110,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" } ] },
+      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" }, { duration: "60'", price: "€50" } ] },
       { title: "Πακέτο massage & τζακούζι", desc: "Συνδυασμός μασάζ και τζακούζι για απόλυτη χαλάρωση.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
@@ -128,7 +128,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     intro: "Χάρισε ευεξία στους αγαπημένους σου.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου.", images: ["/images/services/giftcards.webp"], price: "από €30" },
+      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου. Η τιμή καθορίζεται από την υπηρεσία που επιλέγει ο χρήστης.", images: ["/images/services/giftcards.webp"] },
     ],
   },
 }
@@ -164,9 +164,9 @@ const CATEGORIES_EN: Record<string, Category> = {
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Prenatal Massage", desc: "Gentle massage to relieve musculoskeletal pain.", images: ["/images/services/pregnantMassage.webp"], options: [
-        { duration: "30'", price: "€20" },
-        { duration: "45'", price: "€25" },
-        { duration: "60'", price: "€30" },
+        { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
+        { duration: "60'", price: "€25" },
       ] },
       { title: "Hydromassage", desc: "Water pressure massage for deep relaxation.", images: ["/images/services/uudromasaz.webp"], options: [
         { duration: "30'", price: "€20" },
@@ -224,7 +224,7 @@ const CATEGORIES_EN: Record<string, Category> = {
     intro: "Packages for couples, bachelor/bachelorette parties and anniversaries.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" } ] },
+      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" }, { duration: "60'", price: "€50" } ] },
       { title: "Massage & jacuzzi package", desc: "Combination of massage and jacuzzi for ultimate relaxation.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
@@ -242,7 +242,7 @@ const CATEGORIES_EN: Record<string, Category> = {
     intro: "Give wellness to your loved ones.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Digital gift card.", images: ["/images/services/giftcards.webp"], price: "from €30" },
+      { title: "E-Gift", desc: "Digital gift card. Price depends on the selected service.", images: ["/images/services/giftcards.webp"] },
     ],
   },
 }

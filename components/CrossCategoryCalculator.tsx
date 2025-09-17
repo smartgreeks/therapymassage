@@ -104,7 +104,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Ενεργειακό μασάζ, αγιουρβεδικό, ρεφλεξολογία και περισσότερα.",
     hero: undefined,
     sub: [
-      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", images: ["/images/services/service13.webp"], options: [ { duration: "90'", price: "€40" } ] },
+      { title: "Ενεργειακό μασάζ", desc: "Συνδυασμός τεχνικών για ενεργειακή ισορροπία.", images: ["/images/services/service13.webp"], options: [ { duration: "90'", price: "€40" } ] },
       { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
@@ -119,7 +119,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" } ] },
+      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" }, { duration: "60'", price: "€50" } ] },
       { title: "Πακέτο massage & τζακούζι", desc: "Συνδυασμός μασάζ και τζακούζι για απόλυτη χαλάρωση.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
@@ -136,7 +136,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Χάρισε ευεξία στους αγαπημένους σου.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου.", images: ["/images/services/srvs13.webp"], price: "από €30" },
+      { title: "E-Gift", desc: "Ψηφιακή κάρτα δώρου. Η τιμή καθορίζεται από την υπηρεσία που επιλέγει ο χρήστης για το δώρο.", images: ["/images/services/srvs13.webp"] },
     ],
   },
     }
@@ -225,7 +225,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Ayurvedic Massage", desc: "Ancient Indian technique for body and mind balance.", images: ["/images/services/agiourbediko.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "90'", price: "€40" },
       ] },
       { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
     ],
@@ -235,7 +235,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Packages for couples, bachelor/bachelorette and anniversaries.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" } ] },
+      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" }, { duration: "60'", price: "€50" } ] },
       { title: "Massage & jacuzzi package", desc: "Combination of massage and jacuzzi for ultimate relaxation.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
@@ -253,7 +253,7 @@ const getAllCategories = (locale: 'el' | 'en'): Record<string, Category> => {
     intro: "Give wellness to your loved ones.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Digital gift card.", images: ["/images/services/giftcards.webp"], price: "from €30" },
+      { title: "E-Gift", desc: "Digital gift card. The price is determined by the service the user selects for the gift.", images: ["/images/services/giftcards.webp"] },
     ],
   },
     }
