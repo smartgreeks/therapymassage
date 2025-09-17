@@ -6,6 +6,7 @@ import CrossCategoryCalculator from "@/components/CrossCategoryCalculator"
 import ServiceCardImages from "@/components/ServiceCardImages"
 import { getDictionary } from "@/lib/i18n"
 import { TProvider } from "@/lib/TProvider"
+import Link from "next/link"
 
 type Option = { duration: string; price: string }
 type SubItem = {
@@ -16,6 +17,8 @@ type SubItem = {
   options?: Option[]
   duration?: string
   price?: string
+  href?: string
+  ctaLabel?: string
 }
 type Category = { title: string; intro: string; hero?: string; sub: SubItem[] }
 
@@ -128,7 +131,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     intro: "Χάρισε ευεξία στους αγαπημένους σου.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Ένα E‑Gift από το Therapy Massage είναι κάτι περισσότερο από μια απλή κάρτα δώρου· αποτελεί ένα πολυτελές διάλειμμα από την ένταση της καθημερινότητας. Ο τυχερός αποδέκτης θα απολαύσει μια αυθεντική εμπειρία ευεξίας και απόλυτης χαλάρωσης, με την επιλογή της ιδανικής θεραπείας που θα επιλέξετε από κοινού. Προσθέστε την προσωπική σας ευχή για να μετατρέψετε αυτό το δώρο σε μια μοναδική, προσωπική εμπειρία. Η τελική τιμή καθορίζεται από την υπηρεσία που θα επιλέξετε. CTA: Επικοινωνήστε μαζί μας για να οργανώσουμε κάθε λεπτομέρεια.", images: ["/images/services/giftcards.webp"] },
+      { title: "E-Gift", desc: "Ένα E‑Gift από το Therapy Massage είναι κάτι περισσότερο από μια απλή κάρτα δώρου· αποτελεί ένα πολυτελές διάλειμμα από την ένταση της καθημερινότητας. Ο τυχερός αποδέκτης θα απολαύσει μια αυθεντική εμπειρία ευεξίας και απόλυτης χαλάρωσης, με την επιλογή της ιδανικής θεραπείας που θα επιλέξετε από κοινού. Προσθέστε την προσωπική σας ευχή για να μετατρέψετε αυτό το δώρο σε μια μοναδική, προσωπική εμπειρία. Η τελική τιμή καθορίζεται από την υπηρεσία που θα επιλέξετε.", images: ["/images/services/giftcards.webp"], href: "/contact", ctaLabel: "Επικοινωνήστε μαζί μας" },
     ],
   },
 }
@@ -242,7 +245,7 @@ const CATEGORIES_EN: Record<string, Category> = {
     intro: "Give wellness to your loved ones.",
     hero: undefined,
     sub: [
-      { title: "E-Gift", desc: "Ένα E‑Gift από το Therapy Massage είναι κάτι περισσότερο από μια απλή κάρτα δώρου· αποτελεί ένα πολυτελές διάλειμμα από την ένταση της καθημερινότητας. Ο τυχερός αποδέκτης θα απολαύσει μια αυθεντική εμπειρία ευεξίας και απόλυτης χαλάρωσης, με την επιλογή της ιδανικής θεραπείας που θα επιλέξετε από κοινού. Προσθέστε την προσωπική σας ευχή για να μετατρέψετε αυτό το δώρο σε μια μοναδική, προσωπική εμπειρία. Η τελική τιμή καθορίζεται από την υπηρεσία που θα επιλέξετε. CTA: Επικοινωνήστε μαζί μας για να οργανώσουμε κάθε λεπτομέρεια.", images: ["/images/services/giftcards.webp"] },
+      { title: "E-Gift", desc: "An E‑Gift from Therapy Massage is more than a simple gift card — it’s a luxurious break from the stress of everyday life. The lucky recipient will enjoy an authentic wellness experience and deep relaxation, with the freedom to choose the ideal treatment together with you. Add your personal message to turn this gift into a unique, personalized experience. The final price is determined by the service you choose.", images: ["/images/services/giftcards.webp"], href: "/contact", ctaLabel: "Contact us" },
     ],
   },
 }
