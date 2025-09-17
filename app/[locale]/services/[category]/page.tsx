@@ -61,19 +61,18 @@ const CATEGORIES_EL: Record<string, Category> = {
         { duration: "60'", price: "€40" },
       ] },
       { title: "Hard Rock Massage", desc: "Έντονο μασάζ για απόλυτη μυϊκή ανακούφιση.", images: ["/images/services/hardRock.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "60'", price: "€30" },
       ] },
       { title: "Μασάζ για παιδιά", desc: "Απαλό και ασφαλές μασάζ για παιδιά.", images: ["/images/services/kidsMassage.webp"], options: [
         { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
       ] },
       { title: "4 hands massage", desc: "Τέσσερα χέρια δουλεύουν ταυτόχρονα για διπλή χαλάρωση.", images: ["/images/services/4hands.webp"], options: [
         { duration: "60'", price: "€45" },
       ] },
       { title: "Πρεσσοθεραπεία", desc: "Μηχανική λεμφική παροχέτευση για αποτοξίνωση.", images: ["/images/services/presotherapeia.webp"], options: [
-        { duration: "30'", price: "€20" },
-      ] },
-      { title: "Αγιουρβεδικό μασάζ", desc: "Αρχαία ινδική τεχνική για ισορροπία σώματος και πνεύματος.", images: ["/images/services/agiourbediko.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "45'", price: "€15" },
+        { duration: "Πακέτο 5 συνεδριών", price: "€55" },
       ] },
       { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
     ],
@@ -92,16 +91,16 @@ const CATEGORIES_EL: Record<string, Category> = {
     ],
   },
   "enallaktikes-therapeies": {
-    title: "Εναλλακτικές Θεραπείες",
+    title: "Εναλλακτικές θεραπείες",
     intro: "Ενεργειακό μασάζ, αγιουρβεδικό, ρεφλεξολογία και περισσότερα.",
     hero: undefined,
     sub: [
-      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", images: ["/images/services/service13.webp"], options: [ { duration: "90'", price: "€40" } ] },
+      { title: "Ενεργειακό μασάζ", desc: "Συνδυασμός τεχνικών για ενεργειακή ισορροπία.", images: ["/images/services/service13.webp"], options: [ { duration: "90'", price: "€40" } ] },
       { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Αγιουρβεδικό μασάζ", desc: "Αρχαία ινδική τεχνική για ισορροπία σώματος και πνεύματος.", images: ["/images/services/agiourbediko.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "90'", price: "€40" },
       ] },
       { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
     ],
@@ -111,7 +110,7 @@ const CATEGORIES_EL: Record<string, Category> = {
     intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" } ] },
       { title: "Πακέτο massage & τζακούζι", desc: "Συνδυασμός μασάζ και τζακούζι για απόλυτη χαλάρωση.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },
@@ -176,19 +175,18 @@ const CATEGORIES_EN: Record<string, Category> = {
         { duration: "60'", price: "€40" },
       ] },
       { title: "Hard Rock Massage", desc: "Intense massage for ultimate muscle relief.", images: ["/images/services/hardRock.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "60'", price: "€30" },
       ] },
       { title: "Kids Massage", desc: "Gentle and safe massage for children.", images: ["/images/services/kidsMassage.webp"], options: [
         { duration: "30'", price: "€15" },
+        { duration: "45'", price: "€20" },
       ] },
       { title: "4 hands massage", desc: "Four hands work simultaneously for double relaxation.", images: ["/images/services/4hands.webp"], options: [
         { duration: "60'", price: "€45" },
       ] },
       { title: "Pressotherapy", desc: "Mechanical lymphatic drainage for detoxification.", images: ["/images/services/presotherapeia.webp"], options: [
-        { duration: "30'", price: "€20" },
-      ] },
-      { title: "Ayurvedic Massage", desc: "Ancient Indian technique for body and mind balance.", images: ["/images/services/agiourbediko.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "45'", price: "€15" },
+        { duration: "Package of 5 sessions", price: "€55" },
       ] },
       { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
     ],
@@ -216,7 +214,7 @@ const CATEGORIES_EN: Record<string, Category> = {
         { duration: "30'", price: "€15" }, { duration: "45'", price: "€20" }, { duration: "60'", price: "€25" }
       ] },
       { title: "Ayurvedic Massage", desc: "Ancient Indian technique for body and mind balance.", images: ["/images/services/agiourbediko.webp"], options: [
-        { duration: "60'", price: "€35" },
+        { duration: "90'", price: "€40" },
       ] },
       { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
     ],
@@ -226,7 +224,7 @@ const CATEGORIES_EN: Record<string, Category> = {
     intro: "Packages for couples, bachelor/bachelorette parties and anniversaries.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Couples massage", desc: "Side-by-side experience for two.", images: ["/images/services/srvs2.webp"], options: [ { duration: "45'", price: "€40" } ] },
       { title: "Massage & jacuzzi package", desc: "Combination of massage and jacuzzi for ultimate relaxation.", images: ["/images/services/uudromasaz.webp"], duration: "90'" },
     ],
   },

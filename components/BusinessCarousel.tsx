@@ -19,7 +19,7 @@ export default function BusinessCarousel() {
   // Business space images - real photos from the massage therapy space
   const images: BusinessImage[] = [
     {
-      src: '/images/place/room1.webp',
+      src: '/images/place/room7.webp',
       alt: t('business.reception.alt'),
       title: t('business.reception.title'),
       description: t('business.reception.description')
@@ -37,28 +37,28 @@ export default function BusinessCarousel() {
       description: t('business.relaxationArea.description')
     },
     {
-      src: '/images/place/room4.webp',
+      src: '/images/services/service12.webp',
       alt: t('business.equipment.alt'),
       title: t('business.equipment.title'), 
       description: t('business.equipment.description')
     },
     {
-      src: '/images/place/room5.webp',
-      alt: t('business.ambiance.alt'),
-      title: t('business.ambiance.title'),
-      description: t('business.ambiance.description')
+      src: '/images/place/room1.webp',
+      alt: t('business.ambiance1.alt'),
+      title: t('business.ambiance1.title'),
+      description: t('business.ambiance1.description')
     },
     {
-      src: '/images/place/room7.webp',
-      alt: t('business.ambiance.alt'),
-      title: t('business.ambiance.title'),
-      description: t('business.ambiance.description')
+      src: '/images/place/room5.webp',
+      alt: t('business.ambiance2.alt'),
+      title: t('business.ambiance2.title'),
+      description: t('business.ambiance2.description')
     },
     {
       src: '/images/place/room8.webp',
-      alt: t('business.ambiance.alt'),
-      title: t('business.ambiance.title'),
-      description: t('business.ambiance.description')
+      alt: t('business.ambiance3.alt'),
+      title: t('business.ambiance3.title'),
+      description: t('business.ambiance3.description')
     }
   ]
 
@@ -93,19 +93,11 @@ export default function BusinessCarousel() {
   }
 
   // Get custom object positioning for specific images
-  const getImageClassName = (index: number) => {
+  const getImageClassName = (src: string) => {
     const baseClass = "object-cover transition-transform duration-700"
-    
-    switch (index) {
-      case 2: // room3.webp - 3rd image - focus on center-top area
-        return `${baseClass} object-center-top`
-      case 3: // room4.webp - 4th image - focus on left-center area  
-        return `${baseClass} object-left-center`
-      case 4: // room5.webp - 5th image - focus on center and bottom
-        return `${baseClass} object-center-bottom`
-      default:
-        return `${baseClass} object-center`
-    }
+    if (src.includes('room3')) return `${baseClass} object-center-top`
+    if (src.includes('room5')) return `${baseClass} object-center-bottom`
+    return `${baseClass} object-center`
   }
 
   return (
@@ -151,7 +143,7 @@ export default function BusinessCarousel() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-                    className={getImageClassName(index)}
+                    className={getImageClassName(image.src)}
                   />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-olive-900/60 via-transparent to-transparent" />
@@ -222,7 +214,7 @@ export default function BusinessCarousel() {
                 alt={image.alt}
                 fill
                 sizes="80px"
-                className={getImageClassName(index)}
+                className={getImageClassName(image.src)}
               />
             </button>
           ))}

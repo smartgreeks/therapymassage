@@ -153,6 +153,21 @@
       "title": "Professional Equipment",
       "description": "Modern equipment and high-quality products for every therapy."
     },
+    "ambiance1": {
+      "alt": "Atmosphere details",
+      "title": "Relaxing Ambiance",
+      "description": "Warm lighting and earthy textures that enhance the sense of well-being."
+    },
+    "ambiance2": {
+      "alt": "Balanced decor",
+      "title": "Balance and Calm",
+      "description": "Natural materials and harmonious lines that offer tranquility."
+    },
+    "ambiance3": {
+      "alt": "Clean and bright spaces",
+      "title": "Cleanliness & Order",
+      "description": "Clean, organized spaces with attention to detail."
+    },
     "ambiance": {
       "alt": "Space ambiance",
       "title": "Wellness Spaces",
