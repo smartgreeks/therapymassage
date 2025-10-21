@@ -71,6 +71,12 @@ html, body {
 }
 
 /* --- Small utility animations and nav styles --- */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideDown { animation: slideDown 180ms ease-out; }
 
 .nav-link {
   position: relative;
@@ -159,42 +165,4 @@ html, body {
 
 .object-right-bottom {
   object-position: 75% 75%;
-}
-
-/* Font family utilities */
-.font-playfair {
-  font-family: var(--font-playfair);
-}
-
-/* Animation delay utilities */
-.animate-delay-0 {
-  animation-delay: 0ms;
-}
-
-.animate-delay-60 {
-  animation-delay: 60ms;
-}
-
-.animate-delay-100 {
-  animation-delay: 100ms;
-}
-
-.animate-delay-120 {
-  animation-delay: 120ms;
-}
-
-.animate-delay-180 {
-  animation-delay: 180ms;
-}
-
-.animate-delay-200 {
-  animation-delay: 200ms;
-}
-
-.animate-delay-240 {
-  animation-delay: 240ms;
-}
-
-.animate-delay-300 {
-  animation-delay: 300ms;
 }

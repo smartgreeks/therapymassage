@@ -6,10 +6,8 @@ export default function AboutSection() {
   const t = useT()
   return (
     <section aria-labelledby="about-title" className="container-safe py-16">
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="relative h-64 sm:h-80 w-full overflow-hidden rounded-xl shadow-soft">
-          <Image src="/images/hero.webp" alt={t("about.alt")} fill className="object-cover object-center" />
-        </div>
+      <div className="grid md:grid-cols-1 gap-10 items-center">
+        
         <div>
           <h2 id="about-title" className="section-title font-playfair">{t("about.title")}</h2>
           <p className="mt-4 section-subtitle">{t("about.subtitle")}</p>
@@ -24,3 +22,7 @@ export default function AboutSection() {
     </section>
   )
 }
+
+//<div className="relative h-64 sm:h-80 w-full overflow-hidden rounded-xl shadow-soft">
+ //         <Image src="/images/hero.webp" alt={t("about.alt")} fill className="object-cover object-center" />
+  //      </div>

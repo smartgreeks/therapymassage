@@ -19,7 +19,7 @@ export default function BusinessCarousel() {
   // Business space images - real photos from the massage therapy space
   const images: BusinessImage[] = [
     {
-      src: '/images/place/room7.webp',
+      src: '/images/place/room1.webp',
       alt: t('business.reception.alt'),
       title: t('business.reception.title'),
       description: t('business.reception.description')
@@ -37,28 +37,28 @@ export default function BusinessCarousel() {
       description: t('business.relaxationArea.description')
     },
     {
-      src: '/images/services/service12.webp',
+      src: '/images/place/room4.webp',
       alt: t('business.equipment.alt'),
       title: t('business.equipment.title'), 
       description: t('business.equipment.description')
     },
     {
-      src: '/images/place/room1.webp',
-      alt: t('business.ambiance1.alt'),
-      title: t('business.ambiance1.title'),
-      description: t('business.ambiance1.description')
+      src: '/images/place/room5.webp',
+      alt: t('business.ambiance.alt'),
+      title: t('business.ambiance.title'),
+      description: t('business.ambiance.description')
     },
     {
-      src: '/images/place/room5.webp',
-      alt: t('business.ambiance2.alt'),
-      title: t('business.ambiance2.title'),
-      description: t('business.ambiance2.description')
+      src: '/images/place/room7.webp',
+      alt: t('business.ambiance.alt'),
+      title: t('business.ambiance.title'),
+      description: t('business.ambiance.description')
     },
     {
       src: '/images/place/room8.webp',
-      alt: t('business.ambiance3.alt'),
-      title: t('business.ambiance3.title'),
-      description: t('business.ambiance3.description')
+      alt: t('business.ambiance.alt'),
+      title: t('business.ambiance.title'),
+      description: t('business.ambiance.description')
     }
   ]
 
@@ -93,11 +93,19 @@ export default function BusinessCarousel() {
   }
 
   // Get custom object positioning for specific images
-  const getImageClassName = (src: string) => {
+  const getImageClassName = (index: number) => {
     const baseClass = "object-cover transition-transform duration-700"
-    if (src.includes('room3')) return `${baseClass} object-center-top`
-    if (src.includes('room5')) return `${baseClass} object-center-bottom`
-    return `${baseClass} object-center`
+    
+    switch (index) {
+      case 2: // room3.webp - 3rd image - focus on center-top area
+        return `${baseClass} object-center-top`
+      case 3: // room4.webp - 4th image - focus on left-center area  
+        return `${baseClass} object-left-center`
+      case 4: // room5.webp - 5th image - focus on center and bottom
+        return `${baseClass} object-center-bottom`
+      default:
+        return `${baseClass} object-center`
+    }
   }
 
   return (
@@ -105,7 +113,7 @@ export default function BusinessCarousel() {
       <div className="container-safe">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-olive-900 mb-4 font-playfair">
+          <h2 className="text-3xl lg:text-4xl font-semibold text-olive-900 mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
             {t('business.sectionTitle')}
           </h2>
           <p className="text-lg text-olive-700 max-w-2xl mx-auto">
@@ -143,14 +151,14 @@ export default function BusinessCarousel() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-                    className={getImageClassName(image.src)}
+                    className={getImageClassName(index)}
                   />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-olive-900/60 via-transparent to-transparent" />
                   {/* Content Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-12">
                     <div className="text-white animate-fadeInUp">
-                      <h3 className="text-2xl lg:text-3xl font-semibold mb-2 font-playfair">
+                      <h3 className="text-2xl lg:text-3xl font-semibold mb-2" style={{ fontFamily: "var(--font-playfair)" }}>
                         {image.title}
                       </h3>
                       <p className="text-sand text-lg max-w-2xl">
@@ -214,7 +222,7 @@ export default function BusinessCarousel() {
                 alt={image.alt}
                 fill
                 sizes="80px"
-                className={getImageClassName(image.src)}
+                className={getImageClassName(index)}
               />
             </button>
           ))}

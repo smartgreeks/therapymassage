@@ -24,7 +24,7 @@ export default function HomePage({ params }: Props) {
       <BusinessCarousel />
       <ServicesGrid />
       <WhyChooseUs />
-      <Offers />
+     
       <Testimonials />
       <FAQ />
       <BlogPreview locale={params.locale} />
@@ -32,3 +32,4 @@ export default function HomePage({ params }: Props) {
     </main>
   )
 }
+ // <Offers />

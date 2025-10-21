@@ -46,7 +46,7 @@
     },
     "idiaiteres-stigmes": {
       "title": "Special Moments",
-      "desc": "Packages for couples, bachelor/bachelorette parties and anniversaries."
+      "desc": "Packages for couples, birthdays and anniversaries."
     },
     "special-events": {
       "title": "Special Events",
@@ -54,7 +54,7 @@
     },
     "gift-cards": {
       "title": "Gift Cards",
-      "desc": "Give wellness to your loved ones."
+      "desc": "Give wellness to those you love."
     }
   },
   "about": {
@@ -93,7 +93,7 @@
     }
   },
   "offers": {
-    "title": "Offer: -25% on wellness packages",
+    "title": "Offer: -30% on wellness packages",
     "description": "Valid until the end of the month. Combine services and get additional benefits. Book your appointment now!",
     "days": "Days",
     "hours": "Hours",
@@ -152,21 +152,6 @@
       "alt": "Professional equipment",
       "title": "Professional Equipment",
       "description": "Modern equipment and high-quality products for every therapy."
-    },
-    "ambiance1": {
-      "alt": "Atmosphere details",
-      "title": "Relaxing Ambiance",
-      "description": "Warm lighting and earthy textures that enhance the sense of well-being."
-    },
-    "ambiance2": {
-      "alt": "Balanced decor",
-      "title": "Balance and Calm",
-      "description": "Natural materials and harmonious lines that offer tranquility."
-    },
-    "ambiance3": {
-      "alt": "Clean and bright spaces",
-      "title": "Cleanliness & Order",
-      "description": "Clean, organized spaces with attention to detail."
     },
     "ambiance": {
       "alt": "Space ambiance",
