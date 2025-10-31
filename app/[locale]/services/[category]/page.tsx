@@ -68,12 +68,25 @@ const CATEGORIES_EL: Record<string, Category> = {
         { duration: "60'", price: "€50" },
       ] },
       { title: "Πρεσσοθεραπεία", desc: "Μηχανική λεμφική παροχέτευση για αποτοξίνωση.", images: ["/images/services/presotherapeia.webp"], options: [
-        { duration: "30'", price: "€20" },
+        { duration: "30'", price: "€15" },
+        { duration: "8 θεραπείες", price: "€100" },
       ] },
       { title: "Αγιουρβεδικό μασάζ", desc: "Αρχαία ινδική τεχνική για ισορροπία σώματος και πνεύματος.", images: ["/images/services/agiourbediko.webp"], options: [
         { duration: "60'", price: "€35" },
       ] },
       { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
+      { title: "Candle Massage", desc: "Θεραπευτικό μασάζ με ζεστό λάδι από αρωματικά κεριά για βαθιά χαλάρωση.", images: ["/images/services/candlemassage.webp"], options: [
+        { duration: "30'", price: "€20" },
+        { duration: "45'", price: "€25" },
+        { duration: "60'", price: "€30" },
+        { duration: "90'", price: "€40" },
+      ] },
+      { title: "Hot Stone", desc: "Μασάζ με ζεστές πέτρες για βαθιά χαλάρωση και ανακούφιση μυϊκών εντάσεων.", images: ["/images/services/eueksiaImage.webp"], options: [
+        { duration: "30'", price: "€20" },
+        { duration: "45'", price: "€25" },
+        { duration: "60'", price: "€30" },
+        { duration: "90'", price: "€40" },
+      ] },
     ],
   },
   omorfia: {
@@ -86,8 +99,10 @@ const CATEGORIES_EL: Record<string, Category> = {
       { title: "Scrub μάσκα σώματος & massage", desc: "Απολέπιση, ενυδάτωση και χαλάρωση σε μία θεραπεία.", images: ["/images/services/service22.webp"], price: "€30" },
       { title: "Σοκολατοθεραπεία", desc: "Θεραπεία ευεξίας με άρωμα σοκολάτας.", images: ["/images/services/cocoa.webp"], price: "€30" },
       { title: "Φωτοθεραπεία", desc: "Χρήση φωτός LED για την ανανέωση του δέρματος.", images: ["/images/services/unnamed.webp"], price: "€10" },
-      { title: "Massage κυτταρίτιδας", desc: "Εξειδικευμένο μασάζ για τη μείωση της όψης φλοιού πορτοκαλιού.", images: ["/images/services/celluuliteMassage.webp"], price: "€20" },
-      { title: "Πακέτο 10 συνεδριών κυτταρίτιδας", desc: "Ολοκληρωμένο πρόγραμμα 10 συνεδριών.", images: ["/images/services/celluuliteMassage.webp"], price: "€160" },
+      { title: "Massage κυτταρίτιδας", desc: "Εξειδικευμένο μασάζ για τη μείωση της όψης φλοιού πορτοκαλιού.", images: ["/images/services/celluuliteMassage.webp"], options: [
+        { duration: "1 συνεδρία", price: "€20" },
+        { duration: "10 συνεδρίες", price: "€160" },
+      ] },
     ],
   },
   "enallaktikes-therapeies": {
@@ -180,12 +195,25 @@ const CATEGORIES_EN: Record<string, Category> = {
         { duration: "60'", price: "€50" },
       ] },
       { title: "Pressotherapy", desc: "Mechanical lymphatic drainage for detoxification.", images: ["/images/services/presotherapeia.webp"], options: [
-        { duration: "30'", price: "€20" },
+        { duration: "30'", price: "€15" },
+        { duration: "8 sessions", price: "€100" },
       ] },
       { title: "Ayurvedic Massage", desc: "Ancient Indian technique for body and mind balance.", images: ["/images/services/agiourbediko.webp"], options: [
         { duration: "60'", price: "€35" },
       ] },
       { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€35" }, { duration: "90'", price: "€45" } ] },
+      { title: "Candle Massage", desc: "Therapeutic massage with warm oil from aromatic candles for deep relaxation.", images: ["/images/services/candlemassage.webp"], options: [
+        { duration: "30'", price: "€20" },
+        { duration: "45'", price: "€25" },
+        { duration: "60'", price: "€30" },
+        { duration: "90'", price: "€40" },
+      ] },
+      { title: "Hot Stone", desc: "Massage with hot stones for deep relaxation and muscle tension relief.", images: ["/images/services/eueksiaImage.webp"], options: [
+        { duration: "30'", price: "€20" },
+        { duration: "45'", price: "€25" },
+        { duration: "60'", price: "€30" },
+        { duration: "90'", price: "€40" },
+      ] },
     ],
   },
   omorfia: {
@@ -198,8 +226,10 @@ const CATEGORIES_EN: Record<string, Category> = {
       { title: "Body scrub mask & massage", desc: "Exfoliation, hydration and relaxation in one treatment.", images: ["/images/services/service22.webp"], price: "€30" },
       { title: "Chocolate therapy", desc: "Wellness therapy with chocolate aroma.", images: ["/images/services/cocoa.webp"], price: "€30" },
       { title: "Phototherapy", desc: "Use of LED light for skin rejuvenation.", images: ["/images/services/unnamed.webp"], price: "€10" },
-      { title: "Cellulite massage", desc: "Specialized massage to reduce the orange peel look.", images: ["/images/services/celluuliteMassage.webp"], price: "€20" },
-      { title: "Package of 10 cellulite sessions", desc: "Complete program of 10 sessions.", images: ["/images/services/celluuliteMassage.webp"], price: "€160" },
+      { title: "Cellulite massage", desc: "Specialized massage to reduce the orange peel look.", images: ["/images/services/celluuliteMassage.webp"], options: [
+        { duration: "1 session", price: "€20" },
+        { duration: "10 sessions", price: "€160" },
+      ] },
     ],
   },
   "enallaktikes-therapeies": {
