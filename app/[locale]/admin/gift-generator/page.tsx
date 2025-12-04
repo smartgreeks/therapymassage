@@ -391,7 +391,7 @@ export default function GiftCardGenerator() {
                 {formData.message && (
                   <div className="mt-8 text-center">
                     <p className={`${theme.colors.textSecondary} italic font-serif text-lg leading-relaxed`} style={{ fontFamily: 'var(--font-playfair)' }}>
-                      "{formData.message}"
+                      &quot;{formData.message}&quot;
                     </p>
                   </div>
                 )}
