@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
-import AboutSection from '@/components/AboutSection'
+import GiftCardPromo from '@/components/GiftCardPromo'
 import ServicesGrid from '@/components/ServicesGrid'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import ContactSection from '@/components/ContactSection'
@@ -20,7 +20,7 @@ export default function HomePage({ params }: Props) {
   return (
     <main>
       <Hero />
-      <AboutSection />
+      <GiftCardPromo />
       <BusinessCarousel />
       <ServicesGrid />
       <WhyChooseUs />

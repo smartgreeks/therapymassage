@@ -1,6 +1,6 @@
 "use client"
 import React, { createContext, useContext } from 'react'
-import type { Locale } from './i18n'
+import type { Locale } from './types'
 
 type Dict = Record<string, any>
 

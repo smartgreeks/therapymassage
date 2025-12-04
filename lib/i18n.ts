@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
 import { join } from 'path'
+import { Locale } from './types'
 
-export type Locale = 'el' | 'en'
+export type { Locale }
 
 export function getDictionary(locale: Locale) {
   try {
