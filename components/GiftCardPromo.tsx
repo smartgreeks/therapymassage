@@ -6,7 +6,7 @@ import { useT } from '@/lib/TProvider'
 
 export default function GiftCardPromo() {
   const t = useT()
-  
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#7f1d1d] to-[#991b1b] text-beige py-20">
       {/* Decorative Background Elements */}
@@ -19,34 +19,34 @@ export default function GiftCardPromo() {
 
       <div className="container-safe relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          
+
           {/* Text Content */}
           <div className="text-center md:text-left space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-amber-100 backdrop-blur-sm">
               <Star className="w-4 h-4 text-amber-300 fill-amber-300" />
               <span>Christmas Special</span>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl font-serif italic leading-tight" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Δώστε το Δώρο της <br/>
+              Δώστε το Δώρο της <br />
               <span className="text-amber-200">Απόλυτης Χαλάρωσης</span>
             </h2>
-            
+
             <p className="text-lg text-beige/90 max-w-xl mx-auto md:mx-0 leading-relaxed">
-              Φέτος τις γιορτές, χαρίστε στους αγαπημένους σας στιγμές ευεξίας και αναζωογόνησης. 
+              Φέτος τις γιορτές, χαρίστε στους αγαπημένους σας στιγμές ευεξίας και αναζωογόνησης.
               Οι νέες μας <strong>e-Gift Cards</strong> είναι το ιδανικό δώρο για να δείξετε την αγάπη σας.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-              <Link 
-                href="#contact" 
+              <a
+                href="tel:2104644289"
                 className="inline-flex items-center justify-center gap-2 bg-amber-100 text-[#7f1d1d] px-8 py-4 rounded-full font-bold hover:bg-white transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 <Gift className="w-5 h-5" />
                 Απόκτηση Gift Card
-              </Link>
-              <Link 
-                href="/services" 
+              </a>
+              <Link
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-medium border border-amber-100/30 hover:bg-white/10 transition-all"
               >
                 Δείτε τις Υπηρεσίες
@@ -60,7 +60,7 @@ export default function GiftCardPromo() {
             <div className="relative w-full max-w-md aspect-[1.6/1] bg-[#FDFBF7] rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 p-8 flex flex-col justify-between border-4 border-amber-100/20">
               {/* Mockup of the Gift Card */}
               <div className="absolute top-0 left-0 w-full h-2 bg-[#7f1d1d]"></div>
-              
+
               <div className="flex justify-between items-start">
                 <div>
                   <h3 className="text-2xl font-serif italic text-[#7f1d1d]" style={{ fontFamily: 'var(--font-playfair)' }}>Gift Card</h3>
@@ -70,8 +70,12 @@ export default function GiftCardPromo() {
               </div>
 
               <div className="text-center my-4">
-                <span className="text-4xl font-serif text-[#7f1d1d]">50€</span>
-                <p className="text-xs text-stone-400 uppercase mt-1">Voucher Value</p>
+                <div className="flex justify-center items-center gap-2 mb-2 text-[#7f1d1d]">
+                  <Star className="w-4 h-4 fill-current/60" />
+                  <Star className="w-6 h-6 fill-current" />
+                  <Star className="w-4 h-4 fill-current/60" />
+                </div>
+                <p className="text-xs text-stone-500 uppercase tracking-[0.2em]">The Perfect Gift</p>
               </div>
 
               <div className="flex justify-between items-end border-t border-stone-100 pt-4">
