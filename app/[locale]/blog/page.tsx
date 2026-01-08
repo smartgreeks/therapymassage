@@ -8,7 +8,7 @@ import { getBlogPosts } from "@/lib/blogPosts"
 import TelephoneCTA from "@/components/TelephoneCTA"
 
 type Props = {
-  params: Promise<{ locale: 'el' | 'en' }>
+  params: Promise<{ locale: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -78,11 +78,12 @@ function BlogContent({ locale }: { locale: 'el' | 'en' }) {
 
 export default async function BlogPage({ params }: Props) {
   const { locale } = await params
-  const dict = getDictionary(locale)
+  const validLocale = (locale === 'el' || locale === 'en') ? locale : 'el'
+  const dict = getDictionary(validLocale)
 
   return (
-    <TProvider locale={locale} dict={dict}>
-      <BlogContent locale={locale} />
+    <TProvider locale={validLocale} dict={dict}>
+      <BlogContent locale={validLocale} />
     </TProvider>
   )
 }

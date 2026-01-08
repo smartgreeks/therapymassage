@@ -9,7 +9,7 @@ import { TProvider } from "@/lib/TProvider"
 import { CATEGORIES_EL, CATEGORIES_EN, Category } from "@/lib/categories"
 
 type Props = {
-  params: Promise<{ locale: 'el' | 'en'; category: string }>
+  params: Promise<{ locale: string; category: string }>
 }
 
 export function generateStaticParams() {
@@ -25,13 +25,14 @@ export const dynamicParams = false
 
 export default async function CategoryPage({ params }: Props) {
   const { locale, category } = await params
-  const dict = getDictionary(locale)
-  const categoriesMap = locale === 'el' ? CATEGORIES_EL : CATEGORIES_EN
+  const validLocale = (locale === 'el' || locale === 'en') ? locale : 'el'
+  const dict = getDictionary(validLocale)
+  const categoriesMap = validLocale === 'el' ? CATEGORIES_EL : CATEGORIES_EN
   const data = categoriesMap[category]
   if (!data) return null
 
   return (
-    <TProvider locale={locale} dict={dict}>
+    <TProvider locale={validLocale} dict={dict}>
       <main>
         <section className="bg-olive-900 text-beige">
           <div className="container-safe py-16">
@@ -101,7 +102,7 @@ export default async function CategoryPage({ params }: Props) {
           </div>
         </section>
 
-        <Calculator data={data} locale={locale} />
+        <Calculator data={data} locale={validLocale} />
         <section className="container-safe py-16">
           <div className="TelephoneCTA">
             <TelephoneCTA />

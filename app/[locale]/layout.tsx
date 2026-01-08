@@ -11,7 +11,7 @@ import { TProvider } from '@/lib/TProvider'
 
 type Props = {
   children: React.ReactNode
-  params: Promise<{ locale: 'el' | 'en' }>
+  params: Promise<{ locale: string }>
 }
 
 export async function generateStaticParams() {
@@ -58,7 +58,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
-  const dict = getDictionary(locale)
+  const validLocale = (locale === 'el' || locale === 'en') ? locale : 'el'
+  const dict = getDictionary(validLocale)
+
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -90,9 +92,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={locale} className={`${inter.variable} ${playfair.variable}`}>
+    <html lang={validLocale} className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-beige text-olive-900 antialiased">
-        <TProvider locale={locale} dict={dict}>
+        <TProvider locale={validLocale} dict={dict}>
           <ImagePreloader
             images={[
               '/images/services/relaxing.webp',

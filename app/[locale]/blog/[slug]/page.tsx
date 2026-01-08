@@ -9,7 +9,7 @@ import BlogSidebar from '@/components/BlogSidebar'
 import TelephoneCTA from '@/components/TelephoneCTA'
 
 type Props = {
-  params: Promise<{ locale: 'el' | 'en'; slug: string }>
+  params: Promise<{ locale: string; slug: string }>
 }
 
 export function generateStaticParams() {
@@ -25,25 +25,26 @@ export const dynamicParams = false
 
 export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params
-  const dict = getDictionary(locale)
-  const post = getBlogPost(slug, locale)
-  const relatedPosts = getRelatedBlogPosts(slug, locale, 3)
+  const validLocale = (locale === 'el' || locale === 'en') ? locale : 'el'
+  const dict = getDictionary(validLocale)
+  const post = getBlogPost(slug, validLocale)
+  const relatedPosts = getRelatedBlogPosts(slug, validLocale, 3)
 
   if (!post) {
     notFound()
   }
 
   return (
-    <TProvider locale={locale} dict={dict}>
+    <TProvider locale={validLocale} dict={dict}>
       <main>
         <section className="bg-olive-900 text-beige">
           <div className="container-safe py-16">
             <Link prefetch={false}
-              href={`/${locale}/blog`}
+              href={`/${validLocale}/blog`}
               className="inline-flex items-center gap-2 text-beige/80 hover:text-beige mb-6"
             >
               <ArrowLeft className="h-4 w-4" />
-              {locale === 'el' ? 'Πίσω στο Blog' : 'Back to Blog'}
+              {validLocale === 'el' ? 'Πίσω στο Blog' : 'Back to Blog'}
             </Link>
             <h1 className="text-4xl font-semibold mb-4 font-playfair">
               {post.title}
@@ -51,7 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex items-center gap-4 text-beige/80">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
-                <span>{new Date(post.publishedAt).toLocaleDateString(locale === 'el' ? 'el-GR' : 'en-US')}</span>
+                <span>{new Date(post.publishedAt).toLocaleDateString(validLocale === 'el' ? 'el-GR' : 'en-US')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <User className="h-4 w-4" />

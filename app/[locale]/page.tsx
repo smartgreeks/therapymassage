@@ -10,11 +10,12 @@ import { BusinessCarousel, Testimonials, FAQ } from '@/components/DynamicSection
 const BlogPreview = dynamic(() => import('@/components/BlogPreview'))
 
 type Props = {
-  params: Promise<{ locale: 'el' | 'en' }>
+  params: Promise<{ locale: string }>
 }
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
+  const validLocale = (locale === 'el' || locale === 'en') ? locale : 'el'
 
   return (
     <main>
@@ -26,7 +27,7 @@ export default async function HomePage({ params }: Props) {
 
       <Testimonials />
       <FAQ />
-      <BlogPreview locale={locale} />
+      <BlogPreview locale={validLocale} />
       <ContactSection />
     </main>
   )
