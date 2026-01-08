@@ -4,19 +4,18 @@ import GiftCardPromo from '@/components/GiftCardPromo'
 import ServicesGrid from '@/components/ServicesGrid'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import ContactSection from '@/components/ContactSection'
+import { BusinessCarousel, Testimonials, FAQ } from '@/components/DynamicSections'
 
-// Defer below-the-fold, client-heavy sections
-const BusinessCarousel = dynamic(() => import('@/components/BusinessCarousel'), { ssr: false })
-const Offers = dynamic(() => import('@/components/Offers'), { ssr: false })
-const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: false })
-const FAQ = dynamic(() => import('@/components/FAQ'), { ssr: false })
+// BlogPreview can be dynamically imported without ssr:false
 const BlogPreview = dynamic(() => import('@/components/BlogPreview'))
 
 type Props = {
-  params: { locale: 'el' | 'en' }
+  params: Promise<{ locale: 'el' | 'en' }>
 }
 
-export default function HomePage({ params }: Props) {
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params
+
   return (
     <main>
       <Hero />
@@ -24,12 +23,11 @@ export default function HomePage({ params }: Props) {
       <BusinessCarousel />
       <ServicesGrid />
       <WhyChooseUs />
-     
+
       <Testimonials />
       <FAQ />
-      <BlogPreview locale={params.locale} />
+      <BlogPreview locale={locale} />
       <ContactSection />
     </main>
   )
 }
- // <Offers />

@@ -10,6 +10,7 @@ import { useT, useLocale } from "@/lib/TProvider"
 const navItems = [
   { href: "/", key: "nav.home" },
   { href: "/services", key: "nav.services" },
+  { href: "/ems", key: "nav.ems" },
   { href: "/about", key: "nav.about" },
   { href: "/blog", key: "nav.blog" },
 ]
@@ -36,8 +37,8 @@ export default function Navbar() {
       if (open) {
         const menu = document.querySelector('.mobile-menu')
         const button = document.querySelector('.menu-button')
-        if (menu && !menu.contains(event.target as Node) && 
-            button && !button.contains(event.target as Node)) {
+        if (menu && !menu.contains(event.target as Node) &&
+          button && !button.contains(event.target as Node)) {
           setOpen(false)
         }
       }
@@ -70,10 +71,10 @@ export default function Navbar() {
           <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-primary text-sm">{t("nav.contactCta")}</Link>
         </div>
 
-        <button 
-          className="menu-button md:hidden p-3 cursor-pointer relative z-50 hover:bg-olive-100 rounded-md transition-colors" 
-          aria-label="Άνοιγμα μενού" 
-          aria-expanded={open} 
+        <button
+          className="menu-button md:hidden p-3 cursor-pointer relative z-50 hover:bg-olive-100 rounded-md transition-colors"
+          aria-label="Άνοιγμα μενού"
+          aria-expanded={open}
           onClick={() => setOpen(prev => !prev)}
           type="button"
         >
@@ -84,21 +85,21 @@ export default function Navbar() {
       {open && (
         <>
           {/* Overlay */}
-          <div 
-            className="fixed inset-0 bg-black/20 z-40 md:hidden" 
+          <div
+            className="fixed inset-0 bg-black/20 z-40 md:hidden"
             onClick={() => setOpen(false)}
           />
           <div className="mobile-menu md:hidden border-t border-sand bg-white animate-slideInDown fixed top-16 left-0 right-0 z-50">
-          <div className="container-safe py-3 flex flex-col gap-3">
-            {navItems.map(i => (
-              <Link prefetch={false} key={i.href} href={i.href === '/' ? `/${locale}` : `/${locale}${i.href}`} className="py-2 text-olive-800/90 nav-link" data-active={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`)} aria-current={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`) ? 'page' : undefined} onClick={() => setOpen(false)}>{t(i.key)}</Link>
-            ))}
-            <div className="pt-2 border-t border-sand mt-2">
-              <LanguageSwitcher />
+            <div className="container-safe py-3 flex flex-col gap-3">
+              {navItems.map(i => (
+                <Link prefetch={false} key={i.href} href={i.href === '/' ? `/${locale}` : `/${locale}${i.href}`} className="py-2 text-olive-800/90 nav-link" data-active={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`)} aria-current={pathname === (i.href === '/' ? `/${locale}` : `/${locale}${i.href}`) ? 'page' : undefined} onClick={() => setOpen(false)}>{t(i.key)}</Link>
+              ))}
+              <div className="pt-2 border-t border-sand mt-2">
+                <LanguageSwitcher />
+              </div>
+              <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-primary w-full" onClick={() => setOpen(false)}>{t("nav.contactCta")}</Link>
             </div>
-            <Link prefetch={false} href={`/${locale}/#contact`} className="btn btn-primary w-full" onClick={() => setOpen(false)}>{t("nav.contactCta")}</Link>
           </div>
-        </div>
         </>
       )}
     </header>

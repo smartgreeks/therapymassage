@@ -9,28 +9,29 @@ import { TProvider } from "@/lib/TProvider"
 import { CATEGORIES_EL, CATEGORIES_EN, Category } from "@/lib/categories"
 
 type Props = {
-  params: { locale: 'el' | 'en'; category: string }
+  params: Promise<{ locale: 'el' | 'en'; category: string }>
 }
 
 export function generateStaticParams() {
   const locales = ['el', 'en']
   const categories = Object.keys(CATEGORIES_EL) // Using Greek keys as they're the same for both languages
-  
-  return locales.flatMap(locale => 
+
+  return locales.flatMap(locale =>
     categories.map(category => ({ locale, category }))
   )
 }
 
 export const dynamicParams = false
 
-export default function CategoryPage({ params }: Props) {
-  const dict = getDictionary(params.locale)
-  const categories = params.locale === 'el' ? CATEGORIES_EL : CATEGORIES_EN
-  const data = categories[params.category]
+export default async function CategoryPage({ params }: Props) {
+  const { locale, category } = await params
+  const dict = getDictionary(locale)
+  const categoriesMap = locale === 'el' ? CATEGORIES_EL : CATEGORIES_EN
+  const data = categoriesMap[category]
   if (!data) return null
 
   return (
-    <TProvider locale={params.locale} dict={dict}>
+    <TProvider locale={locale} dict={dict}>
       <main>
         <section className="bg-olive-900 text-beige">
           <div className="container-safe py-16">
@@ -49,45 +50,46 @@ export default function CategoryPage({ params }: Props) {
                 <Image src={data.hero} alt={data.title} fill className="object-contain object-left" />
               </div>
             )}
-            
+
             <div className="grid lg:grid-cols-[1fr_360px] gap-8 lg:gap-12">
               <div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   {data.sub.map((s, i) => {
                     const imgs = (s.images && s.images.length ? s.images : (s.image ? [s.image] : []))
                     return (
-                    <div key={s.title} className="card p-0 overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp" style={{ animationDelay: `${i * 60}ms` }}>
-                      <ServiceCardImages images={imgs} alt={s.title} />
-                      <div className="p-6">
-                        <h3 className="font-semibold text-lg flex items-center gap-2">
-                          <BadgeCheck className="h-5 w-5 text-olive-700" aria-hidden="true" />
-                          <span>{s.title}</span>
-                        </h3>
-                        {s.desc && <p className="mt-2 text-olive-800/80">{s.desc}</p>}
-                        {s.options && s.options.length > 0 ? (
-                          <div className="mt-4 flex flex-wrap gap-2">
-                            {s.options.map((opt, j) => (
-                              <span key={j} className="inline-flex items-center gap-2 rounded-full border border-sand bg-white px-3 py-1 text-sm shadow-sm">
-                                <span className="text-olive-800/90">{opt.duration}</span>
-                                <span className="text-olive-700 font-semibold">{opt.price}</span>
-                              </span>
-                            ))}
-                          </div>
-                        ) : (s.duration || s.price) ? (
-                          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-sand bg-white px-3 py-1 text-sm shadow-sm">
-                            <span>{s.duration ?? ''}</span>
-                            <span className="font-medium">{s.price ?? ''}</span>
-                          </div>
-                        ) : null}
+                      <div key={s.title} className="card p-0 overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp" style={{ animationDelay: `${i * 60}ms` }}>
+                        <ServiceCardImages images={imgs} alt={s.title} />
+                        <div className="p-6">
+                          <h3 className="font-semibold text-lg flex items-center gap-2">
+                            <BadgeCheck className="h-5 w-5 text-olive-700" aria-hidden="true" />
+                            <span>{s.title}</span>
+                          </h3>
+                          {s.desc && <p className="mt-2 text-olive-800/80">{s.desc}</p>}
+                          {s.options && s.options.length > 0 ? (
+                            <div className="mt-4 flex flex-wrap gap-2">
+                              {s.options.map((opt, j) => (
+                                <span key={j} className="inline-flex items-center gap-2 rounded-full border border-sand bg-white px-3 py-1 text-sm shadow-sm">
+                                  <span className="text-olive-800/90">{opt.duration}</span>
+                                  <span className="text-olive-700 font-semibold">{opt.price}</span>
+                                </span>
+                              ))}
+                            </div>
+                          ) : (s.duration || s.price) ? (
+                            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-sand bg-white px-3 py-1 text-sm shadow-sm">
+                              <span>{s.duration ?? ''}</span>
+                              <span className="font-medium">{s.price ?? ''}</span>
+                            </div>
+                          ) : null}
+                        </div>
                       </div>
-                    </div>
-                    )})}
+                    )
+                  })}
                 </div>
               </div>
-              
+
               <div>
-                <ServiceCategorySidebar 
-                  currentCategory={params.category}
+                <ServiceCategorySidebar
+                  currentCategory={category}
                   currentCategoryData={{
                     title: data.title,
                     intro: data.intro,
@@ -99,14 +101,17 @@ export default function CategoryPage({ params }: Props) {
           </div>
         </section>
 
-        <Calculator data={data} locale={params.locale} />
+        <Calculator data={data} locale={locale} />
         <section className="container-safe py-16">
-          <TelephoneCTA />
+          <div className="TelephoneCTA">
+            <TelephoneCTA />
+          </div>
         </section>
       </main>
     </TProvider>
   )
 }
+
 
 function Calculator({ data, locale }: { data: Category; locale: 'el' | 'en' }) {
   return (
@@ -116,8 +121,8 @@ function Calculator({ data, locale }: { data: Category; locale: 'el' | 'en' }) {
           {locale === 'el' ? 'Υπολογισμός πακέτου' : 'Package Calculator'}
         </h2>
         <p className="text-olive-800/80 mt-1">
-          {locale === 'el' 
-            ? 'Συνδυάστε υπηρεσίες από όλες τις κατηγορίες για το ιδανικό πακέτο.' 
+          {locale === 'el'
+            ? 'Συνδυάστε υπηρεσίες από όλες τις κατηγορίες για το ιδανικό πακέτο.'
             : 'Combine services from all categories for the ideal package.'}
         </p>
         <CrossCategoryCalculator currentCategory={getCurrentCategoryKey(data.title, locale)} locale={locale} />
@@ -146,6 +151,6 @@ function getCurrentCategoryKey(title: string, locale: 'el' | 'en'): string {
       'Gift Cards': 'gift-cards'
     }
   }
-  
+
   return Object.entries(mappings[locale]).find(([t]) => t === title)?.[1] || 'euexia'
 }

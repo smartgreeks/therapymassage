@@ -11,15 +11,16 @@ import { TProvider } from '@/lib/TProvider'
 
 type Props = {
   children: React.ReactNode
-  params: { locale: 'el' | 'en' }
+  params: Promise<{ locale: 'el' | 'en' }>
 }
 
 export async function generateStaticParams() {
   return [{ locale: 'el' }, { locale: 'en' }]
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const isEl = params.locale === 'el'
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
+  const isEl = locale === 'el'
   return {
     metadataBase: new URL('https://www.example-massage-spa.com'),
     title: {
@@ -55,9 +56,10 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function LocaleLayout({ children, params }: Props) {
-  const dict = getDictionary(params.locale)
-  
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params
+  const dict = getDictionary(locale)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -88,16 +90,16 @@ export default function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={params.locale} className={`${inter.variable} ${playfair.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${playfair.variable}`}>
       <body className="bg-beige text-olive-900 antialiased">
-        <TProvider locale={params.locale} dict={dict}>
-          <ImagePreloader 
+        <TProvider locale={locale} dict={dict}>
+          <ImagePreloader
             images={[
               '/images/services/relaxing.webp',
               '/images/services/deepTissuue.webp',
               '/images/services/athletic.webp',
               '/images/services/lemfiko.webp'
-            ]} 
+            ]}
           />
           <Navbar />
           <RouteTransition>
@@ -111,3 +113,4 @@ export default function LocaleLayout({ children, params }: Props) {
     </html>
   )
 }
+

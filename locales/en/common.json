@@ -6,6 +6,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "ems": "EMS",
     "about": "About",
     "blog": "Blog",
     "contactCta": "Contact"
@@ -84,7 +85,7 @@
     "callbackNote": "If we don't answer right away, we'll call you back as soon as possible. Thank you for your understanding!",
     "days": {
       "sunday": "Sunday",
-      "monday": "Monday", 
+      "monday": "Monday",
       "tuesday": "Tuesday",
       "wednesday": "Wednesday",
       "thursday": "Thursday",

@@ -6,6 +6,7 @@
   "nav": {
     "home": "Αρχική",
     "services": "Υπηρεσίες",
+    "ems": "EMS",
     "about": "Σχετικά",
     "blog": "Blog",
     "contactCta": "Επικοινωνία"
@@ -85,7 +86,7 @@
     "days": {
       "sunday": "Κυριακή",
       "monday": "Δευτέρα",
-      "tuesday": "Τρίτη", 
+      "tuesday": "Τρίτη",
       "wednesday": "Τετάρτη",
       "thursday": "Πέμπτη",
       "friday": "Παρασκευή",

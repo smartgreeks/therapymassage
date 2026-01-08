@@ -1,6 +1,6 @@
 'use client'
 
-import { Gift, Snowflake, Star, ArrowRight } from 'lucide-react'
+import { Gift, Sparkles, Star, ArrowRight, Heart } from 'lucide-react'
 import Link from 'next/link'
 import { useT } from '@/lib/TProvider'
 
@@ -8,13 +8,14 @@ export default function GiftCardPromo() {
   const t = useT()
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#7f1d1d] to-[#991b1b] text-beige py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#7f1d1d] via-[#991b1b] to-[#7f1d1d] text-beige py-20">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <Snowflake className="absolute top-10 left-10 w-12 h-12 text-white/10 animate-pulse" />
-        <Snowflake className="absolute top-20 right-20 w-8 h-8 text-white/10 animate-bounce duration-[3000ms]" />
+        <Sparkles className="absolute top-10 left-10 w-12 h-12 text-white/10 animate-pulse" />
+        <Sparkles className="absolute top-20 right-20 w-8 h-8 text-white/10 animate-pulse delay-300" />
         <Star className="absolute bottom-10 left-1/4 w-6 h-6 text-yellow-200/20" />
         <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute -left-20 top-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container-safe relative z-10">
@@ -23,18 +24,18 @@ export default function GiftCardPromo() {
           {/* Text Content */}
           <div className="text-center md:text-left space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-amber-100 backdrop-blur-sm">
-              <Star className="w-4 h-4 text-amber-300 fill-amber-300" />
-              <span>Christmas Special</span>
+              <Heart className="w-4 h-4 text-amber-300 fill-amber-300" />
+              <span>Ιδανικό Δώρο</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-serif italic leading-tight" style={{ fontFamily: 'var(--font-playfair)' }}>
-              Δώστε το Δώρο της <br />
+              Χαρίστε Στιγμές <br />
               <span className="text-amber-200">Απόλυτης Χαλάρωσης</span>
             </h2>
 
             <p className="text-lg text-beige/90 max-w-xl mx-auto md:mx-0 leading-relaxed">
-              Φέτος τις γιορτές, χαρίστε στους αγαπημένους σας στιγμές ευεξίας και αναζωογόνησης.
-              Οι νέες μας <strong>e-Gift Cards</strong> είναι το ιδανικό δώρο για να δείξετε την αγάπη σας.
+              Δωρίστε στους αγαπημένους σας μια μοναδική εμπειρία ευεξίας και αναζωογόνησης.
+              Οι <strong>e-Gift Cards</strong> μας είναι το ιδανικό δώρο για κάθε περίσταση.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
@@ -59,7 +60,7 @@ export default function GiftCardPromo() {
           <div className="relative flex justify-center items-center">
             <div className="relative w-full max-w-md aspect-[1.6/1] bg-[#FDFBF7] rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500 p-8 flex flex-col justify-between border-4 border-amber-100/20">
               {/* Mockup of the Gift Card */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-[#7f1d1d]"></div>
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#7f1d1d] to-[#991b1b]"></div>
 
               <div className="flex justify-between items-start">
                 <div>
@@ -72,7 +73,7 @@ export default function GiftCardPromo() {
               <div className="text-center my-4">
                 <div className="flex justify-center items-center gap-2 mb-2 text-[#7f1d1d]">
                   <Star className="w-4 h-4 fill-current/60" />
-                  <Star className="w-6 h-6 fill-current" />
+                  <Heart className="w-6 h-6 fill-current" />
                   <Star className="w-4 h-4 fill-current/60" />
                 </div>
                 <p className="text-xs text-stone-500 uppercase tracking-[0.2em]">The Perfect Gift</p>
@@ -80,11 +81,11 @@ export default function GiftCardPromo() {
 
               <div className="flex justify-between items-end border-t border-stone-100 pt-4">
                 <div className="text-xs text-stone-400">
-                  <p>To: Agapimena Prosopa</p>
-                  <p>From: Esena</p>
+                  <p>Για: Κάποιον Ξεχωριστό</p>
+                  <p>Από: Εσένα</p>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-[#7f1d1d]/10 flex items-center justify-center">
-                  <Snowflake className="w-4 h-4 text-[#7f1d1d]" />
+                  <Sparkles className="w-4 h-4 text-[#7f1d1d]" />
                 </div>
               </div>
             </div>

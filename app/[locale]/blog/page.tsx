@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from "next/image"
 import Link from "next/link"
 import { Calendar } from "lucide-react"
@@ -7,12 +8,13 @@ import { getBlogPosts } from "@/lib/blogPosts"
 import TelephoneCTA from "@/components/TelephoneCTA"
 
 type Props = {
-  params: { locale: 'el' | 'en' }
+  params: Promise<{ locale: 'el' | 'en' }>
 }
 
-export function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params
   return {
-    title: params.locale === 'el' ? 'Blog' : 'Blog'
+    title: locale === 'el' ? 'Blog' : 'Blog'
   }
 }
 
@@ -56,8 +58,8 @@ function BlogContent({ locale }: { locale: 'el' | 'en' }) {
                   {post.title}
                 </h2>
                 <p className="text-olive-800/80 mb-4">{post.excerpt}</p>
-                <Link 
-                  href={`/${locale}/blog/${post.slug}`} 
+                <Link
+                  href={`/${locale}/blog/${post.slug}`}
                   className="inline-flex items-center text-olive-700 hover:text-olive-900 font-medium"
                 >
                   {text.readMore} →
@@ -74,12 +76,14 @@ function BlogContent({ locale }: { locale: 'el' | 'en' }) {
   )
 }
 
-export default function BlogPage({ params }: Props) {
-  const dict = getDictionary(params.locale)
+export default async function BlogPage({ params }: Props) {
+  const { locale } = await params
+  const dict = getDictionary(locale)
 
   return (
-    <TProvider locale={params.locale} dict={dict}>
-      <BlogContent locale={params.locale} />
+    <TProvider locale={locale} dict={dict}>
+      <BlogContent locale={locale} />
     </TProvider>
   )
 }
+
