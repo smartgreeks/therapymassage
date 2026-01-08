@@ -18,13 +18,15 @@ export function rateLimit(key: string, limit = 10, windowMs = 60_000) {
   return { ok: true, remaining: limit - entry.count, resetAt: entry.resetAt }
 }
 
-export function getClientIp(headers: Headers) {
+type HeadersLike = { get: (key: string) => string | null }
+
+export function getClientIp(headers: HeadersLike) {
   const xff = headers.get('x-forwarded-for') || ''
   const parts = xff.split(',').map(s => s.trim()).filter(Boolean)
   return parts[0] || headers.get('x-real-ip') || 'unknown'
 }
 
-export function isSameOrigin(headers: Headers) {
+export function isSameOrigin(headers: HeadersLike) {
   const origin = headers.get('origin') || ''
   const referer = headers.get('referer') || ''
   const host = headers.get('host') || ''

@@ -5,14 +5,14 @@ import { getClientIp, isSameOrigin, rateLimit } from "@/lib/ratelimit"
 
 export async function POST(req: Request) {
   try {
-    const h = headers()
+    const h = await headers()
     if (!isSameOrigin(h)) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 })
     }
     const ip = getClientIp(h)
     const rl = rateLimit(`contact:${ip}`, 5, 60_000)
     if (!rl.ok) {
-      return NextResponse.json({ error: "Too many requests" }, { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now())/1000)) } })
+      return NextResponse.json({ error: "Too many requests" }, { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } })
     }
 
     const { name, email, message, phone, website } = await req.json()
