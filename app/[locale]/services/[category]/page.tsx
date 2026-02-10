@@ -1,6 +1,7 @@
 import TelephoneCTA from "@/components/TelephoneCTA"
 import ServiceCategorySidebar from "@/components/ServiceCategorySidebar"
 import Image from "next/image"
+import Link from "next/link"
 import { Sparkles, BadgeCheck } from "lucide-react"
 import CrossCategoryCalculator from "@/components/CrossCategoryCalculator"
 import ServiceCardImages from "@/components/ServiceCardImages"
@@ -80,7 +81,21 @@ export default async function CategoryPage({ params }: Props) {
                               <span>{s.duration ?? ''}</span>
                               <span className="font-medium">{s.price ?? ''}</span>
                             </div>
-                          ) : null}
+                          ) : (
+                            <div className="mt-4 rounded-lg border border-olive-200 bg-olive-50 p-3">
+                              <p className="text-sm text-olive-800/90">
+                                {validLocale === 'el'
+                                  ? 'Για διάρκεια και τιμή, επικοινωνήστε με το studio.'
+                                  : 'For duration and price, please contact the studio.'}
+                              </p>
+                              <Link prefetch={false}
+                                href={`/${validLocale}/contact`}
+                                className="mt-3 inline-flex items-center rounded-lg bg-olive-900 px-3 py-2 text-sm font-medium text-beige hover:bg-olive-800"
+                              >
+                                {validLocale === 'el' ? 'Επικοινωνία με το studio' : 'Contact the studio'}
+                              </Link>
+                            </div>
+                          )}
                         </div>
                       </div>
                     )

@@ -117,15 +117,16 @@ export const CATEGORIES_EL: Record<string, Category> = {
     intro: "Πακέτα για ζευγάρια, bachelor/bachelorette και επετείους.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Δίπλα-δίπλα εμπειρία για δύο.", images: ["/images/services/service28.webp"], options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Τζακούζι για ζευγάρι με μασάζ", desc: "Ρομαντική εμπειρία για δύο με τζακούζι και μασάζ.", images: ["/images/services/specialMomentImage.webp"], options: [ { duration: "90'", price: "€75" } ] },
     ],
   },
   "special-events": {
     title: "Special Events",
-    intro: "On-site υπηρεσίες για εταιρικά events και ομάδες.",
+    intro: "Υπηρεσίες για bachelor parties και παιδικά spa events.",
     hero: undefined,
     sub: [
-      { title: "Corporate", desc: "Παροχή μασάζ στον χώρο σας.", images: ["/images/services/srvs21.webp"], price: "€80/h" },
+      { title: "Bachelor Spa", desc: "Spa εμπειρία για bachelor / bachelorette party.", images: ["/images/services/bacherorettespa.webp"] },
+      { title: "Παιδικό Spa", desc: "Spa εμπειρία σχεδιασμένη για παιδικά events.", images: ["/images/services/kidsparty.webp"] },
     ],
   },
   "gift-cards": {
@@ -244,15 +245,16 @@ export const CATEGORIES_EN: Record<string, Category> = {
     intro: "Packages for couples, bachelor/bachelorette and anniversaries.",
     hero: undefined,
     sub: [
-      { title: "Couples massage", desc: "Side-by-side experience for two.", options: [ { duration: "60'", price: "€110" } ] },
+      { title: "Couple jacuzzi with massage", desc: "A romantic experience for two with jacuzzi and massage.", images: ["/images/services/specialMomentImage.webp"], options: [ { duration: "90'", price: "€75" } ] },
     ],
   },
   "special-events": {
     title: "Special Events",
-    intro: "On-site services for corporate events and groups.",
+    intro: "Services for bachelor parties and kids spa events.",
     hero: undefined,
     sub: [
-      { title: "Corporate", desc: "Massage services at your location.", images: ["/images/services/srvs21.webp"], price: "€80/h" },
+      { title: "Bachelor Spa", desc: "Spa experience for bachelor / bachelorette parties.", images: ["/images/services/bacherorettespa.webp"] },
+      { title: "Kids Spa", desc: "Spa experience designed for kids events.", images: ["/images/services/kidsparty.webp"] },
     ],
   },
   "gift-cards": {

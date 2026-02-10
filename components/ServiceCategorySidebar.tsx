@@ -72,11 +72,11 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
       slug: 'special-events',
       title: 'Special Events',
       description: locale === 'el'
-        ? 'Εταιρικά events και ομαδικές υπηρεσίες'
-        : 'Corporate events and group services',
+        ? 'Bachelor parties και παιδικά spa events'
+        : 'Bachelor parties and kids spa events',
       icon: <Calendar className="h-5 w-5" />,
       image: '/images/services/specialEventImage.webp',
-      serviceCount: 1
+      serviceCount: 2
     },
     {
       slug: 'gift-cards',
