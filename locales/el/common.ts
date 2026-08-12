@@ -1,7 +1,7 @@
 export default {
   "site": {
     "name": "Therapy Massage",
-    "description": "Premium υπηρεσίες μασάζ και ευεξίας στην Αθήνα"
+    "description": "Premium υπηρεσίες μασάζ και ευεξίας στη Σαλαμίνα"
   },
   "nav": {
     "home": "Αρχική",
@@ -20,9 +20,9 @@ export default {
   "footer": {
     "about": "Σχετικά",
     "socialAlt": "Κοινωνικά δίκτυα",
-    "address": "Ησυχία 123, Αθήνα, 105 58",
-    "phone": "+30 210 123 4567",
-    "email": "info@therapymassage.gr",
+    "address": "Λεωφ. Φανερωμένης 83, Σαλαμίνα 18900",
+    "phone": "+30 210 464 4289",
+    "email": "info@therapy-massage.gr",
     "copyright": "© 2025 Therapy Massage. Όλα τα δικαιώματα διατηρούνται."
   },
   "offers": {

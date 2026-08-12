@@ -405,7 +405,7 @@ export default function GiftCardGenerator() {
                 </div>
                 <div className="text-right">
                   <p className={`text-[9px] ${theme.colors.accent} uppercase tracking-wider`}>Valid for 6 months</p>
-                  <p className={`text-[9px] ${theme.colors.accent} uppercase tracking-wider`}>www.therapymassage.gr</p>
+                  <p className={`text-[9px] ${theme.colors.accent} uppercase tracking-wider`}>therapy-massage.gr</p>
                 </div>
               </div>
             </div>
