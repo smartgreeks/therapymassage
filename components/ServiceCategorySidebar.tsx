@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Users, Gift, Calendar } from 'lucide-react'
 import { useT, useLocale } from '@/lib/TProvider'
+import { CATEGORIES_EL, CATEGORIES_EN } from '@/lib/categories'
 
 interface ServiceCategory {
   slug: string
@@ -25,6 +26,7 @@ interface ServiceCategorySidebarProps {
 export default function ServiceCategorySidebar({ currentCategory, currentCategoryData }: ServiceCategorySidebarProps) {
   const t = useT()
   const locale = useLocale()
+  const categories = locale === 'el' ? CATEGORIES_EL : CATEGORIES_EN
 
   // Define all categories with their metadata
   const allCategories: ServiceCategory[] = [
@@ -36,7 +38,7 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         : 'Relaxation and balance with classic massage techniques',
       icon: <Sparkles className="h-5 w-5" />,
       image: '/images/services/eueksiaImage.webp',
-      serviceCount: 14
+      serviceCount: categories.euexia.sub.length
     },
     {
       slug: 'omorfia',
@@ -46,17 +48,17 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         : 'Natural radiance and face/body care treatments',
       icon: <Sparkles className="h-5 w-5" />,
       image: '/images/services/beautyImage.webp',
-      serviceCount: 7
+      serviceCount: categories.omorfia.sub.length
     },
     {
       slug: 'enallaktikes-therapeies',
       title: locale === 'el' ? 'Εναλλακτικές Θεραπείες' : 'Alternative Therapies',
       description: locale === 'el'
-        ? 'Ενεργειακά μασάζ, αγιουρβέδα και ρεφλεξολογία'
-        : 'Energy massage, Ayurveda and reflexology',
+        ? 'Αγιουρβέδα, ρεφλεξολογία και Thai massage'
+        : 'Ayurveda, reflexology and Thai massage',
       icon: <Calendar className="h-5 w-5" />,
       image: '/images/services/alterTherapiesImage.webp',
-      serviceCount: 4
+      serviceCount: categories['enallaktikes-therapeies'].sub.length
     },
     {
       slug: 'idiaiteres-stigmes',
@@ -66,7 +68,7 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         : 'Packages for couples and special occasions',
       icon: <Users className="h-5 w-5" />,
       image: '/images/services/specialMomentImage.webp',
-      serviceCount: 1
+      serviceCount: categories['idiaiteres-stigmes'].sub.length
     },
     {
       slug: 'special-events',
@@ -76,7 +78,7 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         : 'Bachelor parties and kids spa events',
       icon: <Calendar className="h-5 w-5" />,
       image: '/images/services/specialEventImage.webp',
-      serviceCount: 2
+      serviceCount: categories['special-events'].sub.length
     },
     {
       slug: 'gift-cards',
@@ -86,7 +88,7 @@ export default function ServiceCategorySidebar({ currentCategory, currentCategor
         : 'Give wellness to your loved ones',
       icon: <Gift className="h-5 w-5" />,
       image: '/images/services/giftCardImage.webp',
-      serviceCount: 1
+      serviceCount: categories['gift-cards'].sub.length
     }
   ]
 

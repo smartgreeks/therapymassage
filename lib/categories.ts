@@ -77,8 +77,6 @@ export const CATEGORIES_EL: Record<string, Category> = {
         { duration: "30'", price: "€20" },
         { duration: "45'", price: "€25" },
         { duration: "60'", price: "€30" },
-        { duration: "90'", price: "€43" },
-        { duration: "120'", price: "€55" },
       ] },
       { title: "4 hands massage", desc: "Τέσσερα χέρια δουλεύουν ταυτόχρονα για διπλή χαλάρωση.", images: ["/images/services/4hands.webp"], options: [
         { duration: "60'", price: "€49" },
@@ -89,16 +87,19 @@ export const CATEGORIES_EL: Record<string, Category> = {
       ] },
       { title: "Αγιουρβεδικό μασάζ", desc: "Αρχαία ινδική τεχνική για ισορροπία σώματος και πνεύματος.", images: ["/images/services/agiourbediko.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
-      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€42" } ] },
+      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€45" }, { duration: "120'", price: "€59" } ] },
       { title: "Candle Massage", desc: "Θεραπευτικό μασάζ με ζεστό λάδι από αρωματικά κεριά για βαθιά χαλάρωση.", images: ["/images/services/candlemassage.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
       { title: "Hot Stone", desc: "Μασάζ με ζεστές πέτρες για βαθιά χαλάρωση και ανακούφιση μυϊκών εντάσεων.", images: ["/images/services/eueksiaImage.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
     ],
   },
@@ -114,16 +115,15 @@ export const CATEGORIES_EL: Record<string, Category> = {
       { title: "Φωτοθεραπεία", desc: "Χρήση φωτός LED για την ανανέωση του δέρματος.", images: ["/images/services/unnamed.webp"], price: "€10" },
       { title: "Massage κυτταρίτιδας", desc: "Εξειδικευμένο μασάζ για τη μείωση της όψης φλοιού πορτοκαλιού.", images: ["/images/services/celluuliteMassage.webp"], options: [
         { duration: "1 συνεδρία", price: "€25" },
-        { duration: "10 συνεδρίες", price: "€180" },
+        { duration: "10 συνεδρίες", price: "€220" },
       ] },
     ],
   },
   "enallaktikes-therapeies": {
     title: "Εναλλακτικές Θεραπείες",
-    intro: "Ενεργειακό μασάζ, αγιουρβεδικό, ρεφλεξολογία και περισσότερα.",
+    intro: "Αγιουρβεδικό μασάζ, ρεφλεξολογία, Thai massage και περισσότερα.",
     hero: undefined,
     sub: [
-      { title: "Ενεργειακή θεραπεία", desc: "Συνδυασμός τεχνικών για εξισορρόπηση ενέργειας.", images: ["/images/services/srvs20.webp"], options: [ { duration: "90'", price: "€40" } ] },
       { title: "Ρεφλεξολογία", desc: "Πίεση σε αντανακλαστικά σημεία πελμάτων.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€20" },
         { duration: "45'", price: "€25" },
@@ -133,9 +133,10 @@ export const CATEGORIES_EL: Record<string, Category> = {
       ] },
       { title: "Αγιουρβεδικό μασάζ", desc: "Αρχαία ινδική τεχνική για ισορροπία σώματος και πνεύματος.", images: ["/images/services/agiourbediko.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
-      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€42" } ] },
+      { title: "Thai massage", desc: "Παραδοσιακές διατάσεις και πιέσεις για ευλυγισία.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€45" }, { duration: "120'", price: "€59" } ] },
     ],
   },
   "idiaiteres-stigmes": {
@@ -144,6 +145,7 @@ export const CATEGORIES_EL: Record<string, Category> = {
     hero: undefined,
     sub: [
       { title: "Τζακούζι για ζευγάρι με μασάζ", desc: "Ρομαντική εμπειρία για δύο με τζακούζι και μασάζ.", images: ["/images/services/specialMomentImage.webp"], options: [ { duration: "90'", price: "€80" }, { duration: "120'", price: "€100" } ] },
+      { title: "Couple Massage", desc: "Μασάζ για δύο άτομα στον ίδιο χώρο, για κοινή χαλάρωση και ευεξία.", images: ["/images/services/specialMomentImage.webp"], options: [ { duration: "60'", price: "€58" }, { duration: "90'", price: "€84" } ] },
     ],
   },
   "special-events": {
@@ -231,8 +233,6 @@ export const CATEGORIES_EN: Record<string, Category> = {
         { duration: "30'", price: "€20" },
         { duration: "45'", price: "€25" },
         { duration: "60'", price: "€30" },
-        { duration: "90'", price: "€43" },
-        { duration: "120'", price: "€55" },
       ] },
       { title: "4 hands massage", desc: "Four hands work simultaneously for double relaxation.", images: ["/images/services/4hands.webp"], options: [
         { duration: "60'", price: "€49" },
@@ -243,16 +243,19 @@ export const CATEGORIES_EN: Record<string, Category> = {
       ] },
       { title: "Ayurvedic Massage", desc: "Ancient Indian technique for body and mind balance.", images: ["/images/services/agiourbediko.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
-      { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€42" } ] },
+      { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€45" }, { duration: "120'", price: "€59" } ] },
       { title: "Candle Massage", desc: "Therapeutic massage with warm oil from aromatic candles for deep relaxation.", images: ["/images/services/candlemassage.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
       { title: "Hot Stone", desc: "Massage with hot stones for deep relaxation and muscle tension relief.", images: ["/images/services/eueksiaImage.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
     ],
   },
@@ -268,16 +271,15 @@ export const CATEGORIES_EN: Record<string, Category> = {
       { title: "Phototherapy", desc: "Use of LED light for skin rejuvenation.", images: ["/images/services/unnamed.webp"], price: "€10" },
       { title: "Cellulite massage", desc: "Specialized massage to reduce the orange peel look.", images: ["/images/services/celluuliteMassage.webp"], options: [
         { duration: "1 session", price: "€25" },
-        { duration: "10 sessions", price: "€180" },
+        { duration: "10 sessions", price: "€220" },
       ] },
     ],
   },
   "enallaktikes-therapeies": {
     title: "Alternative Therapies",
-    intro: "Energy massage, Ayurvedic, reflexology and more.",
+    intro: "Ayurvedic massage, reflexology, Thai massage and more.",
     hero: undefined,
     sub: [
-      { title: "Energy therapy", desc: "Combination of techniques for energy balance.", images: ["/images/services/srvs20.webp"], options: [ { duration: "90'", price: "€40" } ] },
       { title: "Reflexology", desc: "Pressure on reflex points of the soles.", images: ["/images/services/reflexologia.webp"], options: [
         { duration: "30'", price: "€20" },
         { duration: "45'", price: "€25" },
@@ -287,9 +289,10 @@ export const CATEGORIES_EN: Record<string, Category> = {
       ] },
       { title: "Ayurvedic Massage", desc: "Ancient Indian technique for body and mind balance.", images: ["/images/services/agiourbediko.webp"], options: [
         { duration: "60'", price: "€32" },
-        { duration: "90'", price: "€42" },
+        { duration: "90'", price: "€45" },
+        { duration: "120'", price: "€59" },
       ] },
-      { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€42" } ] },
+      { title: "Thai massage", desc: "Traditional stretches and pressures for flexibility.", images: ["/images/services/thaiMassage.webp"], options: [ { duration: "60'", price: "€32" }, { duration: "90'", price: "€45" }, { duration: "120'", price: "€59" } ] },
     ],
   },
   "idiaiteres-stigmes": {
@@ -298,6 +301,7 @@ export const CATEGORIES_EN: Record<string, Category> = {
     hero: undefined,
     sub: [
       { title: "Couple jacuzzi with massage", desc: "A romantic experience for two with jacuzzi and massage.", images: ["/images/services/specialMomentImage.webp"], options: [ { duration: "90'", price: "€80" }, { duration: "120'", price: "€100" } ] },
+      { title: "Couple Massage", desc: "A massage for two people in the same room, for shared relaxation and wellness.", images: ["/images/services/specialMomentImage.webp"], options: [ { duration: "60'", price: "€58" }, { duration: "90'", price: "€84" } ] },
     ],
   },
   "special-events": {
