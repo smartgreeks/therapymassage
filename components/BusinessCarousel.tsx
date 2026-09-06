@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useT } from '@/lib/TProvider'
@@ -15,6 +15,18 @@ export default function BusinessCarousel() {
   const t = useT()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const sectionRef = useRef<HTMLElement>(null)
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting))
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => {
+      observer.disconnect()
+      if (resumeTimer.current) clearTimeout(resumeTimer.current)
+    }
+  }, [])
 
   // Business space images - real photos from the massage therapy space
   const images: BusinessImage[] = [
@@ -64,7 +76,7 @@ export default function BusinessCarousel() {
 
   // Auto-play functionality
   useEffect(() => {
-    if (!isAutoPlaying) return
+    if (!isAutoPlaying || !inView) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => 
@@ -73,13 +85,14 @@ export default function BusinessCarousel() {
     }, 5000) // Change every 5 seconds
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, images.length])
+  }, [isAutoPlaying, inView, images.length])
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
     setIsAutoPlaying(false)
     // Resume auto-play after 10 seconds
-    setTimeout(() => setIsAutoPlaying(true), 10000)
+    if (resumeTimer.current) clearTimeout(resumeTimer.current)
+    resumeTimer.current = setTimeout(() => setIsAutoPlaying(true), 10000)
   }
 
   const goToPrevious = () => {
@@ -109,7 +122,7 @@ export default function BusinessCarousel() {
   }
 
   return (
-    <section className="py-12 lg:py-20 bg-gradient-to-b from-white to-sand/20">
+    <section ref={sectionRef} className="py-12 lg:py-20 bg-gradient-to-b from-white to-sand/20">
       <div className="container-safe">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -132,7 +145,7 @@ export default function BusinessCarousel() {
             {images.map((image, index) => {
               const prev = (currentIndex - 1 + images.length) % images.length
               const next = (currentIndex + 1) % images.length
-              const isVisible = index === currentIndex || index === prev || index === next
+              const isVisible = index === currentIndex || (inView && (index === prev || index === next))
               if (!isVisible) return null
               return (
                 <div
@@ -147,10 +160,9 @@ export default function BusinessCarousel() {
                     src={image.src}
                     alt={image.alt}
                     fill
-                    priority={index === 0}
-                    loading={index === 0 ? 'eager' : 'lazy'}
+                    loading="lazy"
                     decoding="async"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+                    sizes="(min-width: 1280px) 1152px, (min-width: 1024px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
                     className={getImageClassName(index)}
                   />
                   {/* Gradient Overlay */}
@@ -211,6 +223,7 @@ export default function BusinessCarousel() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
+              aria-label={`${t('business.goToImage')} ${index + 1}`}
               className={`relative w-20 h-20 rounded-lg overflow-hidden transition-all duration-300 ${
                 index === currentIndex
                   ? 'ring-4 ring-olive-500 scale-110'

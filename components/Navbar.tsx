@@ -51,7 +51,7 @@ export default function Navbar() {
   return (
     <header className={`sticky top-0 z-50 transition-colors ${scrolled ? "bg-white/90 backdrop-blur border-b border-sand" : "bg-beige/90"}`}>
       <nav className="container-safe flex items-center justify-between h-16">
-        <Link prefetch={false} href="/" className="flex items-center gap-2" aria-label="Μετάβαση στην αρχική">
+        <Link prefetch={false} href={`/${locale}`} className="flex items-center gap-2" aria-label="Μετάβαση στην αρχική">
           <Image src="/images/logoTherapy.webp" alt="Therapy Massage logo" width={64} height={64} className="h-16 w-16 object-contain" />
         </Link>
 

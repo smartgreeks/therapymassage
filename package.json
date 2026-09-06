@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "predev": "node scripts/generate-hero.mjs",
+    "prebuild": "node scripts/generate-hero.mjs",
+    "check:performance": "node scripts/check-performance.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

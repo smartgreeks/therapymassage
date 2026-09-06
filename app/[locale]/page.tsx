@@ -19,7 +19,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <main>
-      <Hero />
+      <Hero locale={validLocale} />
       <GiftCardPromo />
       <BusinessCarousel />
       <ServicesGrid />

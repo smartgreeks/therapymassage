@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import '../globals.css'
-import { inter, playfair } from '../fonts'
+import { playfair } from '../fonts'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ImagePreloader from '@/components/ImagePreloader'
 import Script from 'next/script'
-import RouteTransition from '@/components/RouteTransition'
 import { getDictionary } from '@/lib/i18n'
 import { TProvider } from '@/lib/TProvider'
 
@@ -94,21 +92,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   return (
-    <html lang={validLocale} className={`${inter.variable} ${playfair.variable}`}>
+    <html lang={validLocale} className={playfair.variable}>
       <body className="bg-beige text-olive-900 antialiased">
         <TProvider locale={validLocale} dict={dict}>
-          <ImagePreloader
-            images={[
-              '/images/services/relaxing.webp',
-              '/images/services/deepTissuue.webp',
-              '/images/services/athletic.webp',
-              '/images/services/lemfiko.webp'
-            ]}
-          />
           <Navbar />
-          <RouteTransition>
-            {children}
-          </RouteTransition>
+          {children}
           <Footer />
         </TProvider>
         <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

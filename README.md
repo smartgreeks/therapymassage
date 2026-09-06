@@ -36,6 +36,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 
 ## 🏗️ Building for Production
 
+See [performance changes and verification](docs/performance.md) for hero image
+generation, caching, and the production smoke check.
+
 ```bash
 npm run build
 npm start

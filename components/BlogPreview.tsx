@@ -35,7 +35,7 @@ export default function BlogPreview({ locale }: { locale: 'el' | 'en' }) {
         {posts.slice(0, 3).map((post, i) => (
           <article key={post.slug} className={`card overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-lg animate-fadeInUp animate-delay-${i * 100}`}>
             <div className="relative h-44">
-              <Image src={post.imageUrl} alt={post.title} fill className="object-cover object-center" />
+              <Image src={post.imageUrl} alt={post.title} fill sizes="(min-width: 1280px) 389px, (min-width: 1024px) calc((100vw - 112px) / 3), (min-width: 640px) calc((100vw - 72px) / 2), calc(100vw - 32px)" className="object-cover object-center" />
             </div>
             <div className="p-5">
               <div className="flex items-center gap-2 text-olive-600 text-sm mb-2">

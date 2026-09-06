@@ -1,0 +1,40 @@
+{
+  "width": 1600,
+  "height": 1123,
+  "avif": [
+    {
+      "src": "/images/generated/hero-480-c77a79c82738.avif",
+      "width": 480
+    },
+    {
+      "src": "/images/generated/hero-768-2a985a4786d6.avif",
+      "width": 768
+    },
+    {
+      "src": "/images/generated/hero-1080-92de9f44a4cc.avif",
+      "width": 1080
+    },
+    {
+      "src": "/images/generated/hero-1600-facae6d83547.avif",
+      "width": 1600
+    }
+  ],
+  "webp": [
+    {
+      "src": "/images/generated/hero-480-b317f5805436.webp",
+      "width": 480
+    },
+    {
+      "src": "/images/generated/hero-768-7f75efa91087.webp",
+      "width": 768
+    },
+    {
+      "src": "/images/generated/hero-1080-e8abbefd2565.webp",
+      "width": 1080
+    },
+    {
+      "src": "/images/generated/hero-1600-fbddcc96bb63.webp",
+      "width": 1600
+    }
+  ]
+}

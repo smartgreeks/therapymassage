@@ -2,10 +2,10 @@
 
 import { Gift, Sparkles, Star, ArrowRight, Heart } from 'lucide-react'
 import Link from 'next/link'
-import { useT } from '@/lib/TProvider'
+import { useLocale } from '@/lib/TProvider'
 
 export default function GiftCardPromo() {
-  const t = useT()
+  const locale = useLocale()
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#7f1d1d] via-[#991b1b] to-[#7f1d1d] text-beige py-20">
@@ -47,7 +47,7 @@ export default function GiftCardPromo() {
                 Απόκτηση Gift Card
               </a>
               <Link
-                href="/services"
+                href={`/${locale}/services`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-medium border border-amber-100/30 hover:bg-white/10 transition-all"
               >
                 Δείτε τις Υπηρεσίες

@@ -50,18 +50,18 @@ export default function ServiceCardImages({ images, alt }: { images: string[]; a
   return (
     <div ref={boxRef} className="relative h-40" role="group" aria-label={alt}>
       {imgs.map((src, i) => (
-        <div key={src} className={`absolute inset-0 ${i === idx ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>
+        i === idx &&
+        <div key={src} className="absolute inset-0">
           <Image
             src={src}
             alt={alt}
             fill
             className={`${(fits[i] ?? 'cover') === 'cover' ? 'object-cover' : 'object-contain'} ${getObjectPositionClass(src)} bg-olive-50`}
-            priority={i === idx}
-            loading={i === idx ? "eager" : "lazy"}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
+            sizes="(min-width: 1280px) 392px, (min-width: 1024px) calc((100vw - 496px) / 2), (min-width: 640px) calc((100vw - 72px) / 2), calc(100vw - 32px)"
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyVbqfE5eMtOEd5OVDW4MZp6LLEqjZJGTKP0mH8GNK8w="
-            onLoadingComplete={(img) => updateFit(i, img.naturalWidth, img.naturalHeight)}
+            onLoad={(event) => updateFit(i, event.currentTarget.naturalWidth, event.currentTarget.naturalHeight)}
           />
         </div>
       ))}

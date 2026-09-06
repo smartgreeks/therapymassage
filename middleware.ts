@@ -14,16 +14,9 @@ export function middleware(request: NextRequest) {
 
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
-    const locale = defaultLocale
-
-    // e.g. incoming request is /products
-    // The new URL is now /el/products
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
-        request.url
-      )
-    )
+    const destination = request.nextUrl.clone()
+    destination.pathname = `/${defaultLocale}${pathname === '/' ? '' : pathname}`
+    return NextResponse.redirect(destination)
   }
 }
 
@@ -40,6 +33,6 @@ export const config = {
      * - sw.js
      * - sw-register.js
      */
-    '/((?!api|_next/static|_next/image|images|favicon.ico|site.webmanifest|sw.js|sw-register.js).*)',
+    '/((?!api|_next/static|_next/image|images|favicon|apple-touch-icon|android-chrome|site.webmanifest|sw.js|sw-register.js).*)',
   ],
 }
